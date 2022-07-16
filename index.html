@@ -1,0 +1,83 @@
+<html>
+
+<head>
+	<title>混乱时空</title>
+	<meta charset="utf-8">
+	
+	<script src="js/break_eternity.js"></script>
+	<script src="js/LZString.js"></script>
+	<script src="js/save.js"></script>
+	<script src="js/player.js"></script>
+	<script src="js/js.js"></script>
+	<script src="js/pointer.js"></script>
+	<script src="js/format.js"></script>
+	<script src="js/game/ts.js"></script>
+	<script src="js/game/dim.js"></script>
+	<script src="js/game/points.js"></script>
+	<script src="js/game/room.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/css.css" />
+	
+
+</head>
+
+<body onload='load()'>
+	<br><br><br>
+	你有<a id="pointsID" class="points"></a><a class="points">时空悖论</a>,它们将你的时间速率÷<a id="points_speedID" class="timespeed"></a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
+	时间速率<a id="time_speedID" class="timespeed"></a>×<br>
+	<small><small><small></small>残局:解锁时间面板</small></small>
+	<br>
+	<br>
+	<button onclick="showTab('main')">时空</button>
+	<button onclick="showTab('room')">空间</button>
+	<button onclick="showTab('time')" id="unlocked_tab_time">时间</button>
+	<br><br>
+	<mainTab id="tab_main">
+		<button onclick="buyDim(1)" class="button_dim">扭曲时空 <a id="dim_1ID"></a>+<a id="dim_1_additionaID"></a>(+<a id="GainDim_1ID"></a>/sec) 消耗:<a id="CostDim_1ID"></a>时空悖论 ×<a id="dim_1_mulID"></a></button><br><br>
+		<button onclick="buyDim(2)" class="button_dim" style="visibility: hidden;">二维<a id="dim_2ID"></a> 消耗:<a id="CostDim_2ID"></a>时空悖论</button><br><br>
+	</mainTab>
+	<mainTab id="tab_room">
+		<small><small><small>50时空悖论以重置</small></small></small><br>你现在有:<a id="roomID"></a>空间<br>
+		<button onclick="restRoom()" id="button_room_rest">重置时空以获得空间 现在你可以获得:<a id="resetRoomGainID"></a>空间</button>
+		<br><br>
+		<button onclick="showTabMain('room_upg')">升级</button>
+		<button onclick="showTabMain('room_storage')">储存</button>
+		<button onclick="showTabMain('room_distorted')">扭曲</button>
+		<br><br>
+		<mainTab id="tab_room_upg">
+			<tr>
+			<button onclick="buyRoomUpg(1,1)" class="button_upg">空间利用<a id="buyRoomUpg1ID"></a><br>每个扭曲时空都会给予0.1个额外的扭曲时空<br>当前效果:+<a id="roomUpgEff1ID"></a><br>消耗:1空间</button>
+			<button onclick="buyRoomUpg(2,3)" class="button_upg">空间循环<a id="buyRoomUpg2ID"></a><br>额外扭曲时空都会给扭曲时空乘数<br>当前效果:×<a id="roomUpgEff2ID"></a><br>消耗:3空间</button>
+			<button onclick="buyRoomUpg(3,5)" class="button_upg">空间管理<a id="buyRoomUpg3ID"></a><br>改善空间公式<br>(log50->log5)<br>消耗:5空间</button>
+			<button onclick="buyRoomUpg(4,10)" class="button_upg">空间混乱<a id="buyRoomUpg4ID"></a><br>当你时空悖论足够购买扭曲时空时每秒获得0.5扭曲时空且每次重置空间时都会获得2扭曲时空<br>消耗:10空间</button>
+			</tr>
+			<br><br>
+			<tr>
+			<button onclick="buyRoomUpg(5,25)" class="button_upg">空间生产<a id="buyRoomUpg5ID"></a><br>改善空间公式<br>(^0.7->^1.15)<br>消耗:25空间</button>
+			<button onclick="buyRoomUpg(6,50)" class="button_upg">空间自产<a id="buyRoomUpg6ID"></a><br>每秒获得重置时可获得的空间<br>当前效果:+<a id="GainRoomID"></a>/sec<br>消耗:50空间</button>
+			<button onclick="buyRoomUpg(7,300)" class="button_upg">空间提升<a id="buyRoomUpg7ID"></a><br>每秒自动扭曲10%的空间且自动扭曲空间无效耗同时改善扭曲空间加成公式<br>(^1.25->^2.75)<br>当前效果:+<a id="GainRoom_progressID"></a>/sec<br>消耗:300空间</button>
+			<button onclick="buyRoomUpg(8,1000)" class="button_upg">空间消散<a id="buyRoomUpg8ID"></a><br>扭曲空间时有0.01%的空间会被无效耗并转化为子空间,子空间提高空间生产(这些都没做,咕),同时解锁时空页面<br>当前效果:<br>消耗:1000空间</button>
+			</tr>
+		</mainTab>
+		<mainTab id="tab_room_storage">
+			你现在有:<a id="room_storageID"></a>存储空间<br>
+			<button onclick="restRoom_storage()">将所有空间转换为存储空间</button>
+			<br><br><br><br>
+			你现在有:<a id="room_storage_dim1ID"></a>储存扭曲时空<br>
+			<small>下次重置空间时可获得:<a id="room_storage_dim1_progressID"></a>储存扭曲时空<br></small>
+			<button onclick="room_dim_progress()" id="button_dim1_progress">储存扭曲时空</button>
+			<button onclick="room_none_progress()" id="button_none_progress">清空储存(重置时空)</button><br>
+			<br><br>
+			<small><small><small>每个存储空间可以储存1扭曲时空,储存的扭曲时空本次重置不会再生产时空悖论但依旧会提升价格<br>储存后将强重置时空,在下次空间重置时根据一次最大储存量获得额外扭曲时空<br>在储存扭曲时空时储存扭曲时空不会给予额外扭曲时空<br>额外扭曲时空不会进行任何非生产公式以及已说明运算,其包括但不限于:价格,升级,重置等<br>你初始最多只能有10个储存空间</small></small></small>
+		</mainTab>
+		<mainTab id="tab_room_distorted">
+			你现在有:<a id="room_distortedID"></a>扭曲空间,它们将你的时间速率×<a id="room_distorted_speedID" class="timespeed"></a><br>
+			<button onclick="restRoom_distorted()">将所有空间转换为扭曲空间</button>
+		</mainTab>
+	</mainTab>
+	<mainTab id="tab_time">
+		残局
+	</mainTab>
+</body>
+
+</html>
