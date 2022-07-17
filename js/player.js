@@ -1,6 +1,7 @@
 function calcPlayer(){
 	loader(['points'],n(10))
 	loader(['room'],n(0))
+	loader(['room_sub'],n(0))
 	loader(['room_storage'],n(0))
 	loader(['room_storage_dim1'],n(0))
 	loader(['room_storage_dim1_progress'],n(0))
@@ -17,6 +18,13 @@ function calcPlayer(){
 	NotOmegaLoader(['hasRoomUpg4'],"false")
 	NotOmegaLoader(['hasRoomUpg5'],"false")
 	NotOmegaLoader(['hasRoomUpg6'],"false")
+	loader(['roomUpgEff6'],n(0))
 	NotOmegaLoader(['hasRoomUpg7'],"false")
+	loader(['roomUpgEff7'],n(0))
 	NotOmegaLoader(['hasRoomUpg8'],"false")
+	loader(['roomUpgEff8'],n(0))
+	NotOmegaLoader(['hasRoomUpg9'],"false")
+	NotOmegaLoader(['hasRoomUpg10'],"false")
+	NotOmegaLoader(['hasRoomUpg11'],"false")
+	NotOmegaLoader(['hasRoomUpg12'],"false")
 }

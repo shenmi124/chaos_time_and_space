@@ -1,7 +1,7 @@
 function GainDim_1(){
 	let base = player.dim_2
 	let base2 = n(0)
-	if(player.hasRoomUpg4=="true"){base2 = n(0.5)}
+	if(player.hasRoomUpg4=="true" && player.points.gte(CostDim(1))){base2 = n(0.5)}
 	return base.add(base2).mul(time_speed())
 }
 

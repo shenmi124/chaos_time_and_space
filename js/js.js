@@ -22,8 +22,11 @@ function getID(){
 	getDoc("GainPoints",GainPoints())
 	
 	getDoc("room",player.room)
-	getDoc("GainRoom",GainRoom())
-	getDoc("GainRoom_progress",GainRoom_progress())
+	getBuyDoc("GainRoom",'(+'+format(GainRoom())+'/sec)')
+	getDoc("room_sub",player.room_sub)
+	getBuyDoc("GainRoom_sub",'(+'+format(GainRoom_sub())+'/sec)')
+	getBuyDoc("GainRoom_progress",'(+'+format(GainRoom_progress())+'/sec)')
+	getDoc("room_sub_Boostroom",room_sub_Boostroom())
 	getDoc("room_storage",player.room_storage)
 	getDoc("room_storage_dim1",player.room_storage_dim1)
 	getDoc("room_storage_dim1_progress",player.room_storage_dim1_progress)
@@ -31,8 +34,11 @@ function getID(){
 	getDoc("resetRoomGain",restRoomGain())
 	getDoc("roomUpgEff1",player.roomUpgEff1)
 	getDoc("roomUpgEff2",player.roomUpgEff2)
+	getDoc("roomUpgEff6",player.roomUpgEff6)
+	getDoc("roomUpgEff7",player.roomUpgEff7)
+	getDoc("roomUpgEff8",player.roomUpgEff8)
 	
-	for(row=1;row<=8;row++){
+	for(row=1;row<=12;row++){
 		getBuyDoc("buyRoomUpg"+row,player['hasRoomUpg'+row]=="true" ? "(已购买)" : "")
 	}
 	
@@ -69,8 +75,26 @@ function buttonID(){
 		Close('button_room_rest')
 	}
 	
+	if(player.hasRoomUpg4=="true"){
+		Open('tab_room_upg1')
+	}else{
+		Close('tab_room_upg1')
+	}
+	
 	if(player.hasRoomUpg8=="true"){
-		Open('unlocked_tab_time')
+		Open('tab_room_upg2')
+	}else{
+		Close('tab_room_upg2')
+	}
+	
+	if(player.hasRoomUpg8=="true"){
+		Open('tab_room_sub')
+	}else{
+		Close('tab_room_sub')
+	}
+	
+	if(player.hasRoomUpg8=="true"){
+		Close('unlocked_tab_time')
 	}else{
 		Close('unlocked_tab_time')
 	}
@@ -82,6 +106,7 @@ function firstTab(){
 		Close('tab_room_storage')
 		Close('tab_room_distorted')
 		Close('tab_time')
+		Close('tab_room_sub_quark')
 		cao = false
 	}
 }
@@ -124,6 +149,15 @@ function showTabMain(id){
 	}else{
 		Close("tab_room_distorted")
 	}
+	
+}
+
+function showTabMainSub(id){
+	if(id=="room_sub_quark"){
+		Open("tab_room_sub_quark")
+	}else{
+		Close("tab_room_sub_quark")
+	}
 }
 
 setInterval(function(){
@@ -137,6 +171,7 @@ setInterval(function(){
 	player.dim_1 = player.dim_1.add(GainDim_1().div(20))
 	player.room = player.room.add(GainRoom().div(20))
 	player.room_distorted = player.room_distorted.add(GainRoom_progress().div(20))
+	player.room_sub = player.room_sub.add(GainRoom_sub().div(20))
 	if(!player.room_storage_dim1_progress.gt(0)){
 		a = n(player.room_storage_dim1)
 	}

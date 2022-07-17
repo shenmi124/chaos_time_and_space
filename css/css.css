@@ -6,7 +6,7 @@ body {
 }
 
 .button_dim {
-	background-color: #f0fffe;
+	background-color: #ffffff;
 	text-align: center;
 	font-family: verdana;
 	font-size: 17px;
@@ -14,7 +14,14 @@ body {
 	width:600px;
 	cursor: pointer;
 	color:#000000;
+	transition-duration: 0.2s;
+	border: 2px solid #000000;
+	box-shadow: #1bbfab 3px 4px 0px 0px;
 	border-radius: 9px;
+}
+
+.button_dim:hover {
+	border: 2px solid #67e1dd;
 }
 
 .points {
@@ -44,6 +51,84 @@ body {
     border-color: inherit;
 	border-radius: 9px;
 	cursor: pointer;
+	transition-duration: 0.2s;
 	height:200px;
 	width:200px;
+}
+
+.button_upg:hover {
+	box-shadow: #1bbfab 0px 0px 0px 0px;
+}
+
+.button_rest_room {
+	background-color: #ffffff;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	box-shadow: #1bbfab 3px 4px 0px 0px;
+	background: linear-gradient(to bottom, #ededed 5%, #e1e1e1 100%);
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:70px;
+	width:250px;
+}
+
+.button_rest_room:hover {
+	background: linear-gradient(to bottom, #e1e1e1 5%, #ededed 100%);
+}
+
+.tabbtn {
+    background: #E0E0E0;
+    font-weight: bold;
+    border: 2px solid #67e1dd;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtn2 {
+    background: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtn3 {
+    background: #e4d4ff;
+    font-weight: bold;
+    border: 2px solid #e12edd;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtn:hover {
+	border: 2px solid #E0E0E0;
+	background: #000000;
+	color:#e1fffe;
+}
+
+.tabbtn2:hover {
+	border: 2px solid #E0E0E0;
+	background: #000000;
+	color:#FFFFFF;
+}
+
+.tabbtn3:hover {
+	border: 2px solid #E0E0E0;
+	background: #FFFFFF;
+	color:#e4d4ff;
 }

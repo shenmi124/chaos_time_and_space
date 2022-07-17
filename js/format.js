@@ -1,3 +1,4 @@
+var decimalOne = new Decimal(1)
 
 function exponentialFormat(num, precision, mantissa = true) {
     let e = num.log10().floor()

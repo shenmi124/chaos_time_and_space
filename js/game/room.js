@@ -8,7 +8,7 @@ function restRoomGain(){
 		pow = n(1.15)
 	}
 	if(player.points.gte(50)){
-		return player.points.log(log).pow(pow)
+		return player.points.log(log).pow(pow).mul(room_sub_Boostroom())
 	}else{
 		return n(0)
 	}
@@ -33,6 +33,7 @@ function restRoom_distorted(){
 	player.room = n(0)
 }
 
+//存储扭曲时空
 function room_dim_progress(){
 	let a = n(player.dim_1).min(player.room_storage)
 	player.room_storage_dim1_progress = n(a)
@@ -44,15 +45,29 @@ function room_none_progress(){
 	layer_1()
 }
 
+//秒获得空间
 function GainRoom(){
 	let base = n(0)
-	if(player.hasRoomUpg6=="true"){base = restRoomGain()}
+	if(player.hasRoomUpg6=="true"){base = base.add(player.roomUpgEff6)}
 	return base.mul(time_speed())
 }
 
+//秒获得子空间
+function GainRoom_sub(){
+	let base = n(0)
+	if(player.hasRoomUpg8=="true"){base = base.add(player.roomUpgEff8)}
+	return base.mul(time_speed())
+}
+
+function room_sub_Boostroom(){
+	let base = player.room_sub.pow(0.1).max(1)
+	return base
+}
+
+//扭曲空间
 function GainRoom_progress(){
 	let base = n(0)
-	if(player.hasRoomUpg7=="true"){base = player.room.mul(0.1)}
+	if(player.hasRoomUpg7=="true"){base = base.add(player.roomUpgEff7)}
 	return base.mul(time_speed())
 }
 
@@ -66,4 +81,7 @@ function buyRoomUpg(id,id2){
 function getRoomUpgEff(){
 	if(player['hasRoomUpg1']=="true"){player.roomUpgEff1 = n(player.dim_1.mul(0.1))}else{player.roomUpgEff1 = n(0)}
 	if(player['hasRoomUpg2']=="true"){player.roomUpgEff2 = n(player.dim_1_additiona.add(1).log(2).max(1))}else{player.roomUpgEff2 = n(1)}
+	if(player['hasRoomUpg6']=="true"){player.roomUpgEff6 = restRoomGain()}else{player.roomUpgEff6 = n(0)}
+	if(player['hasRoomUpg7']=="true"){player.roomUpgEff7 = player.room.mul(0.1)}else{player.roomUpgEff7 = n(0)}
+	if(player['hasRoomUpg8']=="true"){player.roomUpgEff8 = n(GainRoom_progress()).mul(0.01)}else{player.roomUpgEff8 = n(0)}
 }
