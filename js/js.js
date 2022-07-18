@@ -1,7 +1,9 @@
 var cao = true
 
 function getDoc(id,id2){
-	document.getElementById(id+"ID").innerHTML = format(id2);
+	if(id2 !== null){
+		document.getElementById(id+"ID").innerHTML = format(id2);
+	}
 }
 
 function getBuyDoc(id,id2){
