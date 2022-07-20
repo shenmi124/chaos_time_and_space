@@ -157,6 +157,18 @@ function buttonID(){
 	}else{
 		Close('unlocked_tab_time')
 	}
+	
+	if(player.hasRoomUpg9=="true"){
+		Close('unlocked_tab_room_quark')
+	}else{
+		Close('unlocked_tab_room_quark')
+	}
+	
+	if(player.hasRoomUpg10=="true"){
+		Close('unlocked_tab_room_upg')
+	}else{
+		Close('unlocked_tab_room_upg')
+	}
 }
 
 function firstTab(){
@@ -255,4 +267,5 @@ setInterval(function(){
 	player.cyan = n(player.red).min(player.blue)
 	player.magenta = n(player.green).min(player.blue)
 	player.white = n(player.red).min(player.green).min(player.blue)
+	
 }, 50)

@@ -18,13 +18,15 @@
 	<script src="js/game/room.js"></script>
 	<script src="js/game/quark.js"></script>
 	
+	<script src="js/game/load.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="css/css.css"/>
 	<link rel="stylesheet" type="text/css" href="css/rest.css"/>
 	<link rel="stylesheet" type="text/css" href="css/color.css"/>
 	
 </head>
 
-<body onload='load()'>
+<body>
 	<br><br><br>
 	你有<a id="pointsID" class="points"></a><a class="points">时空悖论</a>,它们将你的时间速率÷<a id="points_speedID" class="timespeed"></a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
 	时间速率<a id="time_speedID" class="timespeed"></a>×<br>
@@ -87,8 +89,8 @@
 				你现在有:<a id="room_subID"></a>子空间,它们将你的空间获取×<a id="room_sub_BoostroomID"></a><br>
 				<small><a id="GainRoom_subID"></a></small><br>
 				<br><br>
-				<button onclick="showTabMainSub('room_sub_quark')" id="unlocked_tab_room_sub" class="tabbtn3">夸克</button>
-				<button onclick="showTabMainSub('room_sub_upg')" class="tabbtn2">子升级</button>
+				<button onclick="showTabMainSub('room_sub_quark')" id="unlocked_tab_room_quark" class="tabbtn3">夸克</button>
+				<button onclick="showTabMainSub('room_sub_upg')" id="unlocked_tab_room_upg" class="tabbtn2">子升级</button>
 				<mainTab id="tab_room_sub_quark">
 					<br><br>
 					<small><small><small>30子空间以重置</small></small></small><br>
