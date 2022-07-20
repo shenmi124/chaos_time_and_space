@@ -158,7 +158,7 @@ function buttonID(){
 		Close('unlocked_tab_time')
 	}
 	
-	if(player.hasRoomUpg9=="true"){
+	if(player.hasRoomUpg9=="true" || player.showQuark=="true"){
 		Open('unlocked_tab_room_quark')
 	}else{
 		Close('unlocked_tab_room_quark')

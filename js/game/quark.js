@@ -1,5 +1,5 @@
 function resetQuarkGain(){
-	return player.white.gt(0) ? player.room_sub.max(1).log(5).pow(0.75).max(1) : n(0)
+	return player.white.gt(0) ? player.room_sub.max(1).log(5).pow(0.75).max(1) : n(1)
 }
 
 function restQuark(){
@@ -52,7 +52,7 @@ function RedEffect(){
 }
 
 function GreenEffect(){
-	return player.green.pow(0.3).div(5)
+	return player.green.pow(0.4).div(5)
 }
 
 function BlueEffect(){
