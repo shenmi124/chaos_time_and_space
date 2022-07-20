@@ -159,13 +159,13 @@ function buttonID(){
 	}
 	
 	if(player.hasRoomUpg9=="true"){
-		Close('unlocked_tab_room_quark')
+		Open('unlocked_tab_room_quark')
 	}else{
 		Close('unlocked_tab_room_quark')
 	}
 	
 	if(player.hasRoomUpg10=="true"){
-		Close('unlocked_tab_room_upg')
+		Open('unlocked_tab_room_upg')
 	}else{
 		Close('unlocked_tab_room_upg')
 	}
