@@ -1,0 +1,91 @@
+.button_rest_room {
+	background-color: #ffffff;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	box-shadow: #1bbfab 3px 4px 0px 0px;
+	background: linear-gradient(to bottom, #ededed 5%, #e1e1e1 100%);
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:70px;
+	width:250px;
+}
+
+.button_rest_room:hover {
+	background: linear-gradient(to bottom, #e1e1e1 5%, #ededed 100%);
+}
+
+.button_rest_quark {
+	background-color: #e12edd;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	box-shadow: #e12edd 3px 4px 0px 0px;
+	background: linear-gradient(to bottom, #e4d4ff 5%, #de52c9 100%);
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:100px;
+	width:250px;
+}
+
+.button_rest_quark:hover {
+	background: linear-gradient(to bottom, #de52c9 5%, #e4d4ff 100%);
+}
+
+.button_rest_quark_to_red {
+	background-color: #e12edd;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	background: linear-gradient(to bottom, #FFFFFF 25%, red 100%);
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:40px;
+	width:220px;
+}
+
+.button_rest_quark_to_red:hover {
+	background: linear-gradient(to bottom, red 25%, #FFFFFF 100%);
+}
+
+.button_rest_quark_to_green {
+	background-color: #e12edd;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	background: linear-gradient(to bottom, #FFFFFF 25%, green 100%);
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:40px;
+	width:220px;
+}
+
+.button_rest_quark_to_green:hover {
+	background: linear-gradient(to bottom, green 25%, #FFFFFF 100%);
+}
+
+.button_rest_quark_to_blue {
+	background-color: #e12edd;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	background: linear-gradient(to bottom, #FFFFFF 25%, blue 100%);
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:40px;
+	width:220px;
+}
+
+.button_rest_quark_to_blue:hover {
+	background: linear-gradient(to bottom, blue 25%, #FFFFFF 100%);
+}

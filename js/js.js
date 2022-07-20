@@ -44,6 +44,25 @@ function getID(){
 		getBuyDoc("buyRoomUpg"+row,player['hasRoomUpg'+row]=="true" ? "(已购买)" : "")
 	}
 	
+	getDoc("quark",player.quark)
+	getDoc("resetQuarkGain",resetQuarkGain())
+	
+	getDoc("quark_red",player.quark_red)
+	getDoc("quark_green",player.quark_green)
+	getDoc("quark_blue",player.quark_blue)
+	
+	getDoc("red",player.red)
+	getDoc("green",player.green)
+	getDoc("blue",player.blue)
+	getDoc("yellow",player.yellow)
+	getDoc("cyan",player.cyan)
+	getDoc("magenta",player.magenta)
+	getDoc("white",player.white)
+	
+	getDoc("gain_quark_red",gain_quark_red())
+	getDoc("gain_quark_green",gain_quark_green())
+	getDoc("gain_quark_blue",gain_quark_blue())
+	
 	getDoc("time_speed",time_speed())
 	getDoc("room_distorted_speed",room_distorted_speed())
 	getDoc("points_speed",points_speed())
@@ -52,7 +71,26 @@ function getID(){
 function layer_1(){
 	player.points = n(10)
 	if(player.hasRoomUpg4=="true"){player.dim_1 = n(2)}else{player.dim_1 = n(0)}
+	player.dim_1_additiona = n(0)
 	player.dim_2 = n(0)
+}
+
+function layer_2(){
+	for(row=1;row<=12;row++){
+		player['hasRoomUpg'+row]="false"
+	}
+	player.roomUpgEff1 = n(0)
+	player.roomUpgEff2 = n(0)
+	player.roomUpgEff6 = n(0)
+	player.roomUpgEff7 = n(0)
+	player.roomUpgEff8 = n(0)
+	player.room = n(0)
+	player.room_sub = n(0)
+	player.room_storage = n(0)
+	player.room_storage_dim1 = n(0)
+	player.room_storage_dim1_progress = n(0)
+	player.room_distorted = n(0)
+	layer_1()
 }
 
 function Close(id){
@@ -63,7 +101,7 @@ function Open(id){
 }
 
 function buttonID(){
-	if(player.room_storage_dim1_progress.gt(0)){
+	if(player.room_storage_dim1_progress.gt(0) || player.showQuark=="true"){
 		Close('button_dim1_progress')
 		Open('button_none_progress')
 	}else{
@@ -77,22 +115,29 @@ function buttonID(){
 		Close('button_room_rest')
 	}
 	
-	if(player.hasRoomUpg4=="true"){
+	
+	if(player.hasRoomUpg4=="true" || player.showQuark=="true"){
 		Open('tab_room_upg1')
 	}else{
 		Close('tab_room_upg1')
 	}
 	
-	if(player.hasRoomUpg8=="true"){
+	if(player.hasRoomUpg8=="true" || player.showQuark=="true"){
 		Open('tab_room_upg2')
 	}else{
 		Close('tab_room_upg2')
 	}
 	
-	if(player.hasRoomUpg8=="true"){
+	if(player.hasRoomUpg8=="true" || player.showQuark=="true"){
 		Open('tab_room_sub')
 	}else{
 		Close('tab_room_sub')
+	}
+	
+	if(player.room_sub.gte(100)){
+		Open('button_quark_rest')
+	}else{
+		Close('button_quark_rest')
 	}
 	
 	if(player.hasRoomUpg8=="true"){
@@ -169,11 +214,16 @@ setInterval(function(){
 	buttonID()
 	firstTab()
 	getRoomUpgEff()
+	
 	player.points = player.points.add(GainPoints().div(20))
 	player.dim_1 = player.dim_1.add(GainDim_1().div(20))
 	player.room = player.room.add(GainRoom().div(20))
 	player.room_distorted = player.room_distorted.add(GainRoom_progress().div(20))
 	player.room_sub = player.room_sub.add(GainRoom_sub().div(20))
+	player.red = player.red.add(gain_quark_red().div(20))
+	player.green = player.green.add(gain_quark_green().div(20))
+	player.blue = player.blue.add(gain_quark_blue().div(20))
+	
 	if(!player.room_storage_dim1_progress.gt(0)){
 		a = n(player.room_storage_dim1)
 	}

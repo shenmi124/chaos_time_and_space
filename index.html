@@ -16,10 +16,12 @@
 	<script src="js/game/dim.js"></script>
 	<script src="js/game/points.js"></script>
 	<script src="js/game/room.js"></script>
+	<script src="js/game/quark.js"></script>
 	
-	<link rel="stylesheet" type="text/css" href="css/css.css" />
+	<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	<link rel="stylesheet" type="text/css" href="css/rest.css"/>
+	<link rel="stylesheet" type="text/css" href="css/color.css"/>
 	
-
 </head>
 
 <body onload='load()'>
@@ -61,7 +63,7 @@
 					<button onclick="buyRoomUpg(5,25)" class="button_upg">空间生产<a id="buyRoomUpg5ID"></a><br>改善空间公式<br>(^0.7->^1.15)<br>消耗:25空间</button>
 					<button onclick="buyRoomUpg(6,50)" class="button_upg">空间自产<a id="buyRoomUpg6ID"></a><br>每秒获得重置时可获得的空间<br>当前效果:+<a id="roomUpgEff6ID"></a>/sec<br>消耗:50空间</button>
 					<button onclick="buyRoomUpg(7,300)" class="button_upg">空间提升<a id="buyRoomUpg7ID"></a><br>每秒自动扭曲10%的空间且自动扭曲空间无效耗同时改善扭曲空间加成公式<br>(^1.25->^2.75)<br>当前效果:+<a id="roomUpgEff7ID"></a>/sec<br>消耗:300空间</button>
-					<button onclick="buyRoomUpg(8,700)" class="button_upg">空间消散<a id="buyRoomUpg8ID"></a><br>扭曲空间时有0.01%的空间会被无效耗并转化为子空间,子空间提高空间生产<br>当前效果:+<a id="roomUpgEff8ID"></a>/sec<br>消耗:700空间</button>
+					<button onclick="buyRoomUpg(8,700)" class="button_upg">空间消散<a id="buyRoomUpg8ID"></a><br>扭曲空间时有0.01%的空间会被无消耗并转化为子空间,子空间提高空间生产<br>当前效果:+<a id="roomUpgEff8ID"></a>/sec<br>消耗:700空间</button>
 				</tr>
 				<br><br>
 			</mainTab>
@@ -88,12 +90,35 @@
 				<button onclick="showTabMainSub('room_sub_quark')" id="unlocked_tab_room_sub" class="tabbtn3">夸克</button>
 				<mainTab id="tab_room_sub_quark">
 					<br><br>
-					<button onclick="restRoom_distorted()" class="button_rest_quark">解构之前的所有内容以来重塑夸克<br>现在你可以获得:没做呢个夸克</button>
+					<small><small><small>100子空间以重置</small></small></small><br>
+					你现在有:<a id="quarkID"></a>夸克<br>
+					<br>
+					<button onclick="restQuark()" class="button_rest_quark" id="button_quark_rest">解构之前的所有内容以来重塑夸克<br>现在你可以获得:<a id="resetQuarkGainID"></a>个夸克<br>你一次最多可以获得1夸克</button>
+					<br>
+					<hr>
+					你现在有:<a id="quark_redID" class="red"/><a class="red">红夸克</a>,它们每秒会生产<a id="gain_quark_redID" class="red"/><a class="red">红元素</a><br>
+					<button onclick="restQuark_to_red()" class="button_rest_quark_to_red">将所有夸克转换为红夸克</button>
+					<hr>
+					你现在有:<a id="quark_greenID" class="green"/><a class="green">绿夸克</a>,它们每秒会生产<a id="gain_quark_greenID" class="green"/><a class="green">绿元素</a><br>
+					<button onclick="restQuark_to_green()" class="button_rest_quark_to_green">将所有夸克转换为绿夸克</button>
+					<hr>
+					你现在有:<a id="quark_blueID" class="blue"/><a class="blue">蓝夸克</a>,它们每秒会生产<a id="gain_quark_blueID" class="blue"/><a class="blue"><a class="blue">蓝元素</a><br>
+					<button onclick="restQuark_to_blue()" class="button_rest_quark_to_blue">将所有夸克转换为蓝夸克</button>
+					<hr>
+					你现在有<a id="redID" class="red"/><a class="red">红元素</a>,它们将空间利用效果提升?倍<br>
+					你现在有<a id="greenID" class="green"/><a class="green">绿元素</a>,它们将每秒给予?空间<br>
+					你现在有<a id="blueID" class="blue"/><a class="blue">蓝元素</a>,它们将时空悖论生产提升?倍<br>
+					你现在有<a id="yellowID" class="yellow"/><a class="yellow">黄元素</a>,它们将空间重置时保留?个扭曲时空<br>
+					你现在有<a id="cyanID" class="cyan"/><a class="cyan">青元素</a>,它们将<a class="timespeed">时间速率</a>提升?倍<br>
+					你现在有<a id="magentaID" class="magenta"/><a class="magenta">紫元素</a>,它们将空间自产升级,空间提升升级,空间消散升级的效果提升?倍<br>
+					你现在有<a id="whiteID" class="white"/><a class="white">白元素</a>,它们将子空间效果指数提升?倍<br>
+					<hr>
 				</mainTab>
 			</mainTab>
 		</mainTab>
 		<mainTab id="tab_room_storage">
 			你现在有:<a id="room_storageID"></a>存储空间<br>
+			<br>
 			<button onclick="restRoom_storage()" class="button_rest_room">将所有空间转换为存储空间</button>
 			<br><br><br><br>
 			你现在有:<a id="room_storage_dim1ID"></a>储存扭曲时空<br>
@@ -102,7 +127,7 @@
 			<button onclick="room_dim_progress()" id="button_dim1_progress" class="button_rest_room">储存扭曲时空</button>
 			<button onclick="room_none_progress()" id="button_none_progress" class="button_rest_room">清空储存(重置时空)</button><br>
 			<br><br>
-			<small><small><small>每个存储空间可以储存1扭曲时空,储存的扭曲时空本次重置不会再生产时空悖论但依旧会提升价格<br>储存后将强重置时空,在下次空间重置时根据一次最大储存量获得额外扭曲时空<br>在储存扭曲时空时储存扭曲时空不会给予额外扭曲时空<br>额外扭曲时空不会进行任何非生产公式以及已说明运算,其包括但不限于:价格,升级,重置等<br>你初始最多只能有10个储存空间</small></small></small>
+			<small><small><small>每个存储空间可以储存1扭曲时空,储存的扭曲时空本次重置不会再生产时空悖论但依旧会提升价格<br>储存后将重置时空,在下次空间重置时根据一次最大储存量获得额外扭曲时空<br>在储存扭曲时空时储存扭曲时空不会给予额外扭曲时空<br>额外扭曲时空不会进行任何非生产公式以及已说明运算,其包括但不限于:价格,升级,重置等<br>你初始最多只能有10个储存空间</small></small></small>
 		</mainTab>
 	</mainTab>
 	<mainTab id="tab_time">

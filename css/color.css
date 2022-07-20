@@ -1,0 +1,62 @@
+.red {
+	text-align: center;
+	font-size: 23px;
+	color:#FF0000;
+	-webkit-text-stroke-width: 0.3px;
+	-webkit-text-stroke-color: #FF0000;
+	border-radius: 9px;
+}
+
+.green {
+	text-align: center;
+	font-size: 23px;
+	color:#00FF00;
+	-webkit-text-stroke-width: 0.3px;
+	-webkit-text-stroke-color: #00FF00;
+	border-radius: 9px;
+}
+
+.blue {
+	text-align: center;
+	font-size: 23px;
+	color:#0000FF;
+	-webkit-text-stroke-width: 0.3px;
+	-webkit-text-stroke-color: #0000FF;
+	border-radius: 9px;
+}
+
+.yellow {
+	text-align: center;
+	font-size: 23px;
+	color:#FFFF00;
+	-webkit-text-stroke-width: 0.3px;
+	-webkit-text-stroke-color: #FFFF00;
+	border-radius: 9px;
+}
+
+.cyan {
+	text-align: center;
+	font-size: 23px;
+	color:#00FFFF;
+	-webkit-text-stroke-width: 0.3px;
+	-webkit-text-stroke-color: #00FFFF;
+	border-radius: 9px;
+}
+
+.magenta {
+	text-align: center;
+	font-size: 23px;
+	color:#FF00FF;
+	-webkit-text-stroke-width: 0.3px;
+	-webkit-text-stroke-color: #FF00FF;
+	border-radius: 9px;
+}
+
+.white {
+	text-align: center;
+	font-size: 23px;
+	color:#000000;
+	-webkit-text-stroke-width: 0.3px;
+	-webkit-text-stroke-color: #FFFFFF;
+	border-radius: 9px;
+}
