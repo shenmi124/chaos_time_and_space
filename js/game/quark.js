@@ -68,7 +68,7 @@ function CyanEffect(){
 }
 
 function MagentaEffect(){
-	return player.magenta.pow(0.5)
+	return player.magenta.pow(0.5).max(1)
 }
 
 function WhiteEffect(){
