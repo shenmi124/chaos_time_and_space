@@ -69,10 +69,10 @@
 			</mainTab>
 			<mainTab id="tab_room_upg2">
 				<tr>
-					<button onclick="buyRoomUpg(9,1100)" class="button_upg">空间夸克<a id="buyRoomUpg9ID"></a><br>在扭曲中解锁夸克面板<br>消耗:1100空间</button>
-					<button onclick="buyRoomUpg(10,10000000)" class="button_upg">空间升级<a id="buyRoomUpg10ID"></a><br>在扭曲中解锁升级面板<br>消耗:10000000空间</button>
-					<button onclick="buyRoomUpg(11,1000000000)" class="button_upg">空间维度<a id="buyRoomUpg11ID"></a><br>在时空中解锁扭曲维度,它可以生产扭曲时空<br>消耗:1000000000空间</button>
-					<button onclick="buyRoomUpg(12,1e11)" class="button_upg">空间时间<a id="buyRoomUpg12ID"></a><br>解锁时间<br>消耗:1e11空间</button>
+					<button onclick="buyRoomUpg(9,1100)" class="button_upg">空间夸克<a id="buyRoomUpg9ID"></a><br>在扭曲中解锁夸克面板<br>消耗:1,100空间</button>
+					<button onclick="buyRoomUpg(10,100000)" class="button_upg">空间升级<a id="buyRoomUpg10ID"></a><br>在扭曲中解锁升级面板<br>消耗:100,000空间</button>
+					<button onclick="buyRoomUpg(11,'1e308')" class="button_upg">空间维度<a id="buyRoomUpg11ID"></a><br>在时空中解锁扭曲维度,它可以生产扭曲时空<br>消耗:∞空间</button>
+					<button onclick="buyRoomUpg(12,'1e308')" class="button_upg">空间时间<a id="buyRoomUpg12ID"></a><br>解锁时间<br>消耗:∞空间</button>
 				</tr>
 				<br><br>
 			</mainTab>
@@ -88,12 +88,13 @@
 				<small><a id="GainRoom_subID"></a></small><br>
 				<br><br>
 				<button onclick="showTabMainSub('room_sub_quark')" id="unlocked_tab_room_sub" class="tabbtn3">夸克</button>
+				<button onclick="showTabMainSub('room_sub_upg')" class="tabbtn2">子升级</button>
 				<mainTab id="tab_room_sub_quark">
 					<br><br>
-					<small><small><small>100子空间以重置</small></small></small><br>
+					<small><small><small>30子空间以重置</small></small></small><br>
 					你现在有:<a id="quarkID"></a>夸克<br>
 					<br>
-					<button onclick="restQuark()" class="button_rest_quark" id="button_quark_rest">解构之前的所有内容以来重塑夸克<br>现在你可以获得:<a id="resetQuarkGainID"></a>个夸克<br>你一次最多可以获得1夸克</button>
+					<button onclick="restQuark()" class="button_rest_quark" id="button_quark_rest">解构之前的所有内容以来重塑夸克<br>现在你可以获得:<a id="resetQuarkGainID"></a>个夸克<br><small>在获得白元素前你一次最多可以获得1夸克</button>
 					<br>
 					<hr>
 					你现在有:<a id="quark_redID" class="red"/><a class="red">红夸克</a>,它们每秒会生产<a id="gain_quark_redID" class="red"/><a class="red">红元素</a><br>
@@ -102,17 +103,21 @@
 					你现在有:<a id="quark_greenID" class="green"/><a class="green">绿夸克</a>,它们每秒会生产<a id="gain_quark_greenID" class="green"/><a class="green">绿元素</a><br>
 					<button onclick="restQuark_to_green()" class="button_rest_quark_to_green">将所有夸克转换为绿夸克</button>
 					<hr>
-					你现在有:<a id="quark_blueID" class="blue"/><a class="blue">蓝夸克</a>,它们每秒会生产<a id="gain_quark_blueID" class="blue"/><a class="blue"><a class="blue">蓝元素</a><br>
+					你现在有:<a id="quark_blueID" class="blue"/><a class="blue">蓝夸克</a>,它们每秒会生产<a id="gain_quark_blueID" class="blue"/><a class="blue">蓝元素</a><br>
 					<button onclick="restQuark_to_blue()" class="button_rest_quark_to_blue">将所有夸克转换为蓝夸克</button>
 					<hr>
-					你现在有<a id="redID" class="red"/><a class="red">红元素</a>,它们将空间利用效果提升?倍<br>
-					你现在有<a id="greenID" class="green"/><a class="green">绿元素</a>,它们将每秒给予?空间<br>
-					你现在有<a id="blueID" class="blue"/><a class="blue">蓝元素</a>,它们将时空悖论生产提升?倍<br>
-					你现在有<a id="yellowID" class="yellow"/><a class="yellow">黄元素</a>,它们将空间重置时保留?个扭曲时空<br>
-					你现在有<a id="cyanID" class="cyan"/><a class="cyan">青元素</a>,它们将<a class="timespeed">时间速率</a>提升?倍<br>
-					你现在有<a id="magentaID" class="magenta"/><a class="magenta">紫元素</a>,它们将空间自产升级,空间提升升级,空间消散升级的效果提升?倍<br>
-					你现在有<a id="whiteID" class="white"/><a class="white">白元素</a>,它们将子空间效果指数提升?倍<br>
+					你现在有<a id="redID" class="red"/><a class="red">红元素</a><a id="GainRedID"></a>,它们将空间利用效果提升<a id="RedEffectID"></a>倍<br>
+					你现在有<a id="greenID" class="green"/><a class="green">绿元素</a><a id="GainGreenID"></a>,它们将每秒给予<a id="GreenEffectID"></a>空间<br>
+					你现在有<a id="blueID" class="blue"/><a class="blue">蓝元素</a><a id="GainBlueID"></a>,它们将时空悖论生产提升<a id="BlueEffectID"></a>倍<br>
+					你现在有<a id="yellowID" class="yellow"/><a class="yellow">黄元素</a>,它们将空间重置时保留<a id="YellowEffectID"></a>个扭曲时空<br>
+					你现在有<a id="cyanID" class="cyan"/><a class="cyan">青元素</a>,它们将<a class="timespeed">时间速率</a>提升<a id="CyanEffectID"></a>倍<br>
+					你现在有<a id="magentaID" class="magenta"/><a class="magenta">紫元素</a>,它们将空间自产升级,空间提升升级,空间消散升级的效果提升<a id="MagentaEffectID"></a>倍<br>
+					你现在有<a id="whiteID" class="white"/><a class="white">白元素</a>,它们将子空间效果指数提升<a id="WhiteEffectID"></a>倍,同时取消夸克重置上限<br>
 					<hr>
+				</mainTab>
+				<mainTab id="tab_room_sub_upg">
+					<br><br>
+					没做呢
 				</mainTab>
 			</mainTab>
 		</mainTab>

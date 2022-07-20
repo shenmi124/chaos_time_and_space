@@ -63,6 +63,18 @@ function getID(){
 	getDoc("gain_quark_green",gain_quark_green())
 	getDoc("gain_quark_blue",gain_quark_blue())
 	
+	getBuyDoc("GainRed",'(+'+format(GainRed())+'/sec)')
+	getBuyDoc("GainGreen",'(+'+format(GainGreen())+'/sec)')
+	getBuyDoc("GainBlue",'(+'+format(GainBlue())+'/sec)')
+	
+	getDoc("RedEffect",RedEffect())
+	getDoc("GreenEffect",GreenEffect())
+	getDoc("BlueEffect",BlueEffect())
+	getDoc("YellowEffect",YellowEffect())
+	getDoc("CyanEffect",CyanEffect())
+	getDoc("MagentaEffect",MagentaEffect())
+	getDoc("WhiteEffect",WhiteEffect())
+	
 	getDoc("time_speed",time_speed())
 	getDoc("room_distorted_speed",room_distorted_speed())
 	getDoc("points_speed",points_speed())
@@ -70,7 +82,7 @@ function getID(){
 
 function layer_1(){
 	player.points = n(10)
-	if(player.hasRoomUpg4=="true"){player.dim_1 = n(2)}else{player.dim_1 = n(0)}
+	if(player.hasRoomUpg4=="true"){player.dim_1 = n(2).add(YellowEffect())}else{player.dim_1 = n(0).add(YellowEffect())}
 	player.dim_1_additiona = n(0)
 	player.dim_2 = n(0)
 }
@@ -101,7 +113,7 @@ function Open(id){
 }
 
 function buttonID(){
-	if(player.room_storage_dim1_progress.gt(0) || player.showQuark=="true"){
+	if(player.room_storage_dim1_progress.gt(0)){
 		Close('button_dim1_progress')
 		Open('button_none_progress')
 	}else{
@@ -134,7 +146,7 @@ function buttonID(){
 		Close('tab_room_sub')
 	}
 	
-	if(player.room_sub.gte(100)){
+	if(player.room_sub.gte(30)){
 		Open('button_quark_rest')
 	}else{
 		Close('button_quark_rest')
@@ -154,6 +166,7 @@ function firstTab(){
 		Close('tab_room_distorted')
 		Close('tab_time')
 		Close('tab_room_sub_quark')
+		Close('tab_room_sub_upg')
 		cao = false
 	}
 }
@@ -205,6 +218,12 @@ function showTabMainSub(id){
 	}else{
 		Close("tab_room_sub_quark")
 	}
+	
+	if(id=="room_sub_upg"){
+		Open("tab_room_sub_upg")
+	}else{
+		Close("tab_room_sub_upg")
+	}
 }
 
 setInterval(function(){
@@ -216,16 +235,24 @@ setInterval(function(){
 	getRoomUpgEff()
 	
 	player.points = player.points.add(GainPoints().div(20))
+	
 	player.dim_1 = player.dim_1.add(GainDim_1().div(20))
+	
 	player.room = player.room.add(GainRoom().div(20))
 	player.room_distorted = player.room_distorted.add(GainRoom_progress().div(20))
 	player.room_sub = player.room_sub.add(GainRoom_sub().div(20))
-	player.red = player.red.add(gain_quark_red().div(20))
-	player.green = player.green.add(gain_quark_green().div(20))
-	player.blue = player.blue.add(gain_quark_blue().div(20))
+	
+	player.red = player.red.add(GainRed().div(20))
+	player.green = player.green.add(GainGreen().div(20))
+	player.blue = player.blue.add(GainBlue().div(20))
 	
 	if(!player.room_storage_dim1_progress.gt(0)){
 		a = n(player.room_storage_dim1)
 	}
 	player.dim_1_additiona = n(0).add(a).add(player.roomUpgEff1)
+	
+	player.yellow = n(player.red).min(player.green)
+	player.cyan = n(player.red).min(player.blue)
+	player.magenta = n(player.green).min(player.blue)
+	player.white = n(player.red).min(player.green).min(player.blue)
 }, 50)

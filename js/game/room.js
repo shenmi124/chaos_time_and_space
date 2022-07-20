@@ -49,7 +49,7 @@ function room_none_progress(){
 function GainRoom(){
 	let base = n(0)
 	if(player.hasRoomUpg6=="true"){base = base.add(player.roomUpgEff6)}
-	return base.mul(time_speed())
+	return base.add(GreenEffect()).mul(time_speed())
 }
 
 //秒获得子空间
@@ -60,7 +60,7 @@ function GainRoom_sub(){
 }
 
 function room_sub_Boostroom(){
-	let base = player.room_sub.pow(0.1).max(1)
+	let base = player.room_sub.pow(n(0.1).mul(WhiteEffect())).max(1)
 	return base
 }
 
@@ -79,9 +79,9 @@ function buyRoomUpg(id,id2){
 }
 
 function getRoomUpgEff(){
-	if(player['hasRoomUpg1']=="true"){player.roomUpgEff1 = n(player.dim_1.mul(0.1))}else{player.roomUpgEff1 = n(0)}
+	if(player['hasRoomUpg1']=="true"){player.roomUpgEff1 = n(player.dim_1.mul(0.1)).mul(RedEffect())}else{player.roomUpgEff1 = n(0)}
 	if(player['hasRoomUpg2']=="true"){player.roomUpgEff2 = n(player.dim_1_additiona.add(1).log(2).max(1))}else{player.roomUpgEff2 = n(1)}
-	if(player['hasRoomUpg6']=="true"){player.roomUpgEff6 = restRoomGain()}else{player.roomUpgEff6 = n(0)}
-	if(player['hasRoomUpg7']=="true"){player.roomUpgEff7 = player.room.mul(0.1)}else{player.roomUpgEff7 = n(0)}
-	if(player['hasRoomUpg8']=="true"){player.roomUpgEff8 = n(GainRoom_progress()).mul(0.01)}else{player.roomUpgEff8 = n(0)}
+	if(player['hasRoomUpg6']=="true"){player.roomUpgEff6 = n(restRoomGain()).mul(MagentaEffect())}else{player.roomUpgEff6 = n(0)}
+	if(player['hasRoomUpg7']=="true"){player.roomUpgEff7 = player.room.mul(0.1).mul(MagentaEffect())}else{player.roomUpgEff7 = n(0)}
+	if(player['hasRoomUpg8']=="true"){player.roomUpgEff8 = n(GainRoom_progress()).mul(0.01).mul(MagentaEffect())}else{player.roomUpgEff8 = n(0)}
 }

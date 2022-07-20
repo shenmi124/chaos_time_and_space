@@ -16,5 +16,6 @@ function time_speed(){
 	let sp = n(1)
 	sp = sp.div(points_speed())
 	sp = sp.mul(room_distorted_speed())
+	sp = sp.mul(CyanEffect())
 	return sp
 }
