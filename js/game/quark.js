@@ -1,5 +1,9 @@
 function resetQuarkGain(){
-	return player.white.gt(0) ? player.room_sub.max(1).log(5).pow(0.75).max(1) : n(1)
+	return player.white.gt(0) ? player.room_sub.max(1).log(5).pow(0.85).max(1).floor() : n(1)
+}
+
+function resetQuarkNext(){
+	return Decimal.pow(5,n(resetQuarkGain()).add(1).root(0.85)).max(1)
 }
 
 function restQuark(){
@@ -21,17 +25,17 @@ function gain_quark_blue(){
 }
 
 function restQuark_to_red(){
-	player.quark_red = n(player.quark)
+	player.quark_red = player.quark_red.add(player.quark)
 	player.quark = n(0)
 }
 
 function restQuark_to_green(){
-	player.quark_green = n(player.quark)
+	player.quark_green = player.quark_green.add(player.quark)
 	player.quark = n(0)
 }
 
 function restQuark_to_blue(){
-	player.quark_blue = n(player.quark)
+	player.quark_blue = player.quark_blue.add(player.quark)
 	player.quark = n(0)
 }
 
@@ -60,11 +64,11 @@ function BlueEffect(){
 }
 
 function YellowEffect(){
-	return player.yellow.div(50).pow(0.5)
+	return player.yellow.div(15).pow(0.5)
 }
 
 function CyanEffect(){
-	return player.cyan.max(1).log(10).max(1)
+	return player.cyan.pow(1.1).max(1).log(8).max(1)
 }
 
 function MagentaEffect(){
@@ -72,5 +76,5 @@ function MagentaEffect(){
 }
 
 function WhiteEffect(){
-	return player.white.max(1).log(25).max(1).pow(0.1)
+	return player.white.max(1).log(15).max(1).pow(0.1)
 }

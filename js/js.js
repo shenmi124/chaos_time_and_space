@@ -46,6 +46,7 @@ function getID(){
 	
 	getDoc("quark",player.quark)
 	getDoc("resetQuarkGain",resetQuarkGain())
+	getBuyDoc('restQuarkTaxt',player.white.gt(0) ? '下一个夸克在:'+format(resetQuarkNext())+'子空间时获取' : '在获得白元素前你一次最多可以获得1夸克')
 	
 	getDoc("quark_red",player.quark_red)
 	getDoc("quark_green",player.quark_green)
@@ -82,7 +83,7 @@ function getID(){
 
 function layer_1(){
 	player.points = n(10)
-	if(player.hasRoomUpg4=="true"){player.dim_1 = n(2).add(YellowEffect())}else{player.dim_1 = n(0).add(YellowEffect())}
+	if(player.hasRoomUpg4=="true"){player.dim_1 = n(2)}else{player.dim_1 = n(0)}
 	player.dim_1_additiona = n(0)
 	player.dim_2 = n(0)
 }
@@ -173,6 +174,7 @@ function buttonID(){
 
 function firstTab(){
 	if(cao==true){
+		Close('tab_setting')
 		Close('tab_room')
 		Close('tab_room_storage')
 		Close('tab_room_distorted')
@@ -184,6 +186,12 @@ function firstTab(){
 }
 
 function showTab(id){
+	if(id=="setting"){
+		Open('tab_setting')
+	}else{
+		Close('tab_setting')
+	}
+	
 	if(id=="main"){
 		Open('tab_main')
 	}else{
@@ -261,7 +269,7 @@ setInterval(function(){
 	if(!player.room_storage_dim1_progress.gt(0)){
 		a = n(player.room_storage_dim1)
 	}
-	player.dim_1_additiona = n(0).add(a).add(player.roomUpgEff1)
+	player.dim_1_additiona = n(0).add(a).add(player.roomUpgEff1).add(YellowEffect())
 	
 	player.yellow = n(player.red).min(player.green)
 	player.cyan = n(player.red).min(player.blue)

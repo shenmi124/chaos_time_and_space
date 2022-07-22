@@ -60,6 +60,23 @@ body {
 	box-shadow: #1bbfab 0px 0px 0px 0px;
 }
 
+.tabbtnSet {
+    background: #E0E0E0;
+    font-weight: bold;
+    border: 2px solid #4980CC;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtnSet:hover {
+    background: #4980CC;
+    color:#FFFFFF;
+}
+
 .tabbtn {
     background: #E0E0E0;
     font-weight: bold;
