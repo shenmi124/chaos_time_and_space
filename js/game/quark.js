@@ -60,7 +60,11 @@ function GreenEffect(){
 }
 
 function BlueEffect(){
-	return player.blue.pow(0.2).max(1).factorial()
+	let base = player.blue.pow(0.2).max(1).factorial()
+	for(col=1;col<=20;col++){
+		if(base.gte(n(10).pow(n(3).mul(col)))){base = base.pow(n(5).div(n(10).pow(col))).add(n(10).pow(n(3).mul(col)))}
+	}
+	return base
 }
 
 function YellowEffect(){
@@ -72,7 +76,7 @@ function CyanEffect(){
 }
 
 function MagentaEffect(){
-	return player.magenta.pow(0.5).max(1)
+	return player.magenta.pow(0.25).max(1)
 }
 
 function WhiteEffect(){
