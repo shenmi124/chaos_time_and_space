@@ -30,6 +30,12 @@ function calcPlayer(){
 	NotOmegaLoader(['hasRoomUpg11'],"false")
 	NotOmegaLoader(['hasRoomUpg12'],"false")
 	
+	NotOmegaLoader(['hasRoomSubUpg1'],"false")
+	loader(['roomSubUpgEff1'],n(0))
+	NotOmegaLoader(['hasRoomSubUpg2'],"false")
+	NotOmegaLoader(['hasRoomSubUpg3'],"false")
+	NotOmegaLoader(['hasRoomSubUpg4'],"false")
+	
 	loader(['quark'],n(0))
 	NotOmegaLoader(['showQuark'],"false")
 	

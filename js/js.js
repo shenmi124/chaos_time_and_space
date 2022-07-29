@@ -34,6 +34,7 @@ function getID(){
 	getDoc("room_storage_dim1_progress",player.room_storage_dim1_progress)
 	getDoc("room_distorted",player.room_distorted)
 	getDoc("resetRoomGain",restRoomGain())
+	
 	getDoc("roomUpgEff1",player.roomUpgEff1)
 	getDoc("roomUpgEff2",player.roomUpgEff2)
 	getDoc("roomUpgEff6",player.roomUpgEff6)
@@ -42,6 +43,12 @@ function getID(){
 	
 	for(row=1;row<=12;row++){
 		getBuyDoc("buyRoomUpg"+row,player['hasRoomUpg'+row]=="true" ? "(已购买)" : "")
+	}
+	
+	getDoc("roomSubUpgEff1",player.roomSubUpgEff1)
+	
+	for(row2=1;row2<=4;row2++){
+		getBuyDoc("buyRoomSubUpg"+row2,player['hasRoomSubUpg'+row2]=="true" ? "(已购买)" : "")
 	}
 	
 	getDoc("quark",player.quark)
@@ -253,6 +260,7 @@ setInterval(function(){
 	buttonID()
 	firstTab()
 	getRoomUpgEff()
+	getRoomSubUpgEff()
 	
 	player.points = player.points.add(GainPoints().div(20))
 	

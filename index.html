@@ -128,11 +128,17 @@
 				</mainTab>
 				<mainTab id="tab_room_sub_upg">
 					<br><br>
+					<small>注:夸克重置并不会重置子升级
+					<br>
 					<tr>
-						<button onclick="buyRoomUpg(1,1)" class="button_upg">升级利用<br>每个空间和子空间升级都会提升0.05夸克获取指数<br>当前效果:+^<br>消耗:50,000子空间</button>
-						<button onclick="buyRoomUpg(1,1)" class="button_upg">元素平衡<br>红,绿,蓝元素<br>当前效果:+^<br>消耗:50,000子空间</button>
-						<button onclick="buyRoomUpg(1,1)" class="button_upg">升级利用<br>每个空间和子空间升级都会提升0.05夸克获取指数<br>当前效果:+^<br>消耗:50,000子空间</button>
-						<button onclick="buyRoomUpg(1,1)" class="button_upg">升级利用<br>每个空间和子空间升级都会提升0.05夸克获取指数<br>当前效果:+^<br>消耗:50,000子空间</button>
+						<button onclick="buyRoomSubUpg(1,2e4)" class="button_upg">升级利用<a id="buyRoomSubUpg1ID"></a><br>每个空间和子空间升级都会提升0.15夸克获取指数<br>当前效果:+<a id="roomSubUpgEff1ID"></a>^<br>消耗:20,000子空间</button>
+						<button onclick="buyRoomSubUpg(2,5e5)" class="button_upg">自协同<a id="buyRoomSubUpg2ID"></a><br>所有元素效果log100+1后提升自己<br>效果:<br>红:× 蓝:× 绿:×<br>黄:× 青:× 紫:×<br>白:×<br>消耗:500,000子空间</button>
+						<button onclick="buyRoomSubUpg(2,1e7)" class="button_upg">夸克平衡<a id="buyRoomSubUpg2ID"></a><br>分配夸克时将同时提升三种夸克<br>消耗:10,000,000子空间</button>
+						<button onclick="buyRoomSubUpg(3,1)" class="button_upg">元素平衡<a id="buyRoomSubUpg3ID"></a><br>相对来说数量较少的元素会提升产量,其效果不会低于×10<br>当前效果:<br>红:×<br>蓝:×<br>绿:×<br>消耗:∞子空间</button>
+					</tr>
+					<br><br>
+					<tr>
+						<button onclick="buyRoomSubUpg(4,1)" class="button_upg">纯净元素<a id="buyRoomSubUpg4ID"></a><br>白元素效果将前六种元素效果提升,其效果不会低于×1<br>当前效果:×<br>消耗:∞子空间</button>
 					</tr>
 				</mainTab>
 			</mainTab>

@@ -1,9 +1,9 @@
 function resetQuarkGain(){
-	return player.white.gt(0) ? player.room_sub.max(1).log(5).pow(0.85).max(1).floor() : n(1)
+	return player.white.gt(0) ? player.room_sub.max(1).log(5).pow(0.85).max(1).pow(player.roomSubUpgEff1.add(1)).floor() : n(1)
 }
 
 function resetQuarkNext(){
-	return Decimal.pow(5,n(resetQuarkGain()).add(1).root(0.85)).max(1)
+	return Decimal.pow(5,n(resetQuarkGain()).add(1).root(player.roomSubUpgEff1.add(1)).root(0.85)).max(1)
 }
 
 function restQuark(){
