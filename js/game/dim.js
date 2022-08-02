@@ -11,7 +11,7 @@ function GainDim_2(){
 }
 
 function MulDim_1(){
-	return player.roomUpgEff2.mul(Decimal.add(1.25).pow(player.dim_2))
+	return n(1).mul(player.roomUpgEff2).mul(Decimal.add(1.25).pow(player.dim_2))
 }
 
 function CostDim(id){
