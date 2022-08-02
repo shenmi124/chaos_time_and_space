@@ -21,11 +21,15 @@ function CostDim(id){
 }
 
 function buyDim(id){
-	if(player.points.gte(CostDim(id)) && id==1){
-		player.points = player.points.sub(CostDim(id))
-		player['dim_'+id] = player['dim_'+id].add(1)
-	}else if(player['dim_'+(id-1)].gte(CostDim(id))){
-		player['dim_'+(id-1)] = player['dim_'+(id-1)].sub(CostDim(id))
-		player['dim_'+id] = player['dim_'+id].add(1)
+	if(id==1){
+		if(player.points.gte(CostDim(id))){
+			player.points = player.points.sub(CostDim(id))
+			player['dim_'+id] = player['dim_'+id].add(1)
+		}
+	}else{
+		if(player['dim_'+(id-1)].gte(CostDim(id))){
+			player['dim_'+(id-1)] = player['dim_'+(id-1)].sub(CostDim(id))
+			player['dim_'+id] = player['dim_'+id].add(1)
+		}
 	}
 }
