@@ -1,8 +1,3 @@
-function points_speed(){
-	let sp = player.points.pow(0.35).max(1)
-	return sp
-}
-
 function room_distorted_speed(){
 	let pow = n(1.25)
 	if(player.hasRoomUpg7=="true"){
@@ -14,8 +9,8 @@ function room_distorted_speed(){
 
 function time_speed(){
 	let sp = n(1)
-	sp = sp.div(points_speed())
 	sp = sp.mul(room_distorted_speed())
 	sp = sp.mul(CyanEffect())
+	sp = sp.mul(player.roomSubUpgEff4)
 	return sp
 }

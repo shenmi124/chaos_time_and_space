@@ -13,10 +13,13 @@ function getBuyDoc(id,id2){
 function getID(){
 	getDoc("dim_1",player.dim_1)
 	getDoc("dim_1_additiona",player.dim_1_additiona)
-	getDoc("dim_1_mul",player.roomUpgEff2)
+	getDoc("dim_1_mul",MulDim_1())
 	getDoc("dim_2",player.dim_2)
+	getDoc("dim_2_additiona",player.dim_2_additiona)
+	getDoc("dim_2_mul",1)
 	
 	getDoc("GainDim_1",GainDim_1())
+	getDoc("GainDim_2",GainDim_2())
 	getDoc("CostDim_1",CostDim(1))
 	getDoc("CostDim_2",CostDim(2))
 	
@@ -29,9 +32,6 @@ function getID(){
 	getBuyDoc("GainRoom_sub",'(+'+format(GainRoom_sub())+'/sec)')
 	getBuyDoc("GainRoom_progress",'(+'+format(GainRoom_progress())+'/sec)')
 	getDoc("room_sub_Boostroom",room_sub_Boostroom())
-	getDoc("room_storage",player.room_storage)
-	getDoc("room_storage_dim1",player.room_storage_dim1)
-	getDoc("room_storage_dim1_progress",player.room_storage_dim1_progress)
 	getDoc("room_distorted",player.room_distorted)
 	getDoc("resetRoomGain",restRoomGain())
 	
@@ -46,8 +46,12 @@ function getID(){
 	}
 	
 	getDoc("roomSubUpgEff1",player.roomSubUpgEff1)
+	getDoc("roomSubUpgEff4",player.roomSubUpgEff4)
+	getDoc("roomSubUpgEff6",player.roomSubUpgEff6)
+	getDoc("roomSubUpgEff7",player.roomSubUpgEff7)
+	getDoc("roomSubUpgEff8",player.roomSubUpgEff8)
 	
-	for(row2=1;row2<=4;row2++){
+	for(row2=1;row2<=8;row2++){
 		getBuyDoc("buyRoomSubUpg"+row2,player['hasRoomSubUpg'+row2]=="true" ? "(已购买)" : "")
 	}
 	
@@ -58,6 +62,12 @@ function getID(){
 	getDoc("quark_red",player.quark_red)
 	getDoc("quark_green",player.quark_green)
 	getDoc("quark_blue",player.quark_blue)
+	
+	getBuyDoc("GainQuarkRest",'(+'+format(GainQuarkRest())+'/sec)<br>')
+	
+	getBuyDoc("GainQuark_red",'(+'+format(GainQuark())+'/sec)')
+	getBuyDoc("GainQuark_green",'(+'+format(GainQuark())+'/sec)')
+	getBuyDoc("GainQuark_blue",'(+'+format(GainQuark())+'/sec)')
 	
 	getDoc("red",player.red)
 	getDoc("green",player.green)
@@ -83,9 +93,36 @@ function getID(){
 	getDoc("MagentaEffect",MagentaEffect())
 	getDoc("WhiteEffect",WhiteEffect())
 	
+	getDoc("roomSubUpgEff2Red",player.roomSubUpgEff2Red)
+	getDoc("roomSubUpgEff2Green",player.roomSubUpgEff2Green)
+	getDoc("roomSubUpgEff2Blue",player.roomSubUpgEff2Blue)
+	getDoc("roomSubUpgEff2Yellow",player.roomSubUpgEff2Yellow)
+	getDoc("roomSubUpgEff2Cyan",player.roomSubUpgEff2Cyan)
+	getDoc("roomSubUpgEff2Magenta",player.roomSubUpgEff2Magenta)
+	getDoc("roomSubUpgEff2White",player.roomSubUpgEff2White)
+	
 	getDoc("time_speed",time_speed())
 	getDoc("room_distorted_speed",room_distorted_speed())
-	getDoc("points_speed",points_speed())
+}
+
+function layer_UpgEff(){
+	player.roomUpgEff1 = n(0)
+	player.roomUpgEff2 = n(0)
+	player.roomUpgEff6 = n(0)
+	player.roomUpgEff7 = n(0)
+	player.roomUpgEff8 = n(0)
+	player.roomSubUpgEff1 = n(0)
+	player.roomSubUpgEff2Red = n(0)
+	player.roomSubUpgEff2Green = n(0)
+	player.roomSubUpgEff2Blue = n(0)
+	player.roomSubUpgEff2Yellow = n(0)
+	player.roomSubUpgEff2Cyan = n(0)
+	player.roomSubUpgEff2Magenta = n(0)
+	player.roomSubUpgEff2White = n(0)
+	player.roomSubUpgEff4 = n(0)
+	player.roomSubUpgEff6 = n(0)
+	player.roomSubUpgEff7 = n(0)
+	player.roomSubUpgEff8 = n(0)
 }
 
 function layer_1(){
@@ -93,23 +130,22 @@ function layer_1(){
 	if(player.hasRoomUpg4=="true"){player.dim_1 = n(2)}else{player.dim_1 = n(0)}
 	player.dim_1_additiona = n(0)
 	player.dim_2 = n(0)
+	player.dim_2_additiona = n(0)
+	
+	layer_UpgEff()
 }
 
 function layer_2(){
 	for(row=1;row<=12;row++){
-		player['hasRoomUpg'+row]="false"
+		if(player.hasRoomSubUpg5=="false"){
+			player['hasRoomUpg'+row]="false"
+		}
 	}
-	player.roomUpgEff1 = n(0)
-	player.roomUpgEff2 = n(0)
-	player.roomUpgEff6 = n(0)
-	player.roomUpgEff7 = n(0)
-	player.roomUpgEff8 = n(0)
 	player.room = n(0)
 	player.room_sub = n(0)
 	player.room_storage = n(0)
-	player.room_storage_dim1 = n(0)
-	player.room_storage_dim1_progress = n(0)
 	player.room_distorted = n(0)
+	
 	layer_1()
 }
 
@@ -121,7 +157,7 @@ function Open(id){
 }
 
 function buttonID(){
-	if(player.room_storage_dim1_progress.gt(0)){
+	if(player.room_storage.gt(0)){
 		Close('button_dim1_progress')
 		Open('button_none_progress')
 	}else{
@@ -160,8 +196,8 @@ function buttonID(){
 		Close('button_quark_rest')
 	}
 	
-	if(player.hasRoomUpg8=="true"){
-		Close('unlocked_tab_time')
+	if(player.hasRoomUpg12=="true"){
+		Open('unlocked_tab_time')
 	}else{
 		Close('unlocked_tab_time')
 	}
@@ -177,6 +213,16 @@ function buttonID(){
 	}else{
 		Close('unlocked_tab_room_upg')
 	}
+	
+	if(player.hasRoomUpg11=="true"){
+		Open('unlocked_dim2')
+		Open('unlocked_dim2_button')
+	}else{
+		Close('unlocked_dim2')
+		Close('unlocked_dim2_button')
+	}
+	
+	Close('unlocked_tab_room_storage')
 }
 
 function firstTab(){
@@ -254,7 +300,6 @@ function showTabMainSub(id){
 }
 
 setInterval(function(){
-	let a = n(0)
 	save()
 	getID()
 	buttonID()
@@ -274,14 +319,16 @@ setInterval(function(){
 	player.green = player.green.add(GainGreen().div(20))
 	player.blue = player.blue.add(GainBlue().div(20))
 	
-	if(!player.room_storage_dim1_progress.gt(0)){
-		a = n(player.room_storage_dim1)
-	}
-	player.dim_1_additiona = n(0).add(a).add(player.roomUpgEff1).add(YellowEffect())
+	player.dim_1_additiona = n(0).add(player.roomUpgEff1).add(YellowEffect())
 	
 	player.yellow = n(player.red).min(player.green)
 	player.cyan = n(player.red).min(player.blue)
 	player.magenta = n(player.green).min(player.blue)
 	player.white = n(player.red).min(player.green).min(player.blue)
 	
+	player.quark = player.quark.add(n(GainQuarkRest()).div(20))
+	
+	player.quark_red = player.quark_red.add(n(GainQuark()).div(20))
+	player.quark_green = player.quark_green.add(n(GainQuark()).div(20))
+	player.quark_blue = player.quark_blue.add(n(GainQuark()).div(20))
 }, 50)
