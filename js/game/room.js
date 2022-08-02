@@ -116,7 +116,7 @@ function getRoomSubUpgEff(){
 			player.roomSubUpgEff6 = n(player.quark).mul(0.01)
 		}
 	}else{
-		player.roomSubUpgEff6 = n(1)
+		player.roomSubUpgEff6 = n(0)
 	}
 	if(player['hasRoomSubUpg7']=="true"){player.roomSubUpgEff7 = Decimal.add(10).pow(n(player.points).max(1).log(10000).max(1))}else{player.roomSubUpgEff7 = n(1)}
 	if(player['hasRoomSubUpg8']=="true"){player.roomSubUpgEff8 = n(resetQuarkGain())}else{player.roomSubUpgEff8 = n(0)}
