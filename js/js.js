@@ -326,7 +326,9 @@ setInterval(function(){
 	player.magenta = n(player.green).min(player.blue)
 	player.white = n(player.red).min(player.green).min(player.blue)
 	
-	player.quark = player.quark.add(n(GainQuarkRest()).div(20))
+	if(player.room_sub.gte(30)){
+		player.quark = player.quark.add(n(GainQuarkRest()).div(20))
+	}
 	
 	player.quark_red = player.quark_red.add(n(GainQuark()).div(20))
 	player.quark_green = player.quark_green.add(n(GainQuark()).div(20))
