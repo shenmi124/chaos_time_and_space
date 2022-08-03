@@ -301,9 +301,6 @@ function showTabMainSub(id){
 
 setInterval(function(){
 	save()
-	getID()
-	buttonID()
-	firstTab()
 	getRoomUpgEff()
 	getRoomSubUpgEff()
 	
@@ -333,4 +330,8 @@ setInterval(function(){
 	player.quark_red = player.quark_red.add(n(GainQuark()).div(20))
 	player.quark_green = player.quark_green.add(n(GainQuark()).div(20))
 	player.quark_blue = player.quark_blue.add(n(GainQuark()).div(20))
+	
+	firstTab()
+	buttonID()
+	getID()
 }, 50)
