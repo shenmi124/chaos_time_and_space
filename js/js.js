@@ -300,9 +300,12 @@ function showTabMainSub(id){
 }
 
 setInterval(function(){
-	save()
 	getRoomUpgEff()
 	getRoomSubUpgEff()
+	save()
+	getID()
+	buttonID()
+	firstTab()
 	
 	player.points = player.points.add(GainPoints().div(20))
 	
@@ -330,8 +333,4 @@ setInterval(function(){
 	player.quark_red = player.quark_red.add(n(GainQuark()).div(20))
 	player.quark_green = player.quark_green.add(n(GainQuark()).div(20))
 	player.quark_blue = player.quark_blue.add(n(GainQuark()).div(20))
-	
-	firstTab()
-	buttonID()
-	getID()
 }, 50)
