@@ -19,17 +19,19 @@
 	<script src="js/game/points.js"></script>
 	<script src="js/game/room.js"></script>
 	<script src="js/game/quark.js"></script>
-	
-	
+	<script src="js/game/time.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="css/css.css"/>
 	<link rel="stylesheet" type="text/css" href="css/rest.css"/>
 	<link rel="stylesheet" type="text/css" href="css/color.css"/>
+	<link rel="stylesheet" type="text/css" href="css/time.css"/>
 	
 </head>
 
 <body>
-	<br><br><br>
+	<br>
+	<a id="time_challenge_doingID"></a>
+	<br>
 	你有<a id="pointsID" class="points"></a><a class="points">时空悖论</a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
 	时间速率<a id="time_speedID" class="timespeed"></a>×<br>
 	<small><small>残局:解锁时间</small></small>
@@ -51,12 +53,12 @@
 		<small>扭曲时空每秒会生产(1×自身倍率)时空悖论</small><br>
 		<button onclick="buyDim(1)" class="button_dim">扭曲时空|<a id="dim_1ID"></a>+<a id="dim_1_additionaID"></a>(+<a id="GainDim_1ID"></a>/sec)|消耗:<a id="CostDim_1ID"></a>时空悖论|×<a id="dim_1_mulID"></a><br></button>
 		<br><br>
-		<a id="unlocked_dim2"><small>扭曲维度每秒会生产(扭曲维度<sup>2</sup>×自身倍率)扭曲时空(如果扭曲时空买得起)并×1.25扭曲时空倍率</small><br></a>
+		<a id="unlocked_dim2"><small>扭曲维度每秒会生产(扭曲维度<sup>2</sup>×自身倍率)扭曲时空(如果扭曲时空买得起)并×(扭曲维度×1.25×扭曲维度倍率)扭曲时空倍率</small><br></a>
 		<button onclick="buyDim(2)" id="unlocked_dim2_button" class="button_dim">扭曲维度|<a id="dim_2ID"></a>+<a id="dim_2_additionaID"></a>(+<a id="GainDim_2ID"></a>/sec)|消耗:<a id="CostDim_2ID"></a>扭曲时空|×<a id="dim_2_mulID"></a><br></button>
 	</mainTab>
 	<mainTab id="tab_room">
 		<small><small><small>50时空悖论以重置</small></small></small><br>
-		你现在有:<a id="roomID"></a>空间<br>
+		你现在有:<a id="roomID" class="rooms"></a><a class="rooms">空间</a><br>
 		<small><a id="GainRoomID"></a></small><br>
 		<br>
 		<button onclick="restRoom()" id="button_room_rest" class="button_rest_room">重置时空以获得空间<br>现在你可以获得:<a id="resetRoomGainID"></a>空间</button>
@@ -93,21 +95,21 @@
 			</mainTab>
 		</mainTab>
 		<mainTab id="tab_room_distorted">
-			你现在有:<a id="room_distortedID"></a>扭曲空间,它们将你的时间速率×<a id="room_distorted_speedID" class="timespeed"></a><br>
+			你现在有:<a id="room_distortedID" class="rooms"></a><a class="rooms">扭曲空间</a>,它们将你的时间速率×<a id="room_distorted_speedID" class="timespeed"></a><br>
 			<small><a id="GainRoom_progressID"></a></small><br>
 			<br>
 			<button onclick="restRoom_distorted()" class="button_rest_room">将所有空间转换为扭曲空间</button>
 			<br><br><br>
 			<mainTab id="tab_room_sub">
-				你现在有:<a id="room_subID"></a>子空间,它们将你的空间获取×<a id="room_sub_BoostroomID"></a><br>
+				你现在有:<a id="room_subID" class="rooms"></a><a class="rooms">子空间</a>,它们将你的空间获取×<a id="room_sub_BoostroomID"></a><br>
 				<small><a id="GainRoom_subID"></a></small><br>
 				<br><br>
 				<button onclick="showTabMainSub('room_sub_quark')" id="unlocked_tab_room_quark" class="tabbtn3">夸克</button>
 				<button onclick="showTabMainSub('room_sub_upg')" id="unlocked_tab_room_upg" class="tabbtn2">子升级</button>
 				<mainTab id="tab_room_sub_quark">
 					<br><br>
-					<small><small><small>30子空间以重置</small></small></small><br>
-					你现在有:<a id="quarkID"></a>夸克<br>
+					<small><small><small>30子空间以重置<br>重置夸克时会使先前大部分内容持续显示</small></small></small><br>
+					你现在有:<a id="quarkID" class="quarks"></a><a class="quarks">夸克</a><br>
 					<small><a id="GainQuarkRestID"></small></a>
 					<br>
 					<button onclick="restQuark()" class="button_rest_quark" id="button_quark_rest">解构之前的所有内容以来重塑夸克<br>现在你可以获得:<a id="resetQuarkGainID"></a>个夸克<br><small><a id="restQuarkTaxtID"></a></button>
@@ -162,7 +164,24 @@
 		</mainTab>
 	</mainTab>
 	<mainTab id="tab_time">
-		残局
+		你有<a id="time_spaceID" class="time_space"></a><a class="time_space">时间幻方</a><br><small>(+<a id="GainTime_spaceID"></a>/sec)</small><br>
+		<small><small><small>(时间幻方不受时间速率的影响)</small></small></small>
+		<br><br>
+		<button onclick="showTabMain('room_upg')" class="tabbtn4">幻方</button>
+		<button onclick="showTabMain('time_challenge')" class="tabbtn4">挑战</button>
+		<mainTab id="tab_time_challenge"><br><br>
+			————时间方盒————
+			<br><br>
+			<div class="square">
+				<div onclick="player.time_challenge='time_challenge_1'" class="square-triangle square-triangle--top"></div>
+				<div onclick="player.time_challenge='time_challenge_2'" class="square-triangle square-triangle--bottom"></div>
+				<div onclick="player.time_challenge='time_challenge_3'" class="square-triangle square-triangle--left"></div>
+				<div onclick="player.time_challenge='time_challenge_4'" class="square-triangle square-triangle--right"></div>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<a id="time_challengeID"></a><br><br>
+			<button onclick="time_challenge(player.time_challenge)" id="button_time_challenge" class="button_time_challenges">进入挑战</button>
+			</mainTab>
 	</mainTab>
 </body>
 

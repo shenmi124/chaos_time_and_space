@@ -64,4 +64,11 @@ function calcPlayer(){
 	loader(['cyan'],n(0))
 	loader(['magenta'],n(0))
 	loader(['white'],n(0))
+	
+	NotOmegaLoader(['time_challenge'],"time_challenge_0")
+	NotOmegaLoader(['time_challenge_doing'],"nothing")
+	
+	NotOmegaLoader(['showTime'],"false")
+	
+	loader(['time_space'],n(0))
 }

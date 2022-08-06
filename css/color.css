@@ -1,9 +1,15 @@
+.quarks {
+	text-align: center;
+	color:#e12edd;
+	text-shadow: 0 0 10px #e4d4ff;
+	border-radius: 9px;
+}
+
 .red {
 	text-align: center;
 	font-size: 23px;
 	color:#FF0000;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #FF0000;
+	text-shadow: 0 0 10px #FF0000;
 	border-radius: 9px;
 }
 
@@ -11,8 +17,7 @@
 	text-align: center;
 	font-size: 23px;
 	color:#00FF00;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #00FF00;
+	text-shadow: 0 0 10px #00FF00;
 	border-radius: 9px;
 }
 
@@ -20,8 +25,7 @@
 	text-align: center;
 	font-size: 23px;
 	color:#0000FF;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #0000FF;
+	text-shadow: 0 0 10px #0000FF;
 	border-radius: 9px;
 }
 
@@ -29,8 +33,7 @@
 	text-align: center;
 	font-size: 23px;
 	color:#FFFF00;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #FFFF00;
+	text-shadow: 0 0 10px #FFFF00;
 	border-radius: 9px;
 }
 
@@ -38,8 +41,7 @@
 	text-align: center;
 	font-size: 23px;
 	color:#00FFFF;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #00FFFF;
+	text-shadow: 0 0 10px #00FFFF;
 	border-radius: 9px;
 }
 
@@ -47,8 +49,7 @@
 	text-align: center;
 	font-size: 23px;
 	color:#FF00FF;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #FF00FF;
+	text-shadow: 0 0 10px #FF00FF;
 	border-radius: 9px;
 }
 
@@ -56,7 +57,6 @@
 	text-align: center;
 	font-size: 23px;
 	color:#000000;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #FFFFFF;
+	text-shadow: 0 0 10px #000000;
 	border-radius: 9px;
 }

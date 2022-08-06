@@ -28,8 +28,14 @@ body {
 	text-align: center;
 	font-size: 27px;
 	color:#000000;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #000000;
+	text-shadow: 0 0 10px #000000;
+	border-radius: 9px;
+}
+
+.rooms {
+	text-align: center;
+	color:#a3a3a3;
+	text-shadow: 0 0 10px #a3a3a3;
 	border-radius: 9px;
 }
 
@@ -37,9 +43,8 @@ body {
 	text-align: center;
 	font-size: 23px;
 	color:#67e1dd;
-	-webkit-text-stroke-width: 0.3px;
-	-webkit-text-stroke-color: #67e1dd;
 	border-radius: 9px;
+	text-shadow: 0 0 10px #67e1dd;
 }
 
 .button_upg {
@@ -54,6 +59,14 @@ body {
 	transition-duration: 0.2s;
 	height:200px;
 	width:200px;
+}
+
+.cant_buy {
+	box-shadow: red 3px 4px 0px 0px;
+}
+
+.can_buy {
+	box-shadow: green 3px 4px 0px 0px;
 }
 
 .button_upg:hover {

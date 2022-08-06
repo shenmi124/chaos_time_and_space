@@ -89,3 +89,23 @@
 .button_rest_quark_to_blue:hover {
 	background: linear-gradient(to bottom, blue 25%, #FFFFFF 100%);
 }
+
+.button_time_challenges {
+	background: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid rgb(0,100,0);
+	box-shadow: rgb(0,206,0) 0px 0px 5px 0px;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+	color:rgb(0,100,0);
+}
+
+.button_time_challenges:hover {
+	border: 2px solid rgb(0,206,0);
+	background: #000000;
+	color:rgb(0,206,0);
+}

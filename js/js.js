@@ -10,6 +10,10 @@ function getBuyDoc(id,id2){
 	document.getElementById(id+"ID").innerHTML = id2;
 }
 
+function getCss(id,id2){
+	document.getElementById(id).class = id2
+}
+
 function getID(){
 	getDoc("dim_1",player.dim_1)
 	getDoc("dim_1_additiona",player.dim_1_additiona)
@@ -17,7 +21,7 @@ function getID(){
 	getDoc("dim_2",player.dim_2)
 	getDoc("dim_2_additiona",player.dim_2_additiona)
 	getDoc("dim_2_mul",1)
-	
+
 	getDoc("GainDim_1",GainDim_1())
 	getDoc("GainDim_2",GainDim_2())
 	getDoc("CostDim_1",CostDim(1))
@@ -103,6 +107,33 @@ function getID(){
 	
 	getDoc("time_speed",time_speed())
 	getDoc("room_distorted_speed",room_distorted_speed())
+	
+	if(player.time_challenge=="time_challenge_0"){
+		getBuyDoc("time_challenge","鼠标移动并点击一个色块查看详情")
+	}else if(player.time_challenge=="time_challenge_1"){
+		getBuyDoc("time_challenge","<h3>时速挑战</h3>效果:时间倍率只有0.00001倍<br>扩张:在时间中解锁时速页面以及购买项<br>目标:解锁时间<br>奖励:永久解锁时速页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+	}else if(player.time_challenge=="time_challenge_2"){
+		getBuyDoc("time_challenge","<h3>储存挑战</h3>效果:非点数资源获得硬上限<br>扩张:在空间中解锁储存页面,储存可以根据存储数量完成挑战获得加成并推迟硬上限<br>目标:解锁时间<br>奖励:永久解锁储存页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+	}else if(player.time_challenge=="time_challenge_3"){
+		getBuyDoc("time_challenge","<h3>虚无挑战</h3>效果:除了'空间时间'外的升级将无法购买<br>扩张:在时空中解锁虚无页面,生产虚无获得加成<br>目标:解锁时间<br>奖励:永久解锁虚无页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+	}else if(player.time_challenge=="time_challenge_4"){
+		getBuyDoc("time_challenge","<h3>压缩挑战</h3>效果:超过1的时间速率效果将大幅度减弱<br>扩张:在空间中解锁压缩页面,压缩时空间获得加成<br>目标:解锁时间<br>奖励:永久解锁压缩页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+	}
+	
+	if(player.time_challenge=="time_challenge_1" && player.time_challenge_doing=="doing"){
+		getBuyDoc("time_challenge_doing","<small>正在进行:时速挑战<br>")
+	}else if(player.time_challenge=="time_challenge_2" && player.time_challenge_doing=="doing"){
+		getBuyDoc("time_challenge_doing","<small>正在进行:储存挑战<br>")
+	}else if(player.time_challenge=="time_challenge_3" && player.time_challenge_doing=="doing"){
+		getBuyDoc("time_challenge_doing","<small>正在进行:虚无挑战<br>")
+	}else if(player.time_challenge=="time_challenge_4" && player.time_challenge_doing=="doing"){
+		getBuyDoc("time_challenge_doing","<small>正在进行:压缩挑战<br>")
+	}else{
+		getBuyDoc("time_challenge_doing","<br>")
+	}
+	
+	getDoc('time_space',player.time_space)
+	getDoc('GainTime_space',GainTime_space())
 }
 
 function layer_UpgEff(){
@@ -148,6 +179,24 @@ function layer_2(){
 	
 	layer_1()
 }
+function layer_3(){
+	for(row=1;row<=8;row++){
+		player['hasRoomSubUpg'+row]="false"
+	}
+	player.quark = n(0)
+	player.showQuark = 'false'
+	player.quark_red = n(0)
+	player.quark_green = n(0)
+	player.quark_blue = n(0)
+	player.red = n(0)
+	player.green = n(0)
+	player.blue = n(0)
+	player.yellow = n(0)
+	player.cyan = n(0)
+	player.magenta = n(0)
+	player.white = n(0)
+	layer_2()
+}
 
 function Close(id){
     document.getElementById(id).style.display = "none" 
@@ -171,20 +220,19 @@ function buttonID(){
 		Close('button_room_rest')
 	}
 	
-	
-	if(player.hasRoomUpg4=="true" || player.showQuark=="true"){
+	if(player.hasRoomUpg4=="true" || player.showQuark=="true" || player.showTime=="true"){
 		Open('tab_room_upg1')
 	}else{
 		Close('tab_room_upg1')
 	}
 	
-	if(player.hasRoomUpg8=="true" || player.showQuark=="true"){
+	if(player.hasRoomUpg8=="true" || player.showQuark=="true" || player.showTime=="true"){
 		Open('tab_room_upg2')
 	}else{
 		Close('tab_room_upg2')
 	}
 	
-	if(player.hasRoomUpg8=="true" || player.showQuark=="true"){
+	if(player.hasRoomUpg8=="true" || player.showQuark=="true" || player.showTime=="true"){
 		Open('tab_room_sub')
 	}else{
 		Close('tab_room_sub')
@@ -196,30 +244,37 @@ function buttonID(){
 		Close('button_quark_rest')
 	}
 	
-	if(player.hasRoomUpg12=="true"){
-		Open('unlocked_tab_time')
-	}else{
-		Close('unlocked_tab_time')
-	}
 	
-	if(player.hasRoomUpg9=="true" || player.showQuark=="true"){
+	if(player.hasRoomUpg9=="true" || player.showQuark=="true" || player.showTime=="true"){
 		Open('unlocked_tab_room_quark')
 	}else{
 		Close('unlocked_tab_room_quark')
 	}
 	
-	if(player.hasRoomUpg10=="true"){
+	if(player.hasRoomUpg10=="true" || player.showTime=="true"){
 		Open('unlocked_tab_room_upg')
 	}else{
 		Close('unlocked_tab_room_upg')
 	}
 	
-	if(player.hasRoomUpg11=="true"){
+	if(player.hasRoomUpg11=="true" || player.showTime=="true"){
 		Open('unlocked_dim2')
 		Open('unlocked_dim2_button')
 	}else{
 		Close('unlocked_dim2')
 		Close('unlocked_dim2_button')
+	}
+	
+	if(player.hasRoomUpg12=="true" || player.showTime=="true"){
+		Open('unlocked_tab_time')
+	}else{
+		Close('unlocked_tab_time')
+	}
+	
+	if(player.time_challenge!="time_challenge_0"){
+		Open('button_time_challenge')
+	}else{
+		Close('button_time_challenge')
 	}
 	
 	Close('unlocked_tab_room_storage')
@@ -231,9 +286,10 @@ function firstTab(){
 		Close('tab_room')
 		Close('tab_room_storage')
 		Close('tab_room_distorted')
-		Close('tab_time')
 		Close('tab_room_sub_quark')
 		Close('tab_room_sub_upg')
+		Close('tab_time')
+		Close('tab_time_challenge')
 		cao = false
 	}
 }
@@ -283,6 +339,11 @@ function showTabMain(id){
 		Close("tab_room_distorted")
 	}
 	
+	if(id=="time_challenge"){
+		Open("tab_time_challenge")
+	}else{
+		Close("tab_time_challenge")
+	}
 }
 
 function showTabMainSub(id){
@@ -333,4 +394,6 @@ setInterval(function(){
 	player.quark_red = player.quark_red.add(n(GainQuark()).div(20))
 	player.quark_green = player.quark_green.add(n(GainQuark()).div(20))
 	player.quark_blue = player.quark_blue.add(n(GainQuark()).div(20))
+	
+	player.time_space = player.time_space.add(n(GainTime_space()).div(20))
 }, 50)
