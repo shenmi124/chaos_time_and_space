@@ -134,6 +134,9 @@ function getID(){
 	
 	getDoc('time_space',player.time_space)
 	getDoc('GainTime_space',GainTime_space())
+	
+	
+	getBuyDoc("autoSave",player.autoSave=="true" ? "开" : "关")
 }
 
 function layer_UpgEff(){
@@ -363,7 +366,15 @@ function showTabMainSub(id){
 setInterval(function(){
 	getRoomUpgEff()
 	getRoomSubUpgEff()
-	save()
+	if(player.autoSave=="true"){
+		save()
+	}else if(player.saveTick!='false_save'){
+		player.saveTick = 'true'
+	}
+	if(player.saveTick=='true'){
+		save()
+		player.saveTick = 'false_save'
+	}
 	getID()
 	buttonID()
 	firstTab()

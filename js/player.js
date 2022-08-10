@@ -71,4 +71,8 @@ function calcPlayer(){
 	NotOmegaLoader(['showTime'],"false")
 	
 	loader(['time_space'],n(0))
+	
+	
+	NotOmegaLoader(['autoSave'],"true")
+	NotOmegaLoader(['saveTick'],"false")
 }

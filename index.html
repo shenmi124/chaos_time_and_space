@@ -13,6 +13,7 @@
 	<script src="js/format.js"></script>
 	<script src="js/js.js"></script>
 	<script src="js/pointer.js"></script>
+	<script src="js/setting.js"></script>
 	
 	<script src="js/game/ts.js"></script>
 	<script src="js/game/dim.js"></script>
@@ -29,6 +30,7 @@
 </head>
 
 <body>
+	<div class="version" style="margin-right: 13px;">v0.1.1</div>
 	<br>
 	<a id="time_challenge_doingID"></a>
 	<br>
@@ -44,10 +46,16 @@
 	<br><br>
 	<mainTab id="tab_setting">
 		<br>
-		游戏每帧会自动保存<br><br>
-		<button onclick="save()" class="tabbtnSet" style="width:200px;height:55px">保存</button>
-		<button onclick="prompt('下面是你的存档:',saveStr)" id="export" class="tabbtnSet" style="width:200px;height:55px">导出</button>
-		<button onclick="load(prompt('输入存档:'))" id="import" class="tabbtnSet" style="width:200px;height:55px">导入</button>     
+		<tr>
+			<button onclick="autoSave()" class="tabbtnSet" style="width:200px;height:55px">自动保存:<a id="autoSaveID"></a></button>
+			<button onclick="prompt('下面是你的存档:',saveStr)" id="export" class="tabbtnSet" style="width:200px;height:55px">导出</button>
+			<button onclick="load(prompt('输入存档:'))" id="import" class="tabbtnSet" style="width:200px;height:55px">导入</button>  
+		</tr><br><br>
+		<tr>
+			<button onclick="save()" class="tabbtnSet" style="width:200px;height:55px">保存<a id="autoSaveID"></a></button>
+			<button onclick="if(!!confirm('你确定要硬重置吗?这样你将失去一切!!!')){if(!!confirm('这个存档将永远失去!(很长时间!)')){toClearSave = true}}" id="export" class="tabbtnSet" style="width:200px;height:55px">硬重置</button>
+			<a href="https://afdian.net/@Mysterious124" target="_blank"><button id="import" class="tabbtnSet" style="width:200px;height:55px">捐助作者</button></a>
+		</tr>
 	</mainTab>
 	<mainTab id="tab_main">
 		<small>扭曲时空每秒会生产(1×自身倍率)时空悖论</small><br>
