@@ -1,9 +1,10 @@
 .can_buyDim {
+	cursor: pointer;
 	border: 2px solid rgb(0,200,0);
 }
 
 .can_buyDim:hover {
-	border: 2px solid darkgreen;
+	border: 2px solid rgb(0,150,0);
 }
 
 
@@ -14,7 +15,6 @@
 	font-size: 17px;
 	height:40px;
 	width:800px;
-	cursor: pointer;
 	color:#000000;
 	transition-duration: 0.2s;
 	box-shadow: #67e1dd 3px 4px 0px 0px;
@@ -23,6 +23,7 @@
 
 .dim1_border {
 	border: 2px solid #000000;
+	cursor: not-allowed;
 }
 
 .dim1_border:hover {
@@ -36,7 +37,6 @@
 	font-size: 17px;
 	height:40px;
 	width:800px;
-	cursor: pointer;
 	color:#000000;
 	transition-duration: 0.2s;
 	box-shadow: #a3a3a3 3px 4px 0px 0px;
@@ -45,6 +45,7 @@
 
 .dim2_border {
 	border: 2px solid #000000;
+	cursor: not-allowed;
 }
 
 .dim2_border:hover {

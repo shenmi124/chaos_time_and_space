@@ -192,6 +192,7 @@ setInterval(function(){
 	
 	dimCss(1)
 	dimCss(2)
+	roomCss()
 	
 	player.points = player.points.add(GainPoints().mul(diff))
 	

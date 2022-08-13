@@ -10,7 +10,7 @@
     background: #FFFFFF;
     font-weight: bold;
     border: 2px solid rgb(0,100,0);
-    border-radius: 2px;
+    border-radius: 6px;
     transition-duration: 0.2s;
     cursor: pointer;
 	font-family: Typewriter;
