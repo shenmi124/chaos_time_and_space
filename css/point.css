@@ -1,0 +1,15 @@
+.points {
+	text-align: center;
+	font-size: 27px;
+	color:#000000;
+	text-shadow: 0 0 10px #000000;
+	border-radius: 9px;
+}
+
+.timespeed {
+	text-align: center;
+	font-size: 23px;
+	color:#67e1dd;
+	border-radius: 9px;
+	text-shadow: 0 0 10px #67e1dd;
+}

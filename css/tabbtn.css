@@ -1,0 +1,91 @@
+.tabbtnSet {
+    background: #E0E0E0;
+    font-weight: bold;
+    border: 2px solid #4980CC;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtnSet:hover {
+    background: #4980CC;
+    color:#FFFFFF;
+}
+
+.tabbtn {
+    background: #E0E0E0;
+    font-weight: bold;
+    border: 2px solid #67e1dd;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtn:hover {
+	border: 2px solid #E0E0E0;
+	background: #000000;
+	color:#e1fffe;
+}
+
+.tabbtn2 {
+    background: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtn2:hover {
+	border: 2px solid #E0E0E0;
+	background: #000000;
+	color:#FFFFFF;
+	box-shadow: #E0E0E0 0px 0px 0px 2px;
+}
+
+.tabbtn3 {
+    background: #e4d4ff;
+    font-weight: bold;
+    border: 2px solid #e12edd;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtn3:hover {
+	border: 2px solid #E0E0E0;
+	background: #FFFFFF;
+	color:#e4d4ff;
+}
+
+.tabbtn4 {
+    background: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid rgb(0,100,0);
+	box-shadow: rgb(0,206,0) 0px 0px 5px 0px;
+    border-radius: 4px;
+    transition-duration: 1s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+	color:rgb(0,100,0);
+}
+
+.tabbtn4:hover {
+	border: 2px solid rgb(0,206,0);
+	background: #000000;
+	color:rgb(0,206,0);
+}

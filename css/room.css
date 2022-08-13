@@ -1,0 +1,24 @@
+.rooms {
+	text-align: center;
+	color:#a3a3a3;
+	text-shadow: 0 0 10px #a3a3a3;
+	border-radius: 9px;
+}
+
+.rooms_upg {
+	background-color: #ffffff;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	box-shadow: #1bbfab 3px 4px 0px 0px;
+    border-color: inherit;
+	border-radius: 9px;
+	cursor: pointer;
+	transition-duration: 0.2s;
+	height:200px;
+	width:200px;
+}
+
+.rooms_upg:hover {
+	box-shadow: #1bbfab 0px 0px 0px 0px;
+}
