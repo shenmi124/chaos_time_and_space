@@ -36,7 +36,7 @@ function buyDim(id){
 
 function dimCss(id){
 	if(id==1){
-		if(player.points.gte(CostDim(id)) && player['dim_'+(id+1)].lte(0) && player.hasRoomUpg4=='false'){
+		if(player.points.gte(CostDim(id)) && n(GainDim_1).lte(0)){
 			getCss('unlocked_dim1_button','can_buyDim')
 			lossCss('unlocked_dim1_button','dim1_border')
 		}else{
