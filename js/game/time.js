@@ -15,3 +15,6 @@ function GainTime_space(){
 	if(player.hasRoomUpg12=='true' || player.showTime=="true"){base = n(1)}
 	return n(1)
 }
+
+function timeBuyCost(){
+}

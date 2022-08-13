@@ -1,19 +1,31 @@
+.can_buyDim {
+	border: 2px solid rgb(0,200,0);
+}
+
+.can_buyDim:hover {
+	border: 2px solid darkgreen;
+}
+
+
 .dim1 {
 	background-color: #ffffff;
 	text-align: center;
 	font-family: verdana;
 	font-size: 17px;
-	height:50px;
+	height:40px;
 	width:800px;
 	cursor: pointer;
 	color:#000000;
 	transition-duration: 0.2s;
-	border: 2px solid #000000;
 	box-shadow: #67e1dd 3px 4px 0px 0px;
 	border-radius: 9px;
 }
 
-.dim1:hover {
+.dim1_border {
+	border: 2px solid #000000;
+}
+
+.dim1_border:hover {
 	border: 2px solid #67e1dd;
 }
 
@@ -22,16 +34,19 @@
 	text-align: center;
 	font-family: verdana;
 	font-size: 17px;
-	height:50px;
+	height:40px;
 	width:800px;
 	cursor: pointer;
 	color:#000000;
 	transition-duration: 0.2s;
-	border: 2px solid #000000;
 	box-shadow: #a3a3a3 3px 4px 0px 0px;
 	border-radius: 9px;
 }
 
-.dim2:hover {
+.dim2_border {
+	border: 2px solid #000000;
+}
+
+.dim2_border:hover {
 	border: 2px solid #a3a3a3;
 }

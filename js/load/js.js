@@ -13,7 +13,11 @@ function getBuyDoc(id,id2){
 }
 
 function getCss(id,id2){
-	document.getElementById(id).class = id2
+	document.getElementById(id).classList.add(id2)
+}
+
+function lossCss(id,id2){
+	document.getElementById(id).classList.remove(id2)
 }
 
 function getID(){
@@ -113,13 +117,13 @@ function getID(){
 	if(player.time_challenge=="time_challenge_0"){
 		getBuyDoc("time_challenge","鼠标移动并点击一个色块查看详情")
 	}else if(player.time_challenge=="time_challenge_1"){
-		getBuyDoc("time_challenge","<h3>时速挑战</h3>效果:时间倍率只有0.00001倍<br>扩张:在时间中解锁时速页面以及购买项<br>目标:解锁时间<br>奖励:永久解锁时速页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>时速挑战</h3><small>效果:时间倍率只有0.00001倍<br>扩张:在时间中解锁时速页面以及购买项<br>目标:解锁时间<br>奖励:永久解锁时速页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
 	}else if(player.time_challenge=="time_challenge_2"){
-		getBuyDoc("time_challenge","<h3>储存挑战</h3>效果:非点数资源获得硬上限<br>扩张:在空间中解锁储存页面,储存可以根据存储数量完成挑战获得加成并推迟硬上限<br>目标:解锁时间<br>奖励:永久解锁储存页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>储存挑战</h3><small>效果:非点数资源获得硬上限<br>扩张:在空间中解锁储存页面,储存可以根据存储数量完成挑战获得加成并推迟硬上限<br>目标:解锁时间<br>奖励:永久解锁储存页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
 	}else if(player.time_challenge=="time_challenge_3"){
-		getBuyDoc("time_challenge","<h3>虚无挑战</h3>效果:除了'空间时间'外的升级将无法购买<br>扩张:在时空中解锁虚无页面,生产虚无获得加成<br>目标:解锁时间<br>奖励:永久解锁虚无页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>虚无挑战</h3><small>效果:除了'空间时间'外的升级将无法购买<br>扩张:在时空中解锁虚无页面,生产虚无获得加成<br>目标:解锁时间<br>奖励:永久解锁虚无页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
 	}else if(player.time_challenge=="time_challenge_4"){
-		getBuyDoc("time_challenge","<h3>压缩挑战</h3>效果:超过1的时间速率效果将大幅度减弱<br>扩张:在空间中解锁压缩页面,压缩时空间获得加成<br>目标:解锁时间<br>奖励:永久解锁压缩页面<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>压缩挑战</h3><small>效果:超过1的时间速率效果将大幅度减弱<br>扩张:在空间中解锁压缩页面,压缩时空间获得加成<br>目标:解锁时间<br>奖励:永久解锁压缩页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
 	}
 	
 	if(player.time_challenge=="time_challenge_1" && player.time_challenge_doing=="doing"){
@@ -185,6 +189,9 @@ setInterval(function(){
 	buttonID()
 	firstTab()
 	document.title = '混乱时空 - '+format(player.points)+'时空悖论'
+	
+	dimCss(1)
+	dimCss(2)
 	
 	player.points = player.points.add(GainPoints().mul(diff))
 	

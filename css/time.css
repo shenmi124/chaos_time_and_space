@@ -5,3 +5,27 @@
 	text-shadow: 0 0 10px rgb(0,206,0);
 	border-radius: 9px;
 }
+
+.time_buy {
+    background: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid rgb(0,100,0);
+    border-radius: 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+    display: inline-block;
+	color:rgb(0,100,0);
+	height:120px;
+	width:250px;
+}
+
+.time_buy:hover {
+	color:rgb(0,206,0);
+	
+}
+
+.time_buy_can {
+	box-shadow:rgb(0,206,0) 0px 0px 10px 0px;
+	border: 2px solid rgb(0,206,0);
+}

@@ -15,7 +15,7 @@ function MulDim_1(){
 }
 
 function CostDim(id){
-	let base = player['dim_'+id].add(1).mul(Decimal.add(10).pow(id-1))
+	let base = player['dim_'+id].add(1).mul(Decimal.add(10).pow(id-1)).pow(n(id).div(10).add(1))
 	let pow = n(2).pow(id)
 	return base.pow(pow)
 }
@@ -30,6 +30,26 @@ function buyDim(id){
 		if(player['dim_'+(id-1)].gte(CostDim(id))){
 			player['dim_'+(id-1)] = player['dim_'+(id-1)].sub(CostDim(id))
 			player['dim_'+id] = player['dim_'+id].add(1)
+		}
+	}
+}
+
+function dimCss(id){
+	if(id==1){
+		if(player.points.gte(CostDim(id)) && player['dim_'+(id+1)].lte(0) && player.hasRoomUpg4=='true'){
+			getCss('unlocked_dim1_button','can_buyDim')
+			lossCss('unlocked_dim1_button','dim1_border')
+		}else{
+			lossCss('unlocked_dim1_button','can_buyDim')
+			getCss('unlocked_dim1_button','dim1_border')
+		}
+	}else if(id==2){
+		if(player['dim_'+(id-1)].gte(CostDim(id))){
+			getCss('unlocked_dim2_button','can_buyDim')
+			lossCss('unlocked_dim2_button','dim2_border')
+		}else{
+			lossCss('unlocked_dim2_button','can_buyDim')
+			getCss('unlocked_dim2_button','dim2_border')
 		}
 	}
 }

@@ -37,7 +37,7 @@
 </head>
 
 <body>
-	<div class="version" style="margin-right: 13px;">v0.1.1.1</div>
+	<div class="version" style="margin-right: 13px;">v0.1.1.2</div>
 	<br>
 	<a id="time_challenge_doingID"></a>
 	<br>
@@ -66,7 +66,7 @@
 	</mainTab>
 	<mainTab id="tab_main">
 		<small>扭曲时空每秒会生产(1×自身倍率)时空悖论</small><br>
-		<button onclick="buyDim(1)" class="dim1">扭曲时空|<a id="dim_1ID"></a>+<a id="dim_1_additionaID"></a>(+<a id="GainDim_1ID"></a>/sec)|消耗:<a id="CostDim_1ID"></a>时空悖论|×<a id="dim_1_mulID"></a><br></button>
+		<button onclick="buyDim(1)" id='unlocked_dim1_button' class="dim1">扭曲时空|<a id="dim_1ID"></a>+<a id="dim_1_additionaID"></a>(+<a id="GainDim_1ID"></a>/sec)|消耗:<a id="CostDim_1ID"></a>时空悖论|×<a id="dim_1_mulID"></a><br></button>
 		<br><br>
 		<a id="unlocked_dim2"><small>扭曲维度每秒会生产(扭曲维度<sup>2</sup>×自身倍率)扭曲时空(如果扭曲时空买得起)并×(扭曲维度×1.25×扭曲维度倍率)扭曲时空倍率</small><br></a>
 		<button onclick="buyDim(2)" id="unlocked_dim2_button" class="dim2">扭曲维度|<a id="dim_2ID"></a>+<a id="dim_2_additionaID"></a>(+<a id="GainDim_2ID"></a>/sec)|消耗:<a id="CostDim_2ID"></a>扭曲时空|×<a id="dim_2_mulID"></a><br></button>
@@ -187,7 +187,7 @@
 		<mainTab id="tab_time_space"><br><br>
 			<small>幻方购买相在时间挑战中只有0.1%的效果</small><br><br>
 			<tr>
-				<button onclick="buyTimeBuy(1)" class="button_time_buy">时间压缩(<a id="buyRoomUpg9ID">)</a><br>将你的时间速率×<a id="roomSubUpgEff7ID"></a><br>下一级:×<a id="roomSubUpgEff7ID"></a><br>消耗:时间幻方</button>
+				<button onclick="timeBuyCost()" id="timeBuy" class="time_buy">时间压缩(<a id="buyRoomUpg9ID">)</a><br>将你的时间速率×<a id="roomSubUpgEff7ID"></a><br>下一级:×<a id="roomSubUpgEff7ID"></a><br>消耗:时间幻方</button>
 			</tr>
 		</mainTab>
 		<mainTab id="tab_time_challenge"><br><br>
