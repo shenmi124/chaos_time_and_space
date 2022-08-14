@@ -11,6 +11,6 @@ function time_speed(){
 	let sp = n(1)
 	sp = sp.mul(room_distorted_speed())
 	sp = sp.mul(CyanEffect())
-	sp = sp.mul(player.roomSubUpgEff4)
+	sp = sp.mul(n(timeBuyAllEff()))
 	return sp
 }

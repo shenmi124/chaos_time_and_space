@@ -3,9 +3,11 @@ var timestart=new Date()
 var diff=0
 
 function getDoc(id,id2){
-	if(id2 !== null){
-		document.getElementById(id+"ID").innerHTML = format(id2);
-	}
+	document.getElementById(id+"ID").innerHTML = format(id2);
+}
+
+function getDocInt(id,id2){
+	document.getElementById(id+"ID").innerHTML = format(id2,0);
 }
 
 function getBuyDoc(id,id2){
@@ -127,21 +129,28 @@ function getID(){
 	}
 	
 	if(player.time_challenge=="time_challenge_1" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:时速挑战<br>")
+		getBuyDoc("time_challenge_doing","<small>正在进行:时速挑战</small><br>")
 	}else if(player.time_challenge=="time_challenge_2" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:储存挑战<br>")
+		getBuyDoc("time_challenge_doing","<small>正在进行:储存挑战</small><br>")
 	}else if(player.time_challenge=="time_challenge_3" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:虚无挑战<br>")
+		getBuyDoc("time_challenge_doing","<small>正在进行:虚无挑战</small><br>")
 	}else if(player.time_challenge=="time_challenge_4" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:压缩挑战<br>")
+		getBuyDoc("time_challenge_doing","<small>正在进行:压缩挑战</small><br>")
 	}else{
 		getBuyDoc("time_challenge_doing","<br>")
 	}
 	
 	getDoc('time_space',player.time_space)
 	getDoc('GainTime_space',GainTime_space())
+
+	getDocInt('time_buy_1',player.time_buy_1)
+	getDoc('timeBuyCost1',timeBuyCost(1))
+	getDoc('timeBuyEff1',timeBuyEff(1))
+	getDoc('timeBuyNextEff1',timeBuyNextEff(1))
+	getDoc('timeBuyAllEff',timeBuyAllEff())
+
 	
-	
+	getBuyDoc("devSpeed",player.devSpeed.eq(1) ? "" : " [开发者模式] 全局时间倍率:<a class='timespeed'>"+format(player.devSpeed)+"</a>×")
 	getBuyDoc("autoSave",player.autoSave=="true" ? "开" : "关")
 }
 
@@ -193,6 +202,7 @@ setInterval(function(){
 	dimCss(1)
 	dimCss(2)
 	roomCss()
+	timeCss(1)
 	
 	player.points = player.points.add(GainPoints().mul(diff))
 	

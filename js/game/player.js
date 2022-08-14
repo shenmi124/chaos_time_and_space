@@ -71,7 +71,7 @@ function calcPlayer(){
 	NotOmegaLoader(['showTime'],"false")
 	
 	loader(['time_space'],n(0))
-	
+	loader(['time_buy_1'],n(0))
 	
 	loader(['devSpeed'],n(1))
 	NotOmegaLoader(['autoSave'],"true")

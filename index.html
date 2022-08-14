@@ -37,12 +37,12 @@
 </head>
 
 <body>
-	<div class="version" style="margin-right: 13px;">v0.1.4.1</div>
+	<div class="version" style="margin-right: 13px;">v0.1.4.2</div>
 	<br>
 	<a id="time_challenge_doingID"></a>
 	<br>
 	你有<a id="pointsID" class="points"></a><a class="points">时空悖论</a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
-	时间速率<a id="time_speedID" class="timespeed"></a>×<br>
+	时间速率<a id="time_speedID" class="timespeed"></a>×<a id="devSpeedID"></a><br>
 	<small><small>残局:解锁时间</small></small>
 	<br>
 	<br>
@@ -127,7 +127,7 @@
 					你现在有:<a id="quarkID" class="quarks"></a><a class="quarks">夸克</a><br>
 					<small><a id="GainQuarkRestID"></small></a>
 					<br>
-					<button onclick="restQuark()" class="button_rest_quark" id="button_quark_rest">解构之前的所有内容以来重塑夸克<br>现在你可以获得:<a id="resetQuarkGainID"></a>个夸克<br><small><a id="restQuarkTaxtID"></a></button>
+					<button onclick="restQuark()" class="button_rest_quark" id="button_quark_rest">解构之前的所有内容以来重塑夸克<br>现在你可以获得:<a id="resetQuarkGainID"></a>个夸克<br><small><a id="restQuarkTaxtID"></a></small></button>
 					<br>
 					<hr>
 					你现在有:<a id="quark_redID" class="red"/><a class="red">红夸克<a id="GainQuark_redID"></a></a>,它们每秒会生产<a id="gain_quark_redID" class="red"/><a class="red">红元素</a><br>
@@ -136,7 +136,7 @@
 					你现在有:<a id="quark_greenID" class="green"/><a class="green">绿夸克<a id="GainQuark_greenID"></a></a></a>,它们每秒会生产<a id="gain_quark_greenID" class="green"/><a class="green">绿元素</a><br>
 					<button onclick="restQuark_to_green()" class="button_rest_quark_to_green">将所有夸克转换为绿夸克</button>
 					<hr>
-					你现在有:<a id="quark_blueID" class="blue"/><a class="blue">蓝夸克<a id="GainQuark_blueID"></a></a></a>,它们每秒会生产<a id="gain_quark_blueID" class="blue"/><a class="blue">蓝元素</a><br>
+					你现在有:<a id="quark_blueID" class="blue"/><a class="blue">蓝夸克<a id="GainQuark_blueID"></a></a>,它们每秒会生产<a id="gain_quark_blueID" class="blue"/><a class="blue">蓝元素</a><br>
 					<button onclick="restQuark_to_blue()" class="button_rest_quark_to_blue">将所有夸克转换为蓝夸克</button>
 					<hr>
 					你现在有<a id="redID" class="red"/><a class="red">红元素</a><a id="GainRedID"></a>,它们将空间利用效果提升<a id="RedEffectID"></a>倍<br>
@@ -185,9 +185,10 @@
 		<button onclick="showTabMain('time_space')" class="tabbtn4">幻方</button>
 		<button onclick="showTabMain('time_challenge')" class="tabbtn4">挑战</button>
 		<mainTab id="tab_time_space"><br><br>
-			<small>幻方购买相在时间挑战中只有0.1%的效果</small><br><br>
+			这些购买项使得你的时速×<a id="timeBuyAllEffID" class="timespeed"></a><br>
+			<small>幻方购买项在时间挑战中没有效果</small><br><br>
 			<tr>
-				<button id="timeBuy" class="time_buy">没做呢,还想买?不可能,绝对不可能<br>时间压缩(<a id="buyRoomUpg9ID"></a>)<br>将你的时间速率×<a id="roomSubUpgEff7ID"></a><br>下一级:×<a id="roomSubUpgEff7ID"></a><br>消耗:时间幻方</button>
+				<button onclick="buyTime(1)" id="timeBuy1" class="time_buy">时间压缩(<a id="time_buy_1ID"></a>)<br>将你的时间速率×<a id="timeBuyEff1ID"></a>+1<br>下一级:×<a id="timeBuyNextEff1ID"></a>+1<br>消耗:<a id="timeBuyCost1ID"></a>时间幻方</button>
 			</tr>
 		</mainTab>
 		<mainTab id="tab_time_challenge"><br><br>
