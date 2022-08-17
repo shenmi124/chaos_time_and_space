@@ -31,6 +31,7 @@ function restQuark_to_red(){
 		player.quark_blue = player.quark_blue.add(player.quark)
 	}
 	player.quark = n(0)
+	layer_0()
 }
 
 function restQuark_to_green(){
@@ -40,6 +41,7 @@ function restQuark_to_green(){
 		player.quark_blue = player.quark_blue.add(player.quark)
 	}
 	player.quark = n(0)
+	layer_0()
 }
 
 function restQuark_to_blue(){
@@ -49,6 +51,7 @@ function restQuark_to_blue(){
 		player.quark_green = player.quark_green.add(player.quark)
 	}
 	player.quark = n(0)
+	layer_0()
 }
 
 function GainRed(){

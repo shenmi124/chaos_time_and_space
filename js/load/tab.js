@@ -73,10 +73,32 @@ function buttonID(){
 		Close('unlocked_tab_time')
 	}
 	
-	if(player.time_challenge!="time_challenge_0"){
-		Open('button_time_challenge')
+	if(player.time_challenge_doing=="nothing"){
+		Open('time_challenge_1')
+		Open('time_challenge_2')
+		Open('time_challenge_3')
+		Open('time_challenge_4')
+		Close('button_time_challenge_out')
+		Open('button_time_challenge_goin')
 	}else{
-		Close('button_time_challenge')
+		Close('time_challenge_1')
+		Close('time_challenge_2')
+		Close('time_challenge_3')
+		Close('time_challenge_4')
+		Open('button_time_challenge_out')
+		Close('button_time_challenge_goin')
+	}
+
+	if(player.time_challenge_finish_1=='finish' && player.time_challenge=='time_challenge_1'){
+		Close('button_time_challenge_goin')
+	}
+
+	if(((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_1') || player.time_challenge_finish_1=='finish') || ((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_3') || player.time_challenge_finish_3=='finish')){
+		Open('unlocked_tab_main_main')
+		Open('unlocked_tab_main_time')
+	}else{
+		Close('unlocked_tab_main_main')
+		Close('unlocked_tab_main_time')
 	}
 	
 	Close('unlocked_tab_room_storage')
@@ -92,6 +114,7 @@ function firstTab(){
 		Close('tab_room_sub_upg')
 		Close('tab_time')
 		Close('tab_time_challenge')
+		Close('tab_main_time')
 		tab = false
 	}
 }
@@ -123,6 +146,20 @@ function showTab(id){
 }
 
 function showTabMain(id){
+	if(id=="main_main"){
+		Open("tab_main_main")
+	}else{
+		
+	}
+
+	if(id=="main_time"){
+		Open("tab_main_time")
+		Close("tab_main_main")
+	}else{
+		Close("tab_main_time")
+		Open("tab_main_main")
+	}
+
 	if(id=="room_upg"){
 		Open("tab_room_upg")
 	}else{

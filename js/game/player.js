@@ -67,12 +67,34 @@ function calcPlayer(){
 	
 	NotOmegaLoader(['time_challenge'],"time_challenge_0")
 	NotOmegaLoader(['time_challenge_doing'],"nothing")
+
+	NotOmegaLoader(['time_challenge_finish_1'],"nothing")//时速
+	NotOmegaLoader(['time_challenge_finish_2'],"nothing")//储存
+	NotOmegaLoader(['time_challenge_finish_3'],"nothing")//虚无
+	NotOmegaLoader(['time_challenge_finish_4'],"nothing")//压缩
 	
 	NotOmegaLoader(['showTime'],"false")
 	
 	loader(['time_space'],n(0))
 	loader(['time_buy_1'],n(0))
 	
+	loader(['time_challenge1_points'],n(0))
+	loader(['time_challenge1_buy_1'],n(0))
+	loader(['time_challenge1_buy_1_distorted'],n(0))
+	loader(['time_challenge1_buy_2'],n(0))
+	loader(['time_challenge1_buy_2_distorted'],n(0))
+	loader(['time_challenge1_buy_3'],n(0))
+	loader(['time_challenge1_buy_3_distorted'],n(0))
+	loader(['time_challenge1_buy_4'],n(0))
+	loader(['time_challenge1_buy_4_distorted'],n(0))
+	loader(['time_challenge1_buy_5'],n(0))
+	loader(['time_challenge1_buy_6'],n(0))
+	loader(['time_challenge1_buy_6_distorted'],n(0))
+	loader(['time_challenge1_buy_7'],n(0))
+	loader(['time_challenge1_buy_7_distorted'],n(0))
+	loader(['time_challenge1_buy_8'],n(0))
+	loader(['time_challenge1_buy_8_distorted'],n(0))
+
 	loader(['devSpeed'],n(1))
 	NotOmegaLoader(['autoSave'],"true")
 	NotOmegaLoader(['saveTick'],"false")

@@ -1,31 +1,53 @@
-.time_space {
-	text-align: center;
-	font-size: 23px;
-	color:rgb(0,100,0);
-	text-shadow: 0 0 10px rgb(0,206,0);
-	border-radius: 9px;
-}
-
 .time_buy {
     background: #FFFFFF;
+    font-weight: bold;
+    vertical-align:text-top;
+    border-color: inherit;
     font-weight: bold;
     border: 2px solid rgb(0,100,0);
     border-radius: 6px;
     transition-duration: 0.2s;
-    cursor: pointer;
+    cursor: not-allowed;
 	font-family: Typewriter;
     display: inline-block;
 	color:rgb(0,100,0);
-	height:120px;
-	width:250px;
+	height:200px;
+	width:200px;
 }
 
 .time_buy:hover {
 	color:rgb(0, 206, 0);
-	
 }
 
 .time_buy_can {
 	box-shadow:rgb(0,206,0) 0px 0px 10px 0px;
 	border: 2px solid rgb(0,206,0);
+    cursor: pointer;
+}
+
+.time_challenge1_buy {
+    background: #FFFFFF;
+    text-align: center;
+	vertical-align:text-top;
+    border-color: inherit;
+    font-weight: bold;
+    border: 2px solid rgb(150,100,0);
+    border-radius: 6px;
+    transition-duration: 0.2s;
+    cursor: not-allowed;
+	font-family: Typewriter;
+    display: inline-block;
+	color:rgb(150, 100, 0);
+	height:120px;
+	width:250px;
+}
+
+.time_challenge1_buy:hover {
+	color:rgb(250, 206, 0);
+}
+
+.time_challenge1_buy_can {
+	box-shadow:rgb(250,206,0) 0px 0px 10px 0px;
+	border: 2px solid rgb(250,206,0);
+    cursor: pointer;
 }

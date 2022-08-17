@@ -13,7 +13,8 @@ function time_challenge(){
 function GainTime_space(){
 	let base = n(0)
 	if(player.hasRoomUpg12=='true' || player.showTime=="true"){base = n(1)}
-	return n(1)
+	if(player.time_challenge_finish_1=='finish'){base = base.mul(100)}
+	return base
 }
 
 function timeBuyCost(id){
@@ -25,22 +26,16 @@ function timeBuyCost(id){
 
 function timeBuyEff(id){
 	if(id==1){
-		let eff = player.time_buy_1.mul(1.5).add(1).pow(player.time_buy_1.div(50).add(1)).sub(1).max(0)
+		let eff = player.time_buy_1.mul(1.5).add(1).pow(player.time_buy_1.div(10).add(1)).sub(1).max(0)
 		return eff
 	}
 }
 
 function timeBuyNextEff(id){
 	if(id==1){
-		let eff = player.time_buy_1.add(1).mul(1.5).add(1).pow(player.time_buy_1.div(50).add(1)).sub(1).max(0)
+		let eff = player.time_buy_1.add(1).mul(1.5).add(1).pow(player.time_buy_1.div(10).add(1)).sub(1).max(0)
 		return eff
 	}
-}
-
-function timeBuyAllEff(){
-	let sp = n(1)
-	sp = sp.mul(n(timeBuyEff(1)).add(1))
-	return sp
 }
 
 function buyTime(id){

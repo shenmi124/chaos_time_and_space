@@ -10,6 +10,10 @@ function getDocInt(id,id2){
 	document.getElementById(id+"ID").innerHTML = format(id2,0);
 }
 
+function getDocFiv(id,id2){
+	document.getElementById(id+"ID").innerHTML = format(id2,5);
+}
+
 function getBuyDoc(id,id2){
 	document.getElementById(id+"ID").innerHTML = id2;
 }
@@ -119,13 +123,17 @@ function getID(){
 	if(player.time_challenge=="time_challenge_0"){
 		getBuyDoc("time_challenge","鼠标移动并点击一个色块查看详情")
 	}else if(player.time_challenge=="time_challenge_1"){
-		getBuyDoc("time_challenge","<h3>时速挑战</h3><small>效果:时间倍率只有0.00001倍<br>扩张:在时间中解锁时速页面以及购买项<br>目标:解锁时间<br>奖励:永久解锁时速页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>时速挑战<a id='time_challenge_finish_1ID'></a></h3><small>效果:时间倍率只有0.0001倍<br>扩张:在时间中解锁时速页面以及购买项<br>目标:解锁时间<br>奖励:永久解锁时速页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge_finish_1",player.time_challenge_finish_1=='finish' ? "(已完成)" : '')
 	}else if(player.time_challenge=="time_challenge_2"){
-		getBuyDoc("time_challenge","<h3>储存挑战</h3><small>效果:非点数资源获得硬上限<br>扩张:在空间中解锁储存页面,储存可以根据存储数量完成挑战获得加成并推迟硬上限<br>目标:解锁时间<br>奖励:永久解锁储存页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>储存挑战<a id='time_challenge_finish_2ID'></a></h3><small>效果:非点数资源获得硬上限<br>扩张:在空间中解锁储存页面,储存可以根据存储数量完成挑战获得加成并推迟硬上限<br>目标:解锁时间<br>奖励:永久解锁储存页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge_finish_2",player.time_challenge_finish_2=='finish' ? "(已完成)" : '')
 	}else if(player.time_challenge=="time_challenge_3"){
-		getBuyDoc("time_challenge","<h3>虚无挑战</h3><small>效果:除了'空间时间'外的升级将无法购买<br>扩张:在时空中解锁虚无页面,生产虚无获得加成<br>目标:解锁时间<br>奖励:永久解锁虚无页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>虚无挑战<a id='time_challenge_finish_3ID'></a></h3><small>效果:除了'空间时间'外的升级将无法购买<br>扩张:在时空中解锁虚无页面,生产虚无获得加成<br>目标:解锁时间<br>奖励:永久解锁虚无页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge_finish_3",player.time_challenge_finish_3=='finish' ? "(已完成)" : '')
 	}else if(player.time_challenge=="time_challenge_4"){
-		getBuyDoc("time_challenge","<h3>压缩挑战</h3><small>效果:超过1的时间速率效果将大幅度减弱<br>扩张:在空间中解锁压缩页面,压缩时空间获得加成<br>目标:解锁时间<br>奖励:永久解锁压缩页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge","<h3>压缩挑战<a id='time_challenge_finish_4ID'></a></h3><small>效果:超过1的时间速率效果将大幅度减弱<br>扩张:在空间中解锁压缩页面,压缩时空间获得加成<br>目标:解锁时间<br>奖励:永久解锁压缩页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
+		getBuyDoc("time_challenge_finish_4",player.time_challenge_finish_4=='finish' ? "(已完成)" : '')
 	}
 	
 	if(player.time_challenge=="time_challenge_1" && player.time_challenge_doing=="doing"){
@@ -139,7 +147,7 @@ function getID(){
 	}else{
 		getBuyDoc("time_challenge_doing","<br>")
 	}
-	
+
 	getDoc('time_space',player.time_space)
 	getDoc('GainTime_space',GainTime_space())
 
@@ -149,29 +157,88 @@ function getID(){
 	getDoc('timeBuyNextEff1',timeBuyNextEff(1))
 	getDoc('timeBuyAllEff',timeBuyAllEff())
 
+	getBuyDoc('main_br',((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_1') || player.time_challenge_finish_1=='finish') || ((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_3') || player.time_challenge_finish_3=='finish') ? '<br><br>' : '')
+
+	getBuyDoc("time_challenge_finish",player.time_challenge_doing=='doing' ? "并完成挑战" : "")
 	
+	getDoc('time_challenge_points_1',player.time_challenge1_points)
+	getDoc('GainTimeChallenge1Points',GainTimeChallenge1Points())
+	getDoc('timeChallenge1Eff',timeChallenge1Eff())
+
+	getDocInt('time_challenge1_buy_1',player.time_challenge1_buy_1)
+	getDoc('time_challenge1_buy_1_distorted',player.time_challenge1_buy_1_distorted)
+	getDoc('timeChallenge1BuyEff1',timeChallenge1BuyEff(1))
+	getDoc('GainTimeChallenge1ToPoints',GainTimeChallenge1Points())
+	getDoc('timeChallenge1BuyNextEff1',timeChallenge1BuyNextEff(1))
+	getDoc('timeChallenge1BuyCost1',timeChallenge1BuyCost(1))
+
+	getDocInt('time_challenge1_buy_2',player.time_challenge1_buy_2)
+	getDoc('time_challenge1_buy_2_distorted',player.time_challenge1_buy_2_distorted)
+	getDoc('timeChallenge1BuyEff2',timeChallenge1BuyEff(2))
+	getDoc('GainTimeChallenge1To1',GainTimeChallenge1Dim1())
+	getDoc('timeChallenge1BuyNextEff2',timeChallenge1BuyNextEff(2))
+	getDoc('timeChallenge1BuyCost2',timeChallenge1BuyCost(2))
+
+	getDocInt('time_challenge1_buy_3',player.time_challenge1_buy_3)
+	getDoc('time_challenge1_buy_3_distorted',player.time_challenge1_buy_3_distorted)
+	getDoc('timeChallenge1BuyEff3',timeChallenge1BuyEff(3))
+	getDoc('GainTimeChallenge1To2',GainTimeChallenge1Dim2())
+	getDoc('timeChallenge1BuyNextEff3',timeChallenge1BuyNextEff(3))
+	getDoc('timeChallenge1BuyCost3',timeChallenge1BuyCost(3))
+
+	getDocInt('time_challenge1_buy_4',player.time_challenge1_buy_4)
+	getDoc('time_challenge1_buy_4_distorted',player.time_challenge1_buy_4_distorted)
+	getDoc('timeChallenge1BuyEff4',timeChallenge1BuyEff(4))
+	getDoc('GainTimeChallenge1To3',GainTimeChallenge1Dim3())
+	getDoc('GainTimeChallenge1To4',GainTimeChallenge1Dim4())
+	getDoc('timeChallenge1BuyNextEff4',timeChallenge1BuyNextEff(4))
+	getDoc('timeChallenge1BuyCost4',timeChallenge1BuyCost(4))
+
+	getDocInt('time_challenge1_buy_5',player.time_challenge1_buy_5)
+	getDoc('timeChallenge1BuyCost5',timeChallenge1BuyCost(5))
+	getBuyDoc("timeChallenge1BuyAuto1",player.time_challenge1_buy_5.gte(1) ? "1.自动购买加速度且购买加速度无消耗<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto2",player.time_challenge1_buy_5.gte(2) ? "2.自动购买加加速度且购买加加速度无消耗<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto3",player.time_challenge1_buy_5.gte(3) ? "3.自动购买加加加速度且购买加加加速度无消耗<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto4",player.time_challenge1_buy_5.gte(4) ? "4.自动购买光<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto5",player.time_challenge1_buy_5.gte(5) ? "5.自动购买加速度快100倍<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto6",player.time_challenge1_buy_5.gte(6) ? "6.自动购买加加速度快100倍<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto7",player.time_challenge1_buy_5.gte(7) ? "7.自动购买加加加速度快100倍<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto8",player.time_challenge1_buy_5.gte(8) ? "8.购买光无消耗且不重置任何<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto9",player.time_challenge1_buy_5.gte(9) ? "9.自动购买重力势能且购买重力势能无消耗<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto10",player.time_challenge1_buy_5.gte(10) ? "10.自动购买磁场势能且购买磁场势能无消耗<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto11",player.time_challenge1_buy_5.gte(11) ? "11.自动购买分子势能且购买分子势能无消耗<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto12",player.time_challenge1_buy_5.gte(12) ? "12.将所有时速购买项倍率提升log<sub>10</sub>(机械能),自动购买机械能<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto13",player.time_challenge1_buy_5.gte(13) ? "13.将所有时速购买项生产速度*1000,但是你只能获得最多10秒的资源<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto14",player.time_challenge1_buy_5.gte(14) ? "14.每个机械能使机械能消耗指数+0.2,重置时保留10%的格外时速购买项<br>" : "")
+
+	getDocInt('time_challenge1_buy_6',player.time_challenge1_buy_6)
+	getDoc('time_challenge1_buy_6_distorted',player.time_challenge1_buy_6_distorted)
+	getDoc('timeChallenge1BuyEff6',timeChallenge1BuyEff(6))
+	getDocFiv('timeChallenge1PotEff6',timeChallenge1PotEff(6))
+	getDoc('GainTimeChallenge1To7',GainTimeChallenge1Dim6())
+	getDoc('timeChallenge1BuyNextEff6',timeChallenge1BuyNextEff(6))
+	getDoc('timeChallenge1BuyCost6',timeChallenge1BuyCost(6))
+
+	getDocInt('time_challenge1_buy_7',player.time_challenge1_buy_7)
+	getDoc('time_challenge1_buy_7_distorted',player.time_challenge1_buy_7_distorted)
+	getDoc('timeChallenge1BuyEff7',timeChallenge1BuyEff(7))
+	getDocFiv('timeChallenge1PotEff7',timeChallenge1PotEff(7))
+	getDoc('GainTimeChallenge1To8',GainTimeChallenge1Dim7())
+	getDoc('timeChallenge1BuyNextEff7',timeChallenge1BuyNextEff(7))
+	getDoc('timeChallenge1BuyCost7',timeChallenge1BuyCost(7))
+
+	getDocInt('time_challenge1_buy_8',player.time_challenge1_buy_8)
+	getDoc('time_challenge1_buy_8_distorted',player.time_challenge1_buy_8_distorted)
+	getDoc('timeChallenge1BuyEff8',timeChallenge1BuyEff(8))
+	getDocFiv('timeChallenge1PotEff8',timeChallenge1PotEff(8))
+	getDoc('GainTimeChallenge1To6',GainTimeChallenge1Dim8())
+	getDoc('timeChallenge1BuyNextEff8',timeChallenge1BuyNextEff(8))
+	getDoc('timeChallenge1BuyCost8',timeChallenge1BuyCost(8))
+
+
+
 	getBuyDoc("devSpeed",player.devSpeed.eq(1) ? "" : " [开发者模式] 全局时间倍率:<a class='timespeed'>"+format(player.devSpeed)+"</a>×")
 	getBuyDoc("autoSave",player.autoSave=="true" ? "开" : "关")
-}
-
-function layer_UpgEff(){
-	player.roomUpgEff1 = n(0)
-	player.roomUpgEff2 = n(0)
-	player.roomUpgEff6 = n(0)
-	player.roomUpgEff7 = n(0)
-	player.roomUpgEff8 = n(0)
-	player.roomSubUpgEff1 = n(0)
-	player.roomSubUpgEff2Red = n(0)
-	player.roomSubUpgEff2Green = n(0)
-	player.roomSubUpgEff2Blue = n(0)
-	player.roomSubUpgEff2Yellow = n(0)
-	player.roomSubUpgEff2Cyan = n(0)
-	player.roomSubUpgEff2Magenta = n(0)
-	player.roomSubUpgEff2White = n(0)
-	player.roomSubUpgEff4 = n(0)
-	player.roomSubUpgEff6 = n(0)
-	player.roomSubUpgEff7 = n(0)
-	player.roomSubUpgEff8 = n(0)
 }
 
 setInterval(function(){
@@ -203,6 +270,14 @@ setInterval(function(){
 	dimCss(2)
 	roomCss()
 	timeCss(1)
+	timeChallenge1Css(1)
+	timeChallenge1Css(2)
+	timeChallenge1Css(3)
+	timeChallenge1Css(4)
+	timeChallenge1Css(5)
+	timeChallenge1Css(6)
+	timeChallenge1Css(7)
+	timeChallenge1Css(8)
 	
 	player.points = player.points.add(GainPoints().mul(diff))
 	
@@ -232,4 +307,64 @@ setInterval(function(){
 	player.quark_blue = player.quark_blue.add(n(GainQuark()).mul(diff))
 	
 	player.time_space = player.time_space.add(n(GainTime_space()).mul(diff))
+
+	if(player.time_challenge1_buy_5.lte(12)){
+		player.time_challenge1_points = player.time_challenge1_points.add(n(GainTimeChallenge1Points()).mul(diff))
+		player.time_challenge1_buy_1_distorted = player.time_challenge1_buy_1_distorted.add(n(GainTimeChallenge1Dim1()).mul(diff))
+		player.time_challenge1_buy_2_distorted = player.time_challenge1_buy_2_distorted.add(n(GainTimeChallenge1Dim2()).mul(diff))
+		player.time_challenge1_buy_3_distorted = player.time_challenge1_buy_3_distorted.add(n(GainTimeChallenge1Dim3()).mul(diff))
+		player.time_challenge1_buy_4_distorted = player.time_challenge1_buy_4_distorted.add(n(GainTimeChallenge1Dim4()).mul(diff))
+		player.time_challenge1_buy_6_distorted = player.time_challenge1_buy_6_distorted.add(n(GainTimeChallenge1Dim6()).mul(diff))
+		player.time_challenge1_buy_7_distorted = player.time_challenge1_buy_7_distorted.add(n(GainTimeChallenge1Dim7()).mul(diff))
+		player.time_challenge1_buy_8_distorted = player.time_challenge1_buy_8_distorted.add(n(GainTimeChallenge1Dim8()).mul(diff))
+	}else{
+		player.time_challenge1_points = player.time_challenge1_points.add(n(GainTimeChallenge1Points()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Points()).mul(10000))
+		player.time_challenge1_buy_1_distorted = player.time_challenge1_buy_1_distorted.add(n(GainTimeChallenge1Dim1()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Dim1()).mul(10000))
+		player.time_challenge1_buy_2_distorted = player.time_challenge1_buy_2_distorted.add(n(GainTimeChallenge1Dim2()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Dim2()).mul(10000))
+		player.time_challenge1_buy_3_distorted = player.time_challenge1_buy_3_distorted.add(n(GainTimeChallenge1Dim3()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Dim3()).mul(10000))
+		player.time_challenge1_buy_4_distorted = player.time_challenge1_buy_4_distorted.add(n(GainTimeChallenge1Dim4()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Dim4()).mul(10000))
+		player.time_challenge1_buy_6_distorted = player.time_challenge1_buy_6_distorted.add(n(GainTimeChallenge1Dim6()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Dim6()).mul(10000))
+		player.time_challenge1_buy_7_distorted = player.time_challenge1_buy_7_distorted.add(n(GainTimeChallenge1Dim7()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Dim7()).mul(10000))
+		player.time_challenge1_buy_8_distorted = player.time_challenge1_buy_8_distorted.add(n(GainTimeChallenge1Dim8()).mul(1000).mul(diff)).min(n(GainTimeChallenge1Dim8()).mul(10000))
+	}
+	
+	let auto5 = false
+	let auto6 = false
+	let auto7 = false
+	if(player.time_challenge1_buy_5.gte(5)){auto5 = true}
+	if(player.time_challenge1_buy_5.gte(6)){auto6 = true}
+	if(player.time_challenge1_buy_5.gte(7)){auto7 = true}
+
+	if(player.time_challenge1_buy_5.gte(1)){
+		if(auto5==true){
+			for(col=1;col<=100;col++){
+				buyTimeChallenge1(1)
+			}
+		}else{
+			buyTimeChallenge1(1)
+		}
+	}
+	if(player.time_challenge1_buy_5.gte(2)){
+		if(auto6==true){
+			for(col=1;col<=100;col++){
+				buyTimeChallenge1(2)
+			}
+		}else{
+			buyTimeChallenge1(2)
+		}
+	}
+	if(player.time_challenge1_buy_5.gte(3)){
+		if(auto7==true){
+			for(col=1;col<=100;col++){
+				buyTimeChallenge1(3)
+			}
+		}else{
+			buyTimeChallenge1(3)
+		}
+	}
+	if(player.time_challenge1_buy_5.gte(4)){buyTimeChallenge1(4)}
+	if(player.time_challenge1_buy_5.gte(9)){buyTimeChallenge1(6)}
+	if(player.time_challenge1_buy_5.gte(10)){buyTimeChallenge1(7)}
+	if(player.time_challenge1_buy_5.gte(11)){buyTimeChallenge1(8)}
+	if(player.time_challenge1_buy_5.gte(12)){buyTimeChallenge1(5)}
 }, 50)

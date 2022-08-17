@@ -22,6 +22,7 @@ function restRoom(){
 function restRoom_distorted(){
 	player.room_distorted = player.room_distorted.add(player.room)
 	player.room = n(0)
+	layer_0()
 }
 
 //秒获得空间
@@ -55,6 +56,26 @@ function buyRoomUpg(id,id2){
 	if(player.room.gte(id2) && player['hasRoomUpg'+id]=="false"){
 		player['hasRoomUpg'+id]="true"
 		player.room = player.room.sub(id2)
+		if(id==12 && player.time_challenge_doing=='doing'){
+			if(player.time_challenge=='time_challenge_1'){
+				player.time_challenge_finish_1 = 'finish'
+				player.time_challenge_doing = 'nothing'
+				player.time_challenge = 'time_challenge_0'
+			}else if(player.time_challenge=='time_challenge_2'){
+				player.time_challenge_finish_2 = 'finish'
+				player.time_challenge_doing = 'nothing'
+				player.time_challenge = 'time_challenge_0'
+			}else if(player.time_challenge=='time_challenge_3'){
+				player.time_challenge_finish_3 = 'finish'
+				player.time_challenge_doing = 'nothing'
+				player.time_challenge = 'time_challenge_0'
+			}else if(player.time_challenge=='time_challenge_4'){
+				player.time_challenge_finish_4 = 'finish'
+				player.time_challenge_doing = 'nothing'
+				player.time_challenge = 'time_challenge_0'
+			}
+		}
+		layer_0()
 	}
 }
 
@@ -70,6 +91,7 @@ function buyRoomSubUpg(id,id2){
 	if(player.room_sub.gte(id2) && player['hasRoomSubUpg'+id]=="false"){
 		player['hasRoomSubUpg'+id]="true"
 		player.room_sub = player.room_sub.sub(id2)
+		layer_0()
 	}
 }
 

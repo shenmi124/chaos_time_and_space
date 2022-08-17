@@ -89,3 +89,22 @@
 	background: #000000;
 	color:rgb(0,206,0);
 }
+
+.tabbtn5 {
+    background: #E0E0E0;
+    font-weight: bold;
+    border: 2px solid #fffb00;
+    box-shadow: #fffb00 0px 0px 5px 0px;
+    border-radius: 4px;
+    transition-duration: 0.15s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
+.tabbtn5:hover {
+	border: 2px solid #fffc51;
+	background: #E0E0E0;
+	color:#e1fffe;
+}

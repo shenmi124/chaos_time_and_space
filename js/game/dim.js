@@ -25,11 +25,13 @@ function buyDim(id){
 		if(player.points.gte(CostDim(id))){
 			player.points = player.points.sub(CostDim(id))
 			player['dim_'+id] = player['dim_'+id].add(1)
+			layer_0()
 		}
 	}else{
 		if(player['dim_'+(id-1)].gte(CostDim(id))){
 			player['dim_'+(id-1)] = player['dim_'+(id-1)].sub(CostDim(id))
 			player['dim_'+id] = player['dim_'+id].add(1)
+			layer_0()
 		}
 	}
 }

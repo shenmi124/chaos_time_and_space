@@ -13,3 +13,25 @@
 	border-radius: 9px;
 	text-shadow: 0 0 10px #67e1dd;
 }
+
+.rooms {
+	text-align: center;
+	color:#a3a3a3;
+	text-shadow: 0 0 10px #a3a3a3;
+	border-radius: 9px;
+}
+
+.time_space {
+	text-align: center;
+	font-size: 23px;
+	color:rgb(0,100,0);
+	text-shadow: 0 0 10px rgb(0,206,0);
+	border-radius: 9px;
+}
+
+.time_challenge_1_points {
+	text-align: center;
+	color:#a5af16d7;
+	text-shadow: 0 0 10px #f0fc51;
+	border-radius: 9px;
+}
