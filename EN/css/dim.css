@@ -1,0 +1,56 @@
+.can_buyDim {
+	cursor: pointer;
+	border: 2px solid rgb(0,200,0);
+}
+
+.can_buyDim:active {
+	transform: translateY(3px);
+}
+
+.can_buyDim:hover {
+	border: 2px solid rgb(0,150,0);
+}
+
+.dim1 {
+	background-color: #ffffff;
+	text-align: center;
+	font-family: verdana;
+	font-size: 13px;
+	height:28px;
+	width:300px;
+	color:#000000;
+	transition-duration: 0.2s;
+	box-shadow: #67e1dd 3px 4px 0px 0px;
+	border-radius: 9px;
+}
+
+.dim1_border {
+	border: 2px solid #000000;
+	cursor: not-allowed;
+}
+
+.dim1_border:hover {
+	border: 2px solid #67e1dd;
+}
+
+.dim2 {
+	background-color: #ffffff;
+	text-align: center;
+	font-family: verdana;
+	font-size: 13px;
+	height:28px;
+	width:300px;
+	color:#000000;
+	transition-duration: 0.2s;
+	box-shadow: #a3a3a3 3px 4px 0px 0px;
+	border-radius: 9px;
+}
+
+.dim2_border {
+	border: 2px solid #000000;
+	cursor: not-allowed;
+}
+
+.dim2_border:hover {
+	border: 2px solid #a3a3a3;
+}

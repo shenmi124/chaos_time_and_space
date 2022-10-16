@@ -1,327 +1,84 @@
-<html>
-
+<!DOCTYPE html>
 <head>
-	<title>混乱时空</title>
-	<meta charset="utf-8">
+	<title>Chaos Time And Space</title>
 	
-	<script src="js/number/break_eternity.js"></script>
-	<script src="js/number/LZString.js"></script>
+	<script src="pointer.js"></script>
+
+	<style>
+	body {
+		text-align: center;
+		font-family: verdana;
+		font-size: 20px;
+		cursor: default;
+	}
 	
-	<script src="js/load/save.js"></script>
-	<script src="js/game/player.js"></script>
-	<script src="js/load/load.js"></script>
-	<script src="js/number/format.js"></script>
-	<script src="js/load/js.js"></script>
-	<script src="js/load/tab.js"></script>
-	<script src="js/load/rest.js"></script>
-	<script src="js/setting/pointer.js"></script>
-	<script src="js/setting/setting.js"></script>
-	<script src="js/number/soft.js"></script>
+	a {
+		background: #E0E0E0;
+		font-weight: bold;
+		border: 2px solid #5e9aee;
+		border-radius: 4px;
+		transition-duration: 0.2s;
+		cursor: pointer;
+		font-family: Typewriter;
+		font-size: 20px;
+		display: inline-block;
+	}
 	
-	<script src="js/game/ts.js"></script>
-	<script src="js/game/dim.js"></script>
-	<script src="js/game/points.js"></script>
-	<script src="js/game/room.js"></script>
-	<script src="js/game/quark.js"></script>
-	<script src="js/game/time.js"></script>
-	<script src="js/game/challenge/challenge1.js"></script>
-	<script src="js/game/challenge/challenge2.js"></script>
+	a:-webkit-any-link {
+		color: #000000;
+		cursor: pointer;
+		text-decoration: none;
+	}
 	
-	<link rel="stylesheet" type="text/css" href="css/css.css"/>
-	<link rel="stylesheet" type="text/css" href="css/tabbtn.css"/>
-	<link rel="stylesheet" type="text/css" href="css/point.css"/>
-	<link rel="stylesheet" type="text/css" href="css/dim.css"/>
-	<link rel="stylesheet" type="text/css" href="css/room.css"/>
-	<link rel="stylesheet" type="text/css" href="css/rest.css"/>
-	<link rel="stylesheet" type="text/css" href="css/color.css"/>
-	<link rel="stylesheet" type="text/css" href="css/time.css"/>
-	<link rel="stylesheet" type="text/css" href="css/timeBox.css"/>
-	
+	a:hover {
+		background: #5e9aee;
+		font-weight: bold;
+		border: 2px solid #E0E0E0;
+	}
+
+	.points {
+		text-align: center;
+		font-size: 27px;
+		color:#000000;
+		text-shadow: 0 0 10px #000000;
+		border-radius: 9px;
+	}
+	</style>
 </head>
 
 <body>
-	<div class="version" style="margin-right: 13px;">v0.4.1.1</div>
-	<br>
-	<a id="time_challenge_doingID"></a>
-	你有<a id="pointsID" class="points"></a><a class="points">时空悖论</a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
-	时间速率×<a id="time_speedID" class="timespeed"></a><a id="devSpeedID"></a><br>
-	<small><small>残局:解锁时间</small></small>
-	<br>
-	<br>
-	<button onclick="showTab('setting')" class="tabbtn tabbtnSet">设置</button>
-	<button onclick="showTab('main')" class="tabbtn tabbtnMain">时空</button>
-	<button onclick="showTab('room')" class="tabbtn tabbtnRoom">空间</button>
-	<button onclick="showTab('time')" id="unlocked_tab_time" class="tabbtn tabbtnTime">时间</button>
+<br><br><br>
+	<t class="points">Chaos Time And Space(混乱时空)</t><br>Made By Shinwmyste(辉影神秘)
 	<br><br>
-	<mainTab id="tab_setting">
-		<br>
-		<tr>
-			<button onclick="autoSave()" class="tabbtnSet" style="width:200px;height:55px">自动保存:<a id="autoSaveID"></a></button>
-			<button onclick="prompt('下面是你的存档:',saveStr)" id="export" class="tabbtnSet" style="width:200px;height:55px">导出</button>
-			<button onclick="load(prompt('输入存档:'))" id="import" class="tabbtnSet" style="width:200px;height:55px">导入</button>  
-		</tr><br><br>
-		<tr>
-			<button onclick="save()" class="tabbtnSet" style="width:200px;height:55px">保存<a id="autoSaveID"></a></button>
-			<button onclick="if(!!confirm('你确定要硬重置吗?这样你将失去一切!!!')){if(!!confirm('这个存档将永远失去!(很长时间!)')){toClearSave = true}}" id="export" class="tabbtnSet" style="width:200px;height:55px">硬重置</button>
-			<a href="https://afdian.net/@Mysterious124" target="_blank"><button id="import" class="tabbtnSet" style="width:200px;height:55px">捐助作者</button></a>
-		</tr>
-	</mainTab>
-	<mainTab id="tab_main">
-		<button id='unlocked_tab_main_main' onclick="showTabMain('main_main')" class="tabbtn tabbtnMain">主页面</button>
-		<button id='unlocked_tab_main_time' onclick="showTabMain('main_time')" class="tabbtn tabbtnTimeChange1">时速</button>
-		<a id="main_brID"></a>
-		<mainTab id="tab_main_main">
-			<div style="display: table-cell;">
-				<table cellpadding="8" style="font-family: Typewriter;">
-					<tr>
-						<td></td>
-						<td>&nbsp;&nbsp;</td>
-						<td>数量</td>
-						<td>&nbsp;&nbsp;</td>
-						<td>格外数量</td>
-						<td>&nbsp;&nbsp;</td>
-						<td>获取</td>
-						<td>&nbsp;&nbsp;</td>
-						<td>倍率</td>
-						<td>&nbsp;&nbsp;</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td id='unlocked_dim1_button'>扭曲时空</td>
-						<td></td>
-						<td><a id="dim_1ID"></a></td>
-						<td></td>
-						<td><a id="dim_1_additionaID"></a></td>
-						<td></td>
-						<td>(+<a id="GainDim_1ID"></a>/sec)</td>
-						<td></td>
-						<td><a id="dim_1_mulID"></a>×</td>
-						<td></td>
-						<td><button onclick="buyDim(1)" id='dim1ButtonCss' class=" dim1">消耗: <a id="CostDim_1ID"></a> 时空悖论</button></td>
-					</tr>
-					<tr id="unlocked_dim2_button">
-						<td>扭曲维度</td>
-						<td></td>
-						<td><a id="dim_2ID"></a></td>
-						<td></td>
-						<td><a id="dim_2_additionaID"></a></td>
-						<td></td>
-						<td>(+<a id="GainDim_2ID"></a>/sec)</td>
-						<td></td>
-						<td><a id="dim_2_mulID"></a>×</td>
-						<td></td>
-						<td><button onclick="buyDim(2)" id='dim2ButtonCss' class="dim2">消耗: <a id="CostDim_2ID"></a> 扭曲时空</button>
-						</td>
-					</tr>
-				</table>
-			</div><br><br>
-			<small><small><small>扭曲时空每秒会生产(1×自身倍率)时空悖论</small></small></small><br>
-			<a id="unlocked_dim2"><small><small><small>(如果买得起扭曲时空)扭曲维度每秒会生产(扭曲维度<sup>2</sup>×自身倍率)扭曲时空并×(扭曲维度×1.5×扭曲维度倍率)扭曲时空倍率</small></small></small><br></a>
-		</mainTab>
-		<mainTab id="tab_main_time">
-			你有<a id="time_challenge_points_1ID" class="time_challenge_1_points"></a><a class="time_challenge_1_points">时速能量</a>,它们使你的时间速率加快<a id="timeChallenge1EffID"></a>×<br>
-			<small>(+<a id="GainTimeChallenge1PointsID"></a>/sec)</small><br>
-			<small><small><small>(时速能量不会被时间速率的影响)</small></small></small><br>
-			<small><small><small>当你购买任何时空,购买空间和子空间升级,扭曲时空,分配夸克,进行任何重置时你将损失全部的<a class="time_challenge_1_points">时速能量</a>以及全部格外的时速购买项</small></small></small><br><br>
-			<div style="display: table-cell;">
-				<div style="float: right;">
-					<button onclick="buyTimeChallenge1(5)" id="time_challenge1_buy_5" class="time_challenge1_buy" style="height: 525px; ">机械能(<a id="time_challenge1_buy_5ID"></a>)<br>购买机械能以获取自动化<br>目前效果:<br><a id='timeChallenge1BuyAuto1ID'></a><a id='timeChallenge1BuyAuto2ID'></a><a id='timeChallenge1BuyAuto3ID'></a><a id='timeChallenge1BuyAuto4ID'></a><a id='timeChallenge1BuyAuto5ID'></a><a id='timeChallenge1BuyAuto6ID'></a><a id='timeChallenge1BuyAuto7ID'></a><a id='timeChallenge1BuyAuto8ID'></a><a id='timeChallenge1BuyAuto9ID'></a><a id='timeChallenge1BuyAuto10ID'></a><a id='timeChallenge1BuyAuto11ID'></a><a id='timeChallenge1BuyAuto12ID'></a><a id='timeChallenge1BuyAuto13ID'></a><a id='timeChallenge1BuyAuto14ID'></a><br><br>消耗:<a id="timeChallenge1BuyCost5ID"></a></button>
-				</div>
-				<div style="width:1050px">
-					<button onclick="buyTimeChallenge1(1)" id="time_challenge1_buy_1" class="time_challenge1_buy">加速度(<a id="time_challenge1_buy_1ID"></a>+<a id='time_challenge1_buy_1_distortedID'></a>)<br>倍率<a id="timeChallenge1BuyEff1ID"></a>×<br>生产<a id="GainTimeChallenge1ToPointsID"></a>时速能量/sec<br>下一级:×<a id="timeChallenge1BuyNextEff1ID"></a><br>消耗:<a id="timeChallenge1BuyCost1ID"></a>时速能量</button>
-					<button onclick="buyTimeChallenge1(2)" id="time_challenge1_buy_2" class="time_challenge1_buy">加加速度(<a id="time_challenge1_buy_2ID"></a>+<a id='time_challenge1_buy_2_distortedID'></a>)<br>倍率<a id="timeChallenge1BuyEff2ID"></a>×<br>生产<a id="GainTimeChallenge1To1ID"></a>加速度/sec<br>下一级:×<a id="timeChallenge1BuyNextEff2ID"></a><br>消耗:<a id="timeChallenge1BuyCost2ID"></a>时速能量</button>
-					<button onclick="buyTimeChallenge1(3)" id="time_challenge1_buy_3" class="time_challenge1_buy">加加加速度(<a id="time_challenge1_buy_3ID"></a>+<a id='time_challenge1_buy_3_distortedID'></a>)<br>倍率<a id="timeChallenge1BuyEff3ID"></a>×<br>生产<a id="GainTimeChallenge1To2ID"></a>加加速度/sec<br>下一级:×<a id="timeChallenge1BuyNextEff3ID"></a><br>消耗:<a id="timeChallenge1BuyCost3ID"></a>时速能量</button>
-					<button onclick="buyTimeChallenge1(4)" id="time_challenge1_buy_4" class="time_challenge1_buy" style="width: 765px;height: 240px;font-size: 23px; margin-top: 20px;">光(<a id="time_challenge1_buy_4ID"></a>+<a id='time_challenge1_buy_4_distortedID'></a>)<br>对于光及加速度,加加速度,加加加速度的倍率<a id="timeChallenge1BuyEff4ID"></a>×<br>生产<a id="GainTimeChallenge1To3ID"></a>加加加速度和<a id="GainTimeChallenge1To4ID"></a>光/sec<br>下一级:×<a id="timeChallenge1BuyNextEff4ID"></a><br>消耗:<a id="timeChallenge1BuyCost4ID"></a>时速能量<br><small><small>购买时将重置之前的所有时速资源</small></small></button><br><br>
-				</div>
-				<div style="width:1050px">
-					<button onclick="buyTimeChallenge1(6)" id="time_challenge1_buy_6" class="time_challenge1_buy">重力势能(<a id="time_challenge1_buy_6ID"></a>+<a id='time_challenge1_buy_6_distortedID'></a>)<br>倍率<a id="timeChallenge1BuyEff6ID"></a>×<br>生产<a id="GainTimeChallenge1To7ID"></a>磁场势能/sec并使时间速率加成指数×<a id="timeChallenge1PotEff6ID"></a><br>下一级:×<a id="timeChallenge1BuyNextEff6ID"></a><br>消耗:<a id="timeChallenge1BuyCost6ID"></a>时速能量</button>
-					<button onclick="buyTimeChallenge1(7)" id="time_challenge1_buy_7" class="time_challenge1_buy">磁场势能(<a id="time_challenge1_buy_7ID"></a>+<a id='time_challenge1_buy_7_distortedID'></a>)<br>倍率<a id="timeChallenge1BuyEff7ID"></a>×<br>生产<a id="GainTimeChallenge1To8ID"></a>分子势能/sec并使自己除外的全部时速购买项倍率×<a id="timeChallenge1PotEff7ID"></a><br>下一级:×<a id="timeChallenge1BuyNextEff7ID"></a><br>消耗:<a id="timeChallenge1BuyCost7ID"></a>时速能量</button>
-					<button onclick="buyTimeChallenge1(8)" id="time_challenge1_buy_8" class="time_challenge1_buy">分子势能(<a id="time_challenge1_buy_8ID"></a>+<a id='time_challenge1_buy_8_distortedID'></a>)<br>倍率<a id="timeChallenge1BuyEff8ID"></a>×<br>生产<a id="GainTimeChallenge1To6ID"></a>重力势能/sec并使全部时速购买项消耗^<a id="timeChallenge1PotEff8ID"></a><br>下一级:×<a id="timeChallenge1BuyNextEff8ID"></a><br>消耗:<a id="timeChallenge1BuyCost8ID"></a>时速能量</button>
-				</div>
-			</div>
-		</mainTab>
-	</mainTab>
-	<mainTab id="tab_room">
-		<small><small><small>50时空悖论以重置</small></small></small><br>
-		你有<a id="roomID" class="rooms"></a><a class="rooms">空间</a><br>
-		<small><a id="GainRoomID"></a></small><br>
-		<br>
-		<button onclick="restRoom()" id="button_room_rest" class="button_rest_room">重置时空以获得空间<br>现在你可以获得:<a id="resetRoomGainID"></a>空间</button>
-		<br><br>
-		<button onclick="showTabMain('room_upg')" class="tabbtn tabbtnRoom">升级</button>
-		<button onclick="showTabMain('room_distorted')" class="tabbtn tabbtnRoom">扭曲</button>
-		<button onclick="showTabMain('room_chest')"  id="unlocked_tab_room_chest" class="tabbtn tabbtnRoom">储存</button>
-		<br><br>
-		<mainTab id="tab_room_upg">
+	Choose a language<br>选择语言<br><br>
+	<a href="EN/index.html">&nbspEnglish&nbsp </a><br><br>
+	<a href="CN/index.html">&nbsp中文&nbsp </a><br><br>
+	<br>
+	Thanks to the following / 感谢以下人员<br><br>
+	<div style="display: inline-block;">
+		<table cellpadding="8" style="font-family: Typewriter;">
 			<tr>
-				<button onclick="buyRoomUpg(1,1)" id="roomUpg1" class="rooms_upg">空间利用<a id="buyRoomUpg1ID"></a><br>每个扭曲时空都会给予0.1个额外的扭曲时空<br>当前效果:+<a id="roomUpgEff1ID"></a><br>消耗:1空间</button>
-				<button onclick="buyRoomUpg(2,2)" id="roomUpg2" class="rooms_upg">空间循环<a id="buyRoomUpg2ID"></a><br>额外扭曲时空都会给扭曲时空乘数<br>当前效果:×<a id="roomUpgEff2ID"></a><br>消耗:2空间</button>
-				<button onclick="buyRoomUpg(3,4)" id="roomUpg3" class="rooms_upg">空间管理<a id="buyRoomUpg3ID"></a><br>改善空间公式<br>(log50->log5)<br>消耗:4空间</button>
-				<button onclick="buyRoomUpg(4,8)" id="roomUpg4" class="rooms_upg">空间混乱<a id="buyRoomUpg4ID"></a><br>当你时空悖论足够购买扭曲时空时每秒获得0.5扭曲时空且每次重置空间时都会获得2扭曲时空<br>消耗:8空间</button>
+				<td>QwQe308</td>
+				<td>Provide the save.js(提供save.js)</td>
 			</tr>
-			<br><br>
-			<mainTab id="tab_room_upg1">
-				<tr>
-					<button onclick="buyRoomUpg(5,18)" id="roomUpg5" class="rooms_upg">空间生产<a id="buyRoomUpg5ID"></a><br>改善空间公式<br>(^0.7->^1.15)<br>消耗:18空间</button>
-					<button onclick="buyRoomUpg(6,45)" id="roomUpg6" class="rooms_upg">空间自产<a id="buyRoomUpg6ID"></a><br>每秒获得重置时可获得的空间<br>当前效果:+<a id="roomUpgEff6ID"></a>/sec<br>消耗:45空间</button>
-					<button onclick="buyRoomUpg(7,1000)" id="roomUpg7" class="rooms_upg">空间提升<a id="buyRoomUpg7ID"></a><br>每秒自动扭曲10%的空间且自动扭曲空间无效耗同时改善扭曲空间加成公式<br>(^1.25->^2.75)<br>当前效果:+<a id="roomUpgEff7ID"></a>/sec<br>消耗:1000空间</button>
-					<button onclick="buyRoomUpg(8,30000)" id="roomUpg8" class="rooms_upg">空间消散<a id="buyRoomUpg8ID"></a><br>扭曲空间时有0.000,000,1%的空间会被无消耗并转化为子空间,子空间提高空间生产<br>当前效果:+<a id="roomUpgEff8ID"></a>/sec<br>消耗:30000空间</button>
-				</tr>
-				<br><br>
-			</mainTab>
-			<mainTab id="tab_room_upg2">
-				<tr>
-					<button onclick="buyRoomUpg(9,2e5)" id="roomUpg9" class="rooms_upg">空间夸克<a id="buyRoomUpg9ID"></a><br>在扭曲中解锁夸克面板<br>消耗:200,000空间</button>
-					<button onclick="buyRoomUpg(10,1e8)" id="roomUpg10" class="rooms_upg">空间升级<a id="buyRoomUpg10ID"></a><br>在扭曲中解锁升级面板<br>消耗:100,000,000空间</button>
-					<button onclick="buyRoomUpg(11,'1e30')" id="roomUpg11" class="rooms_upg">空间维度<a id="buyRoomUpg11ID"></a><br>在时空中解锁扭曲维度,它可以生产扭曲时空<br>消耗:1e30空间</button>
-					<button onclick="buyRoomUpg(12,'1e35')" id="roomUpg12" class="rooms_upg">空间时间<a id="buyRoomUpg12ID"></a><br>解锁时间<a id='time_challenge_finishID'></a><br>消耗:1e35空间</button>
-				</tr>
-				<br><br>
-			</mainTab>
-		</mainTab>
-		<mainTab id="tab_room_distorted">
-			你现在有:<a id="room_distortedID" class="rooms"></a><a class="rooms">扭曲空间</a>,它们将你的时间速率×<a id="room_distorted_speedID" class="timespeed"></a><br>
-			<small><a id="GainRoom_progressID"></a></small><br>
-			<br>
-			<button onclick="restRoom_distorted()" class="button_rest_room">将所有空间转换为扭曲空间</button>
-			<br><br><br>
-			<mainTab id="tab_room_sub">
-				你现在有:<a id="room_subID" class="rooms"></a><a class="rooms">子空间</a>,它们将你的空间获取×<a id="room_sub_BoostroomID"></a><br>
-				<small><a id="GainRoom_subID"></a></small><br>
-				<br><br>
-				<button onclick="showTabMainSub('room_sub_quark')" id="unlocked_tab_room_quark" class="tabbtn tabbtnQuark">夸克</button>
-				<button onclick="showTabMainSub('room_sub_upg')" id="unlocked_tab_room_upg" class="tabbtn tabbtnRoom">子升级</button>
-				<mainTab id="tab_room_sub_quark">
-					<br><br>
-					<small><small><small>30子空间以重置<br>重置夸克时会使先前大部分内容持续显示<br>红+绿=黄,绿+蓝=青,蓝+红=紫</small></small></small><br>
-					你现在有:<a id="quarkID" class="quarks"></a><a class="quarks">夸克</a><br>
-					<small><a id="GainQuarkRestID"></small></a>
-					<br>
-					<button onclick="restQuark()" class="button_rest_quark" id="button_quark_rest">解构之前的所有内容以来重塑夸克<br>现在你可以获得:<a id="resetQuarkGainID"></a>个夸克<br><small><a id="restQuarkTaxtID"></a></small></button>
-					<br><br><br>
-					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
-						<button onclick="restQuark_to_red()" class="button_rest_quark_to_red">将所有夸克转换为红夸克</button><br>
-						你现在有:<a id="quark_redID" class="red"/><a class="red">红夸克<a id="GainQuark_redID"></a></a><br>它们每秒会生产<a id="gain_quark_redID" class="red"/><a class="red">红元素</a><br><br>
-						你现在有<a id="redID" class="red"/><a class="red">红元素</a><a id="GainRedID"></a><br>它们将空间利用效果提升<a id="RedEffectID"></a>倍<br>
-					</div>
-					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
-						<button onclick="restQuark_to_green()" class="button_rest_quark_to_green">将所有夸克转换为绿夸克</button><br>
-						你现在有:<a id="quark_greenID" class="green"/><a class="green">绿夸克<a id="GainQuark_greenID"></a></a></a><br>它们每秒会生产<a id="gain_quark_greenID" class="green"/><a class="green">绿元素</a><br><br>
-						你现在有<a id="greenID" class="green"/><a class="green">绿元素</a><a id="GainGreenID"></a><br>它们将每秒给予<a id="GreenEffectID"></a>空间<br>
-					</div>
-					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
-						<button onclick="restQuark_to_blue()" class="button_rest_quark_to_blue">将所有夸克转换为蓝夸克</button><br>
-						你现在有:<a id="quark_blueID" class="blue"/><a class="blue">蓝夸克<a id="GainQuark_blueID"></a></a><br>它们每秒会生产<a id="gain_quark_blueID" class="blue"/><a class="blue">蓝元素</a><br><br>
-						你现在有<a id="blueID" class="blue"/><a class="blue">蓝元素</a><a id="GainBlueID"></a><br>它们将时空悖论生产提升<a id="BlueEffectID"></a>倍<br>
-					</div>
-					<br><br>
-					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
-						你现在有<a id="yellowID" class="yellow"/><a class="yellow">黄元素</a><br>它们将给予<a id="YellowEffectID"></a>个额外扭曲时空<br>
-					</div>
-					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
-						你现在有<a id="cyanID" class="cyan"/><a class="cyan">青元素</a><br>它们将<a class="timespeed">时间速率</a>提升<a id="CyanEffectID"></a>倍<br>
-					</div>
-					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
-						你现在有<a id="magentaID" class="magenta"/><a class="magenta">紫元素</a><br>它们将空间自产升级,空间提升升级,空间消散升级的效果提升<a id="MagentaEffectID"></a>倍<br>
-					</div>
-					<br><br>
-					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
-						你现在有<a id="whiteID" class="white"/><a class="white">白元素</a><br>它们将子空间效果指数提升<a id="WhiteEffectID"></a>倍,同时取消夸克重置上限<br>
-					</div>
-				</mainTab>
-				<mainTab id="tab_room_sub_upg">
-					<br><br>
-					<small>注:夸克重置并不会重置子升级</small>
-					<br>
-					<tr>
-						<button onclick="buyRoomSubUpg(1,1e9)" id="roomSubUpg1" class="rooms_upg">升级利用<a id="buyRoomSubUpg1ID"></a><br>每个空间和子空间升级都会提升0.15夸克获取指数<br>当前效果:+<a id="roomSubUpgEff1ID"></a>^<br>消耗:1e9子空间</button>
-						<button onclick="buyRoomSubUpg(2,3e11)" id="roomSubUpg2" class="rooms_upg">自协同<a id="buyRoomSubUpg2ID"></a><br>所有元素效果log10+1后提升自己<br><small><small><small><small><small>效果:<br>红:×<a id="roomSubUpgEff2RedID"></a> 绿:×<a id="roomSubUpgEff2GreenID"></a> 蓝:×<a id="roomSubUpgEff2BlueID"></a><br>黄:×<a id="roomSubUpgEff2YellowID"></a> 青:×<a id="roomSubUpgEff2CyanID"></a> 紫:×<a id="roomSubUpgEff2MagentaID"></a><br>白:×<a id="roomSubUpgEff2WhiteID"></a></small></small></small></small></small><br>消耗:3e11子空间</button>
-						<button onclick="buyRoomSubUpg(3,2e17)" id="roomSubUpg3" class="rooms_upg">夸克平衡<a id="buyRoomSubUpg3ID"></a><br>分配夸克时将同时提升三种夸克<br>消耗:2e17子空间</button>
-						<button onclick="buyRoomSubUpg(4,5e20)" id="roomSubUpg4" class="rooms_upg">相对夸克<a id="buyRoomSubUpg4ID"></a><br>根据红,绿,蓝夸克的总数增加时速速率<br>当前效果:×<a id="roomSubUpgEff4ID"></a><br>消耗:5e20子空间</button>
-					</tr>
-					<br><br>
-					<tr>
-						<button onclick="buyRoomSubUpg(5,1e23)" id="roomSubUpg5" class="rooms_upg">潜在夸克<a id="buyRoomSubUpg5ID"></a><br>夸克重置时保留空间升级<br>消耗:1e23子空间</button>
-						<button onclick="buyRoomSubUpg(6,1.5e24)" id="roomSubUpg6" class="rooms_upg">元素蔓延<a id="buyRoomSubUpg6ID"></a><br>每秒自动分配1%的夸克且自动分配夸克无消耗<br>当前效果:+<a id="roomSubUpgEff6ID"></a>/sec<br>消耗:1.5e24子空间</button>
-						<button onclick="buyRoomSubUpg(7,3e26)" id="roomSubUpg7" class="rooms_upg">空间收束<a id="buyRoomSubUpg7ID"></a><br>时空悖论提升空间获取<br>当前效果:×<a id="roomSubUpgEff7ID"></a><br>消耗:3e26子空间</button>
-						<button onclick="buyRoomSubUpg(8,2e37)" id="roomSubUpg8" class="rooms_upg">夸克自产<a id="buyRoomSubUpg8ID"></a><br>每秒获得重置时可获得的夸克,元素蔓延效果×100<br>当前效果:+<a id="roomSubUpgEff8ID">/sec</a><br>消耗:2e37子空间</button>
-					</tr>
-				</mainTab>
-			</mainTab>
-		</mainTab>
-		<mainTab id="tab_room_chest">
-			<button onclick="startChestChallenge()" id="button_room_challenge" class="button_rest_room">将你目前的时空悖论转化为挑战难度并开启挑战</button>
-			<button onclick="quitChestChallenge()" id="button_room_challengeRe" class="button_rest_room">退出挑战</button>
-			&nbsp;
-			<button onclick="easyChestChallenge()" id="button_room_challengeEa" class="button_rest_room">降低一半挑战难度</button>
-			<button onclick="quitChestChallenge()" id="button_room_challengeFi" class="button_rest_room">完成挑战</button>
-			<br><br><br>
-			<br><br><br>
-			<div style="display: table-cell;">
-				<table cellpadding="8" style="font-family: Typewriter;font-size: 20px;">
-					<tr>
-						<td>当前挑战难度(D): <a id="time_challenge2_chest_diffID"></a></td>
-						<td>&nbsp;|&nbsp;</td>
-						<td>当前奖励强度(E): <a id="time_challenge2_chest_finishID"></a></td>
-					</tr>
-					<tr>
-						<td>目标: <a id="chestDiffCostID"></a></td>
-						<td>&nbsp;|&nbsp;</td>
-						<td>时空悖论: ×<a id="chestFinEff1ID"></a></td>
-					</tr>
-					<tr>
-						<td>时空悖论: ÷<a id="chestDiffEff2ID"></a></td>
-						<td>&nbsp;|&nbsp;</td>
-						<td>额外扭曲时空: +<a id="chestFinEff2ID"></a></td>
-					</tr>
-					<tr>
-						<td>时间速率: ÷<a id="chestDiffEff3ID"></a></td>
-						<td>&nbsp;|&nbsp;</td>
-						<td>空间获取指数: +<a id="chestFinEff3ID"></a></td>
-					</tr>
-					<tr>
-						<td>D2效果: ^<a id="chestDiffEff4ID"></a></td>
-						<td>&nbsp;|&nbsp;</td>
-						<td>点数加成点数:<small><small> (log<sub>8</sub>(n+1)<sup><a id="chestFinEff4ID"></a></sup>) => ×<a id="chestFinEff4EndID"></a></small></small></td>
-					</tr>
-					<tr>
-						<td>D3效果: ^<a id="chestDiffEff5ID"></a></td>
-						<td>&nbsp;|&nbsp;</td>
-						<td>子空间生产: ×<a id="chestFinEff5ID"></a></td>
-					</tr>
-				</table>
-			</div>
-			<br><br><br>
-			<small><small><small>进行储存时将进行一次空间重置并以进入时同等时空悖论作为挑战难度<br>挑战难度将决定储存挑战的难度和奖励<br>在储存中会触发储存时间挑战(不叠加)</small></small></small>
-		</mainTab>
-	</mainTab>
-	<mainTab id="tab_time">
-		你有<a id="time_spaceID" class="time_space"></a><a class="time_space">时间幻方</a><br><small>(+<a id="GainTime_spaceID"></a>/sec)</small><br>
-		<small><small><small>(时间幻方不受时间速率的影响)</small></small></small>
-		<br><br>
-		<button onclick="showTabMain('time_space')" class="tabbtn tabbtnTime">幻方</button>
-		<button onclick="showTabMain('time_challenge')" class="tabbtn tabbtnTime">挑战</button>
-		<mainTab id="tab_time_space"><br><br>
-			这些购买项使得你的时速×<a id="timeBuyAllEffID" class="timespeed"></a><br>
-			<small>幻方购买项在时间挑战中没有效果</small><br><br>
-			<button onclick="buyTime(1)" id="timeBuy1" class="time_buy">时间压缩(<a id="time_buy_1ID"></a>)<br>将你的时间速率×<a id="timeBuyEff1ID"></a><br>下一级:×<a id="timeBuyNextEff1ID"></a><br>消耗:<a id="timeBuyCost1ID"></a>时间幻方</button>
-			<button onclick="buyTime(2)" id="timeBuy2" class="time_buy">时速压缩(<a id="time_buy_2ID"></a>)<br>将你的时间速率和时速能量生产×<a id="timeBuyEff2ID"></a><br>重置时额外保留<a id="timeBuyOtherEff2ID"></a>%的格外时速购买项<br>下一级:<br>×<a id="timeBuyNextEff2ID"></a><br><a id="timeBuyOtherNextEff2ID"></a>%<br>消耗:<a id="timeBuyCost2ID"></a>时间幻方</button>
-		</mainTab>
-		<mainTab id="tab_time_challenge"><br><br>
-			————时间方盒————
-			<br><br>
-			<div class="square">
-				<div onclick="player.time_challenge='time_challenge_1'" id="time_challenge_1" class="square-triangle square-triangle--top"></div>
-				<div onclick="player.time_challenge='time_challenge_2'" id="time_challenge_2" class="square-triangle square-triangle--bottom"></div>
-				<div onclick="player.time_challenge='time_challenge_3'" id="time_challenge_3" class="square-triangle square-triangle--left"></div>
-				<div onclick="player.time_challenge='time_challenge_4'" id="time_challenge_4" class="square-triangle square-triangle--right"></div>
-			</div>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br>
-			<a id="time_challengeID"></a><br><br>
-			<button onclick="time_challenge(player.time_challenge)" id="button_time_challenge_goin" class="button_time_challenges">进入挑战</button>
-			<button onclick="time_challenge(player.time_challenge)" id="button_time_challenge_out" class="button_time_challenges">退出挑战</button>
-		</mainTab>
-	</mainTab>
+			<tr>
+				<td>寒寒</td>
+				<td>Translate games into English(提供英语语言)</td>
+			</tr>
+			<tr>
+				<td>匿_名/ng</td>
+				<td>Translate games into English(提供英语语言)</td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<br>
+	<br>
+	<a class="link" href="https://afdian.net/@Mysterious124" target="_blank">Jump directly to the donation page(点我跳转到捐助页面)</a><br>
+	If you think this game is interesting, you can donald some money to me, I'd appreciate it<br>
+	如果你觉得我的游戏很有趣,您可以给我捐些钱,我会很感谢的<br>
+	My only source of income(我唯一的收入来源)<br>
+	Think you playing(感谢游玩)<br>
+	E-mail(邮箱) 67265011@qq.com<br>
+	QQ:67265011<br>
 </body>
-
-</html>

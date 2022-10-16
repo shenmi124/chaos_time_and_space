@@ -1,0 +1,71 @@
+.quarks {
+	background: linear-gradient(60deg, #FF0000, #00FF00, #0000FF, #FFFF00, #FF00FF, #00FFFF, #FFFFFF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: xx-large;
+}
+
+.red {
+	background: linear-gradient(60deg, #FF0000, #00FF00, #0000FF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
+}
+
+.green {
+	background: linear-gradient(60deg, #00FF00, #0000FF, #FF0000);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
+}
+
+.blue {
+	background: linear-gradient(60deg, #0000FF, #FF0000, #00FF00);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
+}
+
+.yellow {
+	background: linear-gradient(60deg, #FFFF00, #FF0000, #00FF00);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
+}
+
+.cyan {
+	background: linear-gradient(60deg, #00FFFF, #00FF00, #0000FF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
+}
+
+.magenta {
+	background: linear-gradient(60deg, #FF00FF, #FF0000, #0000FF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
+}
+
+.white {
+	background: linear-gradient(60deg, #000000, #888);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
+}
