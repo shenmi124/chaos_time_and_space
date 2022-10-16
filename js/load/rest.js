@@ -19,27 +19,14 @@ function layer_UpgEff(){
 }
 
 function layer_0(){
-	if(player.time_challenge1_buy_8.lte(13)){
-		player.time_challenge1_points = n(0)
-		player.time_challenge1_buy_1_distorted = n(0)
-		player.time_challenge1_buy_2_distorted = n(0)
-		player.time_challenge1_buy_3_distorted = n(0)
-		player.time_challenge1_buy_4_distorted = n(0)
-		player.time_challenge1_buy_6_distorted = n(0)
-		player.time_challenge1_buy_7_distorted = n(0)
-		player.time_challenge1_buy_8_distorted = n(0)
-	}else{
-		player.time_challenge1_points = player.time_challenge1_points.mul(0.1)
-		player.time_challenge1_buy_1_distorted = time_challenge1_buy_1_distorted.mul(0.1)
-		player.time_challenge1_buy_2_distorted = time_challenge1_buy_2_distorted.mul(0.1)
-		player.time_challenge1_buy_3_distorted = time_challenge1_buy_3_distorted.mul(0.1)
-		player.time_challenge1_buy_4_distorted = time_challenge1_buy_4_distorted.mul(0.1)
-		player.time_challenge1_buy_6_distorted = time_challenge1_buy_5_distorted.mul(0.1)
-		player.time_challenge1_buy_7_distorted = time_challenge1_buy_6_distorted.mul(0.1)
-		player.time_challenge1_buy_8_distorted = time_challenge1_buy_7_distorted.mul(0.1)
-	}
-
-	layer_UpgEff()
+	player.time_challenge1_points = player.time_challenge1_points.mul(time_challenge1_buy_rest())
+	player.time_challenge1_buy_1_distorted = player.time_challenge1_buy_1_distorted.mul(time_challenge1_buy_rest())
+	player.time_challenge1_buy_2_distorted = player.time_challenge1_buy_2_distorted.mul(time_challenge1_buy_rest())
+	player.time_challenge1_buy_3_distorted = player.time_challenge1_buy_3_distorted.mul(time_challenge1_buy_rest())
+	player.time_challenge1_buy_4_distorted = player.time_challenge1_buy_4_distorted.mul(time_challenge1_buy_rest())
+	player.time_challenge1_buy_6_distorted = player.time_challenge1_buy_6_distorted.mul(time_challenge1_buy_rest())
+	player.time_challenge1_buy_7_distorted = player.time_challenge1_buy_7_distorted.mul(time_challenge1_buy_rest())
+	player.time_challenge1_buy_8_distorted = player.time_challenge1_buy_8_distorted.mul(time_challenge1_buy_rest())
 }
 
 function layer_1(){
@@ -49,6 +36,7 @@ function layer_1(){
 	player.dim_2 = n(0)
 	player.dim_2_additiona = n(0)
 	
+	layer_UpgEff()
 	layer_0()
 }
 
@@ -90,5 +78,8 @@ function layer_3(){
 	player.time_challenge1_buy_6 = n(0)
 	player.time_challenge1_buy_7 = n(0)
 	player.time_challenge1_buy_8 = n(0)
+	player.time_challenge2_chest_doing = 'nothing'
+	player.time_challenge2_chest_diff = n(0)
+	player.time_challenge2_chest_finish = n(0)
 	layer_2()
 }

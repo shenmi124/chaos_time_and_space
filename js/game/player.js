@@ -3,13 +3,10 @@ function calcPlayer(){
 	
 	loader(['room'],n(0))
 	loader(['room_sub'],n(0))
-	loader(['room_storage'],n(0))
 	loader(['room_distorted'],n(0))
 	
 	loader(['dim_1'],n(0))
-	loader(['dim_1_additiona'],n(0))
 	loader(['dim_2'],n(0))
-	loader(['dim_2_additiona'],n(0))
 	
 	NotOmegaLoader(['hasRoomUpg1'],"false")
 	loader(['roomUpgEff1'],n(0))
@@ -77,6 +74,7 @@ function calcPlayer(){
 	
 	loader(['time_space'],n(0))
 	loader(['time_buy_1'],n(0))
+	loader(['time_buy_2'],n(0))
 	
 	loader(['time_challenge1_points'],n(0))
 	loader(['time_challenge1_buy_1'],n(0))
@@ -94,6 +92,10 @@ function calcPlayer(){
 	loader(['time_challenge1_buy_7_distorted'],n(0))
 	loader(['time_challenge1_buy_8'],n(0))
 	loader(['time_challenge1_buy_8_distorted'],n(0))
+
+	NotOmegaLoader(['time_challenge2_chest_doing'],'nothing')
+	loader(['time_challenge2_chest_diff'],n(0))
+	loader(['time_challenge2_chest_finish'],n(0))
 
 	loader(['devSpeed'],n(1))
 	NotOmegaLoader(['autoSave'],"true")

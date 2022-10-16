@@ -1,7 +1,16 @@
+.tabbtn {
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+	font-size: 20px;
+    display: inline-block;
+}
+
 .tabbtnSet {
     background: #E0E0E0;
     font-weight: bold;
-    border: 2px solid #4980CC;
+    border: 2px solid #5e9aee;
     border-radius: 4px;
     transition-duration: 0.2s;
     cursor: pointer;
@@ -11,14 +20,8 @@
 }
 
 .tabbtnSet:hover {
-    background: #4980CC;
+    background: #5e9aee;
     color:#FFFFFF;
-}
-
-.tabbtn {
-    background: #E0E0E0;
-    font-weight: bold;
-    border: 2px solid #67e1dd;
     border-radius: 4px;
     transition-duration: 0.2s;
     cursor: pointer;
@@ -27,83 +30,66 @@
     display: inline-block;
 }
 
-.tabbtn:hover {
+.tabbtnMain {
+    background: #E0E0E0;
+    font-weight: bold;
+    border: 2px solid #67e1dd;
+}
+
+.tabbtnMain:hover {
 	border: 2px solid #E0E0E0;
 	background: #000000;
 	color:#e1fffe;
 }
 
-.tabbtn2 {
+.tabbtnRoom {
     background: #FFFFFF;
     font-weight: bold;
     border: 2px solid #000000;
-    border-radius: 4px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-	font-family: Typewriter;
-	font-size: 20px;
-    display: inline-block;
 }
 
-.tabbtn2:hover {
+.tabbtnRoom:hover {
 	border: 2px solid #E0E0E0;
 	background: #000000;
 	color:#FFFFFF;
 	box-shadow: #E0E0E0 0px 0px 0px 2px;
 }
 
-.tabbtn3 {
+.tabbtnQuark {
     background: #e4d4ff;
     font-weight: bold;
     border: 2px solid #e12edd;
-    border-radius: 4px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-	font-family: Typewriter;
-	font-size: 20px;
-    display: inline-block;
 }
 
-.tabbtn3:hover {
+.tabbtnQuark:hover {
 	border: 2px solid #E0E0E0;
 	background: #FFFFFF;
 	color:#e4d4ff;
 }
 
-.tabbtn4 {
+.tabbtnTime {
     background: #FFFFFF;
     font-weight: bold;
     border: 2px solid rgb(0,100,0);
 	box-shadow: rgb(0,206,0) 0px 0px 5px 0px;
-    border-radius: 4px;
     transition-duration: 1s;
-    cursor: pointer;
-	font-family: Typewriter;
-	font-size: 20px;
-    display: inline-block;
 	color:rgb(0,100,0);
 }
 
-.tabbtn4:hover {
+.tabbtnTime:hover {
 	border: 2px solid rgb(0,206,0);
 	background: #000000;
 	color:rgb(0,206,0);
 }
 
-.tabbtn5 {
+.tabbtnTimeChange1 {
     background: #E0E0E0;
     font-weight: bold;
     border: 2px solid #fffb00;
     box-shadow: #fffb00 0px 0px 5px 0px;
-    border-radius: 4px;
-    transition-duration: 0.15s;
-    cursor: pointer;
-	font-family: Typewriter;
-	font-size: 20px;
-    display: inline-block;
 }
 
-.tabbtn5:hover {
+.tabbtnTimeChange1:hover {
 	border: 2px solid #fffc51;
 	background: #E0E0E0;
 	color:#e1fffe;

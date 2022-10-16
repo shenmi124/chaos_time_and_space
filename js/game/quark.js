@@ -12,6 +12,7 @@ function restQuark(){
 	layer_2()
 }
 
+//查看三色夸克秒给予生产,非直接生产
 function gain_quark_red(){
 	return n(player.quark_red)
 }
@@ -55,15 +56,21 @@ function restQuark_to_blue(){
 }
 
 function GainRed(){
-	return n(gain_quark_red()).mul(time_speed())
+	let base = n(player.quark_red).mul(time_speed())
+	if(player.time_challenge2_chest_doing=='doing' || (player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_2')){base = softpowcap(base,n(1),n(0.75))}
+	return base
 }
 
 function GainGreen(){
-	return n(gain_quark_green()).mul(time_speed())
+	let base = n(player.quark_green).mul(time_speed())
+	if(player.time_challenge2_chest_doing=='doing' || (player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_2')){base = softpowcap(base,n(1),n(0.75))}
+	return base
 }
 
 function GainBlue(){
-	return n(gain_quark_blue()).mul(time_speed())
+	let base = n(player.quark_blue).mul(time_speed())
+	if(player.time_challenge2_chest_doing=='doing' || (player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_2')){base = softpowcap(base,n(1),n(0.75))}
+	return base
 }
 
 function RedEffect(){
@@ -99,9 +106,13 @@ function WhiteEffect(){
 }
 
 function GainQuark(){
-	return player.roomSubUpgEff6.mul(time_speed())
+	let base = player.roomSubUpgEff6.mul(time_speed())
+	if(player.time_challenge2_chest_doing=='doing' || (player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_2')){base = softpowcap(base,n(1),n(0.75))}
+	return base
 }
 
 function GainQuarkRest(){
-	return player.roomSubUpgEff8.mul(time_speed())
+	let base = player.roomSubUpgEff8.mul(time_speed())
+	if(player.time_challenge2_chest_doing=='doing' || (player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_2')){base = softpowcap(base,n(1),n(0.75))}
+	return base
 }

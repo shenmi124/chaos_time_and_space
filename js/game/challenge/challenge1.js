@@ -1,5 +1,5 @@
 function GainTimeChallenge1Points(){
-    return n(player.time_challenge1_buy_1.add(player.time_challenge1_buy_1_distorted)).mul(timeChallenge1BuyEff(1))
+    return n(player.time_challenge1_buy_1.add(player.time_challenge1_buy_1_distorted)).mul(timeChallenge1BuyEff(1)).mul(timeBuyEff(2))
 }
 
 function GainTimeChallenge1Dim1(){
@@ -144,6 +144,13 @@ function timeChallenge1BuyNextEff(id){
         let eff = n(2).pow(player.time_challenge1_buy_8.add(1)).mul(timeChallenge1PotEff(7)).mul(effBoost)
 		return eff
     }
+}
+
+function time_challenge1_buy_rest(){
+    let base = n(0)
+    if(player.time_challenge1_buy_8.gt(13)){base = base.add(0.1)}
+    base = base.add(timeBuyOtherEff(2))
+    return base.min(1)
 }
 
 function buyTimeChallenge1(id){

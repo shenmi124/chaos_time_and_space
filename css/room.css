@@ -3,7 +3,7 @@
 	text-align: center;
 	vertical-align:text-top;
 	font-family: verdana;
-    border-color: inherit;
+	border: 2px solid #AAA;
 	border-radius: 9px;
 	transition-duration: 0.2s;
 	height:200px;
@@ -15,13 +15,17 @@
 }
 
 .rooms_upg_cantBuy {
-	box-shadow: red 3px 4px 0px 0px;
+	box-shadow: rgb(255, 0, 0) 3px 4px 0px 0px;
 	cursor: not-allowed;
 }
 
 .rooms_upg_canBuy {
 	box-shadow: lightgreen 3px 4px 0px 0px;
 	cursor: pointer;
+}
+
+.rooms_upg_canBuy:active {
+	transform: translateY(3px);
 }
 
 .rooms_upg_canBuy:hover {

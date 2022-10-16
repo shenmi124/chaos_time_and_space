@@ -21,19 +21,42 @@ function timeBuyCost(id){
 	if(id==1){
 		let cost = player.time_buy_1.add(1).mul(3).pow(player.time_buy_1.div(20).add(1))
 		return cost
+	}else if(id==2){
+		let cost = player.time_buy_2.add(1).mul(300).pow(player.time_buy_2.div(15).add(1))
+		return cost
 	}
 }
 
 function timeBuyEff(id){
 	if(id==1){
-		let eff = player.time_buy_1.mul(1.5).add(1).pow(player.time_buy_1.div(10).add(1)).sub(1).max(0)
+		let eff = player.time_buy_1.mul(1.5).add(1).pow(player.time_buy_1.div(10).add(1)).sub(1).max(1)
+		return eff
+	}else if(id==2){
+		let eff = player.time_buy_2.mul(1.75).add(1).pow(player.time_buy_2.div(8).add(1)).sub(1).max(1)
 		return eff
 	}
 }
 
 function timeBuyNextEff(id){
 	if(id==1){
-		let eff = player.time_buy_1.add(1).mul(1.5).add(1).pow(player.time_buy_1.div(10).add(1)).sub(1).max(0)
+		let eff = player.time_buy_1.add(1).mul(1.5).add(1).pow(player.time_buy_1.add(1).div(10).add(1)).sub(1).max(1)
+		return eff
+	}else if(id==2){
+		let eff = player.time_buy_2.add(1).mul(1.75).add(1).pow(player.time_buy_2.add(1).div(8).add(1)).sub(1).max(1)
+		return eff
+	}
+}
+
+function timeBuyOtherEff(id){
+	if(id==2){
+		let eff = player.time_buy_2.mul(1.75).pow(player.time_buy_2.div(8).add(1)).add(5).log(5).sub(1).max(0)
+		return eff
+	}
+}
+
+function timeBuyOtherNextEff(id){
+	if(id==2){
+		let eff = player.time_buy_2.add(1).mul(1.75).pow(player.time_buy_2.add(1).div(8).add(1)).add(5).log(5).sub(1).max(0)
 		return eff
 	}
 }

@@ -11,83 +11,85 @@
 	border-radius: 9px;
 	height:70px;
 	width:250px;
+	transition-duration: 0.2s;
 }
 
 .button_rest_room:hover {
 	background: linear-gradient(to bottom, #e1e1e1 5%, #ededed 100%);
 }
 
+.button_rest_room:active {
+	transform: translateY(3px);
+}
+
 .button_rest_quark {
-	background-color: #e12edd;
 	text-align: center;
 	vertical-align:text-top;
 	font-family: verdana;
-	box-shadow: #e12edd 3px 4px 0px 0px;
-	background: linear-gradient(to bottom, #e4d4ff 5%, #de52c9 100%);
+	box-shadow: #e12edd70 3px 4px 0px 0px;
+	background: linear-gradient(60deg, var(--RedColor), var(--GreenColor), var(--BlueColor));
 	cursor: pointer;
 	font-family: Typewriter;
 	font-size: 15px;
 	border-radius: 9px;
 	height:100px;
 	width:250px;
+	transition-duration: 0.2s;
 }
 
-.button_rest_quark:hover {
-	background: linear-gradient(to bottom, #de52c9 5%, #e4d4ff 100%);
+.button_rest_quark:active {
+	transform: translateY(3px);
 }
 
 .button_rest_quark_to_red {
-	background-color: #e12edd;
 	text-align: center;
 	vertical-align:text-top;
 	font-family: verdana;
-	background: linear-gradient(to bottom, #FFFFFF 25%, red 100%);
+	background: var(--RedColor);
 	cursor: pointer;
-	font-family: Typewriter;
-	font-size: 15px;
+	font-size: 17px;
 	border-radius: 9px;
-	height:40px;
+	height:80px;
 	width:220px;
+	transition-duration: 0.2s;
 }
 
-.button_rest_quark_to_red:hover {
-	background: linear-gradient(to bottom, red 25%, #FFFFFF 100%);
+.button_rest_quark_to_red:active {
+	transform: translateY(3px);
 }
 
 .button_rest_quark_to_green {
-	background-color: #e12edd;
 	text-align: center;
 	vertical-align:text-top;
 	font-family: verdana;
-	background: linear-gradient(to bottom, #FFFFFF 25%, green 100%);
+	background: var(--GreenColor);
 	cursor: pointer;
-	font-family: Typewriter;
-	font-size: 15px;
+	font-size: 17px;
 	border-radius: 9px;
-	height:40px;
+	height:80px;
 	width:220px;
+	transition-duration: 0.2s;
 }
 
-.button_rest_quark_to_green:hover {
-	background: linear-gradient(to bottom, green 25%, #FFFFFF 100%);
+.button_rest_quark_to_green:active {
+	transform: translateY(3px);
 }
 
 .button_rest_quark_to_blue {
-	background-color: #e12edd;
 	text-align: center;
 	vertical-align:text-top;
 	font-family: verdana;
-	background: linear-gradient(to bottom, #FFFFFF 25%, blue 100%);
+	background: var(--BlueColor);
 	cursor: pointer;
-	font-family: Typewriter;
-	font-size: 15px;
+	font-size: 17px;
 	border-radius: 9px;
-	height:40px;
+	height:80px;
 	width:220px;
+	transition-duration: 0.2s;
 }
 
-.button_rest_quark_to_blue:hover {
-	background: linear-gradient(to bottom, blue 25%, #FFFFFF 100%);
+.button_rest_quark_to_blue:active {
+	transform: translateY(3px);
 }
 
 .button_time_challenges {
@@ -98,7 +100,6 @@
     border-radius: 4px;
     transition-duration: 0.2s;
     cursor: pointer;
-	font-family: Typewriter;
 	font-size: 20px;
     display: inline-block;
 	color:rgb(0,100,0);

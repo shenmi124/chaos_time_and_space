@@ -1,62 +1,71 @@
 .quarks {
-	text-align: center;
-	color:#e12edd;
-	text-shadow: 0 0 10px #e4d4ff;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #FF0000, #00FF00, #0000FF, #FFFF00, #FF00FF, #00FFFF, #FFFFFF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: xx-large;
 }
 
 .red {
-	text-align: center;
-	font-size: 23px;
-	color:#FF0000;
-	text-shadow: 0 0 10px #FF0000;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #FF0000, #00FF00, #0000FF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
 }
 
 .green {
-	text-align: center;
-	font-size: 23px;
-	color:#00FF00;
-	text-shadow: 0 0 10px #00FF00;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #00FF00, #0000FF, #FF0000);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
 }
 
 .blue {
-	text-align: center;
-	font-size: 23px;
-	color:#0000FF;
-	text-shadow: 0 0 10px #0000FF;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #0000FF, #FF0000, #00FF00);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
 }
 
 .yellow {
-	text-align: center;
-	font-size: 23px;
-	color:#FFFF00;
-	text-shadow: 0 0 10px #FFFF00;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #FFFF00, #FF0000, #00FF00);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
 }
 
 .cyan {
-	text-align: center;
-	font-size: 23px;
-	color:#00FFFF;
-	text-shadow: 0 0 10px #00FFFF;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #00FFFF, #00FF00, #0000FF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
 }
 
 .magenta {
-	text-align: center;
-	font-size: 23px;
-	color:#FF00FF;
-	text-shadow: 0 0 10px #FF00FF;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #FF00FF, #FF0000, #0000FF);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
 }
 
 .white {
-	text-align: center;
-	font-size: 23px;
-	color:#000000;
-	text-shadow: 0 0 10px #000000;
-	border-radius: 9px;
+	background: linear-gradient(60deg, #000000, #888);
+    background-size: 300% 300%;
+    background-position: 0 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 23px;
 }

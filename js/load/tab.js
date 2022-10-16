@@ -8,12 +8,21 @@ function Open(id){
 }
 
 function buttonID(){
-	if(player.room_storage.gt(0)){
-		Close('button_dim1_progress')
-		Open('button_none_progress')
-	}else{
-		Open('button_dim1_progress')
-		Close('button_none_progress')
+	if(player.points.gte(chestDiffCost()) && player.time_challenge2_chest_diff.gte(player.time_challenge2_chest_finish) && player.time_challenge2_chest_doing=='doing'){
+        Open('button_room_challengeFi')
+		Close('button_room_challengeRe')
+		Close('button_room_challengeEa')
+		Close('button_room_challenge')
+    }else if(player.time_challenge2_chest_doing=='doing'){
+        Close('button_room_challengeFi')
+		Open('button_room_challengeRe')
+		Open('button_room_challengeEa')
+		Close('button_room_challenge')
+    }else{
+		Close('button_room_challengeFi')
+		Close('button_room_challengeRe')
+		Close('button_room_challengeEa')
+		Open('button_room_challenge')
 	}
 	
 	if(player.points.gte(50)){
@@ -93,22 +102,34 @@ function buttonID(){
 		Close('button_time_challenge_goin')
 	}
 
-	if(((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_1') || player.time_challenge_finish_1=='finish') || ((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_3') || player.time_challenge_finish_3=='finish')){
+	if(((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_1') || (player.time_challenge_finish_1=='finish' && player.time_challenge_doing=='nothing'))){
 		Open('unlocked_tab_main_main')
 		Open('unlocked_tab_main_time')
 	}else{
 		Close('unlocked_tab_main_main')
 		Close('unlocked_tab_main_time')
 	}
+
+	//|| ((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_3') || player.time_challenge_finish_3=='finish')
 	
-	Close('unlocked_tab_room_storage')
+	if(((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_2') || (player.time_challenge_finish_2=='finish' && player.time_challenge_doing=='nothing'))){
+		Open('unlocked_tab_room_chest')
+	}else{
+		Close('unlocked_tab_room_chest')
+	}
+
+	if(player.time_challenge_finish_1=='finish'){
+		Open('timeBuy2')
+	}else{
+		Close('timeBuy2')
+	}
 }
 
 function firstTab(){
 	if(tab==true){
 		Close('tab_setting')
 		Close('tab_room')
-		Close('tab_room_storage')
+		Close('tab_room_chest')
 		Close('tab_room_distorted')
 		Close('tab_room_sub_quark')
 		Close('tab_room_sub_upg')
@@ -166,10 +187,10 @@ function showTabMain(id){
 		Close("tab_room_upg")
 	}
 	
-	if(id=="room_storage"){
-		Open("tab_room_storage")
+	if(id=="room_chest"){
+		Open("tab_room_chest")
 	}else{
-		Close("tab_room_storage")
+		Close("tab_room_chest")
 	}
 
 	if(id=="room_distorted"){
