@@ -43,7 +43,7 @@
 	<div class="version" style="margin-right: 13px;">v0.4.1.1</div>
 	<br>
 	<a id="time_challenge_doingID"></a>
-	You have<a id="pointsID" class="points"></a><a class="points"> Space Time Paradox</a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
+	You have <a id="pointsID" class="points"></a><a class="points"> Space Time Paradox</a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
 	Time Speed×<a id="time_speedID" class="timespeed"></a><a id="devSpeedID"></a><br>
 	<small><small>Currently EndGame:Unlock time</small></small>
 	<br>
@@ -51,7 +51,7 @@
 	<button onclick="showTab('setting')" class="tabbtn tabbtnSet">Settings</button>
 	<button onclick="showTab('main')" class="tabbtn tabbtnMain">Space Time</button>
 	<button onclick="showTab('room')" class="tabbtn tabbtnRoom">Space</button>
-	<button onclick="showTab('time')" id="unlocked_tab_time" class="tabbtn tabbtnTime">Time</button>
+	<button onclick="confirm('Are comming......')" id="unlocked_tab_time" class="tabbtn tabbtnTime">Time</button>
 	<br><br>
 	<mainTab id="tab_setting">
 		<br>
@@ -62,8 +62,8 @@
 		</tr><br><br>
 		<tr>
 			<button onclick="save()" class="tabbtnSet" style="width:200px;height:55px">Save<a id="autoSaveID"></a></button>
-			<button onclick="if(!!confirm('Are you sure you want to hard reset?You will lose everything!!!')){if(!!confirm('This save will be lost forever!(For a long time!)')){toClearSave = true}}" id="export" class="tabbtnSet" style="width:200px;height:55px">Hard Reset</button>
-			<a href="https://afdian.net/@Mysterious124" target="_blank"><button id="import" class="tabbtnSet" style="width:200px;height:55px">捐助作者</button></a>
+			<button onclick="if(!!confirm('Are you sure to HARDREST?You will lose all your things!!!')){if(!!confirm('This save will be lost forever!(For a long time!)')){toClearSave = true}}" id="export" class="tabbtnSet" style="width:200px;height:55px">Hard Reset</button>
+			<a href="https://afdian.net/@Mysterious124" target="_blank"><button id="import" class="tabbtnSet" style="width:200px;height:55px">Donation</button></a>
 		</tr>
 	</mainTab>
 	<mainTab id="tab_main">
@@ -76,18 +76,18 @@
 					<tr>
 						<td></td>
 						<td>&nbsp;&nbsp;</td>
-						<td>数量</td>
+						<td>Number</td>
 						<td>&nbsp;&nbsp;</td>
-						<td>格外数量</td>
+						<td>Extra</td>
 						<td>&nbsp;&nbsp;</td>
-						<td>获取</td>
+						<td>Gain</td>
 						<td>&nbsp;&nbsp;</td>
-						<td>倍率</td>
+						<td>Mult</td>
 						<td>&nbsp;&nbsp;</td>
 						<td></td>
 					</tr>
 					<tr>
-						<td id='unlocked_dim1_button'>扭曲时空</td>
+						<td id='unlocked_dim1_button'>Twist Space and Time</td>
 						<td></td>
 						<td><a id="dim_1ID"></a></td>
 						<td></td>
@@ -97,10 +97,10 @@
 						<td></td>
 						<td><a id="dim_1_mulID"></a>×</td>
 						<td></td>
-						<td><button onclick="buyDim(1)" id='dim1ButtonCss' class=" dim1">消耗: <a id="CostDim_1ID"></a> 时空悖论</button></td>
+						<td><button onclick="buyDim(1)" id='dim1ButtonCss' class=" dim1">cost: <a id="CostDim_1ID"></a> Space Time Paradox</button></td>
 					</tr>
 					<tr id="unlocked_dim2_button">
-						<td>扭曲维度</td>
+						<td>Twist Dimension</td>
 						<td></td>
 						<td><a id="dim_2ID"></a></td>
 						<td></td>
@@ -110,13 +110,13 @@
 						<td></td>
 						<td><a id="dim_2_mulID"></a>×</td>
 						<td></td>
-						<td><button onclick="buyDim(2)" id='dim2ButtonCss' class="dim2">消耗: <a id="CostDim_2ID"></a> 扭曲时空</button>
+						<td><button onclick="buyDim(2)" id='dim2ButtonCss' class="dim2">cost: <a id="CostDim_2ID"></a> Twist Space and Time</button>
 						</td>
 					</tr>
 				</table>
 			</div><br><br>
-			<small><small><small>扭曲时空每秒会生产(1×自身倍率)时空悖论</small></small></small><br>
-			<a id="unlocked_dim2"><small><small><small>(如果买得起扭曲时空)扭曲维度每秒会生产(扭曲维度<sup>2</sup>×自身倍率)扭曲时空并×(扭曲维度×1.5×扭曲维度倍率)扭曲时空倍率</small></small></small><br></a>
+			<small><small><small>Twist Space And Time will produce (1×Self Mult) Space Time paradox per second</small></small></small><br>
+			<a id="unlocked_dim2"><small><small><small>Twist Dimension will produce (Twist Dimension<sup>2</sup>×Self Mult)Twist Space Time per second if you can afford Twist Space Time and multiply Twist Space Time by (Twist Dimension×1.5×Twist Dimension's power)</small></small></small><br></a>
 		</mainTab>
 		<mainTab id="tab_main_time">
 			你有<a id="time_challenge_points_1ID" class="time_challenge_1_points"></a><a class="time_challenge_1_points">时速能量</a>,它们使你的时间速率加快<a id="timeChallenge1EffID"></a>×<br>
@@ -174,7 +174,7 @@
 					<button onclick="buyRoomUpg(9,2e5)" id="roomUpg9" class="rooms_upg">Space Quark<a id="buyRoomUpg9ID"></a><br>Unlock Quark in Twist<br>Cost:200,000 Space</button>
 					<button onclick="buyRoomUpg(10,1e8)" id="roomUpg10" class="rooms_upg">Space Upgrade<a id="buyRoomUpg10ID"></a><br>Unlock upgrades in Twist<br>Cost:100,000,000 Space</button>
 					<button onclick="buyRoomUpg(11,'1e30')" id="roomUpg11" class="rooms_upg">Space Dimension<a id="buyRoomUpg11ID"></a><br>Unlock Twist Dimension in Space Time, it can produce Twist Space Time<br>Cost:1e30 Space</button>
-					<button onclick="buyRoomUpg(12,'1e35')" id="roomUpg12" class="rooms_upg">Space Time<a id="buyRoomUpg12ID"></a><br>Unlock Time<a id='time_challenge_finishID'></a><br>Cost:1e35 Space</button>
+					<button onclick="buyRoomUpg(12,'1e33')" id="roomUpg12" class="rooms_upg">Space Time<a id="buyRoomUpg12ID"></a><br>Unlock Time<a id='time_challenge_finishID'></a><br>Cost:1e33 Space</button>
 				</tr>
 				<br><br>
 			</mainTab>
@@ -201,17 +201,17 @@
 					<br><br><br>
 					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
 						<button onclick="restQuark_to_red()" class="button_rest_quark_to_red">Turn all Quarks to Red Quarks</button><br>
-						You have <a id="quark_redID" class="red"/><a class="red"> Red Quarks<br><a id="GainQuark_redID"></a></a><br>They produce <a id="gain_quark_redID" class="red"/><a class="red"> Red Elements every second</a><br><br>
+						You have <a id="quark_redID" class="red"/><a class="red"> Red Quarks<br><a id="GainQuark_redID"></a></a><br>They produce <a id="gain_quark_redID" class="red"/><a class="red"> Red Elements </a>every second<br><br>
 						You have <a id="redID" class="red"/><a class="red"> Red Elements<br></a><a id="GainRedID"></a><br>They multiply Space Utilize's effect by ×<a id="RedEffectID"></a><br>
 					</div>
 					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
 						<button onclick="restQuark_to_green()" class="button_rest_quark_to_green">Turn all Quarks to Green Quarks</button><br>
-						You have <a id="quark_greenID" class="green"/><a class="green"> Green Quarks<br><a id="GainQuark_greenID"></a></a></a><br>They produce <a id="gain_quark_greenID" class="green"/><a class="green"> Green Elements every second</a><br><br>
+						You have <a id="quark_greenID" class="green"/><a class="green"> Green Quarks<br><a id="GainQuark_greenID"></a></a></a><br>They produce <a id="gain_quark_greenID" class="green"/><a class="green"> Green Elements </a>every second<br><br>
 						You have <a id="greenID" class="green"/><a class="green"> Green Elements<br></a><a id="GainGreenID"></a><br>They give you <a id="GreenEffectID"></a> Space every second<br>
 					</div>
 					<div style="max-width: 450px; min-width: 450px; display: table-cell;">
 						<button onclick="restQuark_to_blue()" class="button_rest_quark_to_blue">Turn all Quarks to Blue Quarks</button><br>
-						You have <a id="quark_blueID" class="blue"/><a class="blue"> Blue Quarks<br><a id="GainQuark_blueID"></a></a><br>They produce <a id="gain_quark_blueID" class="blue"/><a class="blue"> Blue Elements every second</a><br><br>
+						You have <a id="quark_blueID" class="blue"/><a class="blue"> Blue Quarks<br><a id="GainQuark_blueID"></a></a><br>They produce <a id="gain_quark_blueID" class="blue"/><a class="blue"> Blue Elements </a>every second<br><br>
 						You have <a id="blueID" class="blue"/><a class="blue"> Blue Elements<br></a><a id="GainBlueID"></a><br>They multiply Space Time Paradox production by ×<a id="BlueEffectID"></a><br>
 					</div>
 					<br><br>
@@ -241,10 +241,10 @@
 					</tr>
 					<br><br>
 					<tr>
-						<button onclick="buyRoomSubUpg(5,1e23)" id="roomSubUpg5" class="rooms_upg">Potential Quarks<a id="buyRoomSubUpg5ID"></a><br>Keep Space upgrades when Quark Reset<br>Cost:1e23 Sub-Space</button>
-						<button onclick="buyRoomSubUpg(6,1.5e24)" id="roomSubUpg6" class="rooms_upg">Element Spread<a id="buyRoomSubUpg6ID"></a><br>Distribute 1% of Quarks every second without cost<br>Currently:+<a id="roomSubUpgEff6ID"></a>/sec<br>Cost:1.5e24 Sub-Space</button>
-						<button onclick="buyRoomSubUpg(7,3e26)" id="roomSubUpg7" class="rooms_upg">Space Collect<a id="buyRoomSubUpg7ID"></a><br>Space Time Paradox boost Space gain<br>Currently:×<a id="roomSubUpgEff7ID"></a><br>Cost:3e26 Sub-Space</button>
-						<button onclick="buyRoomSubUpg(8,2e37)" id="roomSubUpg8" class="rooms_upg">Quark Self-Production<a id="buyRoomSubUpg8ID"></a><br>Gain 100% of Quark gain every second and Element Spread's effect x100<br>Currently:+<a id="roomSubUpgEff8ID">/sec</a><br>Cost:2e37 Sub-Space</button>
+						<button onclick="buyRoomSubUpg(5,5e21)" id="roomSubUpg5" class="rooms_upg">Potential Quarks<a id="buyRoomSubUpg5ID"></a><br>Keep Space upgrades when Quark Reset<br>Cost:5e21 Sub-Space</button>
+						<button onclick="buyRoomSubUpg(6,1.5e22)" id="roomSubUpg6" class="rooms_upg">Element Spread<a id="buyRoomSubUpg6ID"></a><br>Distribute 1% of Quarks every second without cost<br>Currently:+<a id="roomSubUpgEff6ID"></a>/sec<br>Cost:1.5e22 Sub-Space</button>
+						<button onclick="buyRoomSubUpg(7,3e24)" id="roomSubUpg7" class="rooms_upg">Space Collect<a id="buyRoomSubUpg7ID"></a><br>Space Time Paradox boost Space gain<br>Currently:×<a id="roomSubUpgEff7ID"></a><br>Cost:3e24 Sub-Space</button>
+						<button onclick="buyRoomSubUpg(8,2e35)" id="roomSubUpg8" class="rooms_upg">Quark Self-Production<a id="buyRoomSubUpg8ID"></a><br>Gain 100% of Quark gain every second and Element Spread's effect x100<br>Currently:+<a id="roomSubUpgEff8ID">/sec</a><br>Cost:2e35 Sub-Space</button>
 					</tr>
 				</mainTab>
 			</mainTab>

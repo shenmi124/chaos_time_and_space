@@ -61,7 +61,7 @@ function getID(){
 	getDoc("roomUpgEff8",player.roomUpgEff8)
 	
 	for(row=1;row<=12;row++){
-		getBuyDoc("buyRoomUpg"+row,player['hasRoomUpg'+row]=="true" ? "(已购买)" : "")
+		getBuyDoc("buyRoomUpg"+row,player['hasRoomUpg'+row]=="true" ? "(Bought)" : "")
 	}
 	
 	getDoc("roomSubUpgEff1",player.roomSubUpgEff1)
@@ -71,12 +71,12 @@ function getID(){
 	getDoc("roomSubUpgEff8",player.roomSubUpgEff8)
 	
 	for(row2=1;row2<=8;row2++){
-		getBuyDoc("buyRoomSubUpg"+row2,player['hasRoomSubUpg'+row2]=="true" ? "(已购买)" : "")
+		getBuyDoc("buyRoomSubUpg"+row2,player['hasRoomSubUpg'+row2]=="true" ? "(Bought)" : "")
 	}
 	
 	getDoc("quark",player.quark)
 	getDoc("resetQuarkGain",resetQuarkGain())
-	getBuyDoc('restQuarkTaxt',player.white.gt(0) ? '下一个夸克在:'+format(resetQuarkNext())+'子空间时获取' : '在获得白元素前你一次最多可以获得1夸克')
+	getBuyDoc('restQuarkTaxt',player.white.gt(0) ? 'Next Quark at:'+format(resetQuarkNext())+'SubSpace' : 'Before you have the White Element , you can only gain 1 quark at a time')
 	
 	getDoc("quark_red",player.quark_red)
 	getDoc("quark_green",player.quark_green)
@@ -124,19 +124,19 @@ function getID(){
 	getDoc("room_distorted_speed",room_distorted_speed())
 	
 	if(player.time_challenge=="time_challenge_0"){
-		getBuyDoc("time_challenge","鼠标移动并点击一个色块查看详情")
+		getBuyDoc("time_challenge","Move your mouse to see what's inside the box")
 	}else if(player.time_challenge=="time_challenge_1"){
-		getBuyDoc("time_challenge","<h3>时速挑战<a id='time_challenge_finish_1ID'></a></h3><small>效果:时间倍率只有0.0001倍<br>扩张:在时间中解锁时速页面,在时速的生产与重置中获取自动化取得时速加成<br>目标:解锁时间<br>奖励:永久解锁时速页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
-		getBuyDoc("time_challenge_finish_1",player.time_challenge_finish_1=='finish' ? "(已完成)" : '')
+		getBuyDoc("time_challenge","<h3>Challenge : Time Speed<a id='time_challenge_finish_1ID'></a></h3><small>Effect:Time Speed is only 0.0001x<br>Things new:Unlock the Speed page in the Time<br>Goal:Unlock Time<br>Reward:Unlock the Speed page penman permanently,Magic Square's gain is ×100,Unlock a new Magic Square Buyable<br><small><small><small>Enter or Quit the Challenge will cause a Time Reset<br>Reset Time will keep showing the content")
+		getBuyDoc("time_challenge_finish_1",player.time_challenge_finish_1=='finish' ? "(Completed)" : '')
 	}else if(player.time_challenge=="time_challenge_2"){
-		getBuyDoc("time_challenge","<h3>储存挑战<a id='time_challenge_finish_2ID'></a></h3><small>效果:超过1的n(时速加成之后)会使得n变为(n÷n<sup>0.25</sup>),n为时空佳论生产,扭曲时空生产,空间生产,子空间生产,夸克生产,元素生产,储存挑战奖励将无视此效果<br>扩张:在空间中解锁储存页面,储存时空悖论进入储存挑战以获得生产加成<br>目标:解锁时间<br>奖励:永久解锁储存页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
-		getBuyDoc("time_challenge_finish_2",player.time_challenge_finish_2=='finish' ? "(已完成)" : '')
+		getBuyDoc("time_challenge","<h3>Challenge : Storage<a id='time_challenge_finish_2ID'></a></h3><small>Effect:Any number which is more than 1 will become (n÷n<sup>0.25</sup>).The reward form the Storage page will ignore it.<br>Things new:Unlock the Storage page in the Time<br>Goal:Unlock Time<br>Reward:Unlock the Storage page penman permanently,Magic Square's gain is ×100,Unlock a new Magic Square Buyable<br><small><small><small>Enter or Quit the Challenge will cause a Time Reset<br>Reset Time will keep showing the content")
+		getBuyDoc("time_challenge_finish_2",player.time_challenge_finish_2=='finish' ? "(Completed)" : '')
 	}else if(player.time_challenge=="time_challenge_3"){
-		getBuyDoc("time_challenge","<h3>虚无挑战<a id='time_challenge_finish_3ID'></a></h3><small>效果:除了'空间时间'外的升级将无法购买<br>扩张:在时空中解锁虚无页面,生产虚无获得加成<br>目标:解锁时间<br>奖励:永久解锁虚无页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
-		getBuyDoc("time_challenge_finish_3",player.time_challenge_finish_3=='finish' ? "(已完成)" : '')
+		getBuyDoc("time_challenge","<h3>Challenge : Empty<a id='time_challenge_finish_3ID'></a></h3><small>Effect:You can't buy any upgrade except 'Space Time'<br>Things new:Unlock the Empty page in the Time<br>Goal:Unlock Time<br>Reward:Unlock the Empty page penman permanently,Magic Square's gain is ×100,Unlock a new Magic Square Buyable<br><small><small><small>Enter or Quit the Challenge will cause a Time Reset<br>Reset Time will keep showing the content")
+		getBuyDoc("time_challenge_finish_3",player.time_challenge_finish_3=='finish' ? "(Completed)" : '')
 	}else if(player.time_challenge=="time_challenge_4"){
-		getBuyDoc("time_challenge","<h3>压缩挑战<a id='time_challenge_finish_4ID'></a></h3><small>效果:超过1的时间速率效果将大幅度减弱<br>扩张:在空间中解锁压缩页面,压缩时空间获得加成<br>目标:解锁时间<br>奖励:永久解锁压缩页面,时间幻方产量×100,解锁一个新的幻方可购买<br><small><small><small>进入或退出挑战将进行一次时间重置<br>重置时间时会使先前大部分内容持续显示")
-		getBuyDoc("time_challenge_finish_4",player.time_challenge_finish_4=='finish' ? "(已完成)" : '')
+		getBuyDoc("time_challenge","<h3>Challenge : Compression<a id='time_challenge_finish_4ID'></a></h3><small>Effect:Time Speed which is more than 1 will be weaken sharply<br>Things new:Unlock the Compression page in the Time<br>Goal:Unlock Time<br>Reward:Unlock the Compression page penman permanently,Magic Square's gain is ×100,Unlock a new Magic Square Buyable<br><small><small><small>Enter or Quit the Challenge will cause a Time Reset<br>Reset Time will keep showing the content")
+		getBuyDoc("time_challenge_finish_4",player.time_challenge_finish_4=='finish' ? "(Completed)" : '')
 	}
 	
 	if(player.time_challenge=="time_challenge_1" && player.time_challenge_doing=="doing"){
@@ -168,7 +168,7 @@ function getID(){
 
 	getBuyDoc('main_br',((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_1') || player.time_challenge_finish_1=='finish') || ((player.time_challenge_doing=='doing' && player.time_challenge=='time_challenge_3') || player.time_challenge_finish_3=='finish') ? '<br><br>' : '')
 
-	getBuyDoc("time_challenge_finish",player.time_challenge_doing=='doing' ? "并完成挑战" : "")
+	getBuyDoc("time_challenge_finish",player.time_challenge_doing=='doing' ? "And complete the Challenge" : "")
 	
 	getDoc('time_challenge_points_1',player.time_challenge1_points)
 	getDoc('GainTimeChallenge1Points',GainTimeChallenge1Points())
@@ -190,20 +190,20 @@ function getID(){
 
 	getDocInt('time_challenge1_buy_5',player.time_challenge1_buy_5)
 	getDoc('timeChallenge1BuyCost5',timeChallenge1BuyCost(5))
-	getBuyDoc("timeChallenge1BuyAuto1",player.time_challenge1_buy_5.gte(1) ? "1.自动购买加速度且购买加速度无消耗<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto2",player.time_challenge1_buy_5.gte(2) ? "2.自动购买加加速度且购买加加速度无消耗<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto3",player.time_challenge1_buy_5.gte(3) ? "3.自动购买加加加速度且购买加加加速度无消耗<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto4",player.time_challenge1_buy_5.gte(4) ? "4.自动购买光<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto5",player.time_challenge1_buy_5.gte(5) ? "5.自动购买加速度快100倍<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto6",player.time_challenge1_buy_5.gte(6) ? "6.自动购买加加速度快100倍<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto7",player.time_challenge1_buy_5.gte(7) ? "7.自动购买加加加速度快100倍<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto8",player.time_challenge1_buy_5.gte(8) ? "8.购买光无消耗且不重置任何<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto9",player.time_challenge1_buy_5.gte(9) ? "9.自动购买重力势能且购买重力势能无消耗<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto10",player.time_challenge1_buy_5.gte(10) ? "10.自动购买磁场势能且购买磁场势能无消耗<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto11",player.time_challenge1_buy_5.gte(11) ? "11.自动购买分子势能且购买分子势能无消耗<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto12",player.time_challenge1_buy_5.gte(12) ? "12.将所有时速购买项倍率提升log<sub>10</sub>(机械能),自动购买机械能<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto13",player.time_challenge1_buy_5.gte(13) ? "13.将所有时速购买项生产速度*1000,但是你只能获得最多10秒的资源<br>" : "")
-	getBuyDoc("timeChallenge1BuyAuto14",player.time_challenge1_buy_5.gte(14) ? "14.每个机械能使机械能消耗指数+0.2,重置时保留10%的格外时速购买项<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto1",player.time_challenge1_buy_5.gte(1) ? "1.Auto buy Δv and it will cost nothing<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto2",player.time_challenge1_buy_5.gte(2) ? "2.Auto buy ΔΔv and it will cost nothing<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto3",player.time_challenge1_buy_5.gte(3) ? "3.Auto buy ΔΔΔv and it will cost nothing<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto4",player.time_challenge1_buy_5.gte(4) ? "4.Auto buy Light<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto5",player.time_challenge1_buy_5.gte(5) ? "5.Auto buy Δv is 100 times faster<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto6",player.time_challenge1_buy_5.gte(6) ? "6.Auto buy ΔΔv is 100 times faster<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto7",player.time_challenge1_buy_5.gte(7) ? "7.Auto buy ΔΔΔv is 100 times faster<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto8",player.time_challenge1_buy_5.gte(8) ? "8.Buy Light and will cost nothing and reset nothing<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto9",player.time_challenge1_buy_5.gte(9) ? "9.Auto buy Gravitational Energy and it will cost nothing<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto10",player.time_challenge1_buy_5.gte(10) ? "10.Auto buy Magnetic Energy and it will cost nothing<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto11",player.time_challenge1_buy_5.gte(11) ? "11.Auto buy Chemical Energy and it will cost nothing<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto12",player.time_challenge1_buy_5.gte(12) ? "12.Mult all the buyable by log<sub>10</sub>(Mechanical Energy),Auto buy Mechanical Energy<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto13",player.time_challenge1_buy_5.gte(13) ? "13.Mult all the buyable speed by 1000,but you can only gain 10s' resource<br>" : "")
+	getBuyDoc("timeChallenge1BuyAuto14",player.time_challenge1_buy_5.gte(14) ? "14.Each Mechanical Energy will let Mechanical Energy's cost exponent add by 0.2,Keep 10% Extra Time Speed buyable when resets<br>" : "")
 
 	for(i=6;i<=8;i++){	
 		getDocInt('time_challenge1_buy_'+i,player['time_challenge1_buy_'+i])
@@ -232,8 +232,8 @@ function getID(){
 	getDoc('chestDiffEff5',chestDiffEff5())
 	getDoc('chestFinEff5',chestFinEff5())
 
-	getBuyDoc("devSpeed",player.devSpeed.eq(1) ? "" : " [开发者模式] 全局时间倍率:<a class='timespeed'>"+format(player.devSpeed)+"</a>×")
-	getBuyDoc("autoSave",player.autoSave=="true" ? "开" : "关")
+	getBuyDoc("devSpeed",player.devSpeed.eq(1) ? "" : " [Developer Mode] Total Time Speed:<a class='timespeed'>"+format(player.devSpeed)+"</a>×")
+	getBuyDoc("autoSave",player.autoSave=="true" ? "On" : "Off")
 }
 
 setInterval(function(){

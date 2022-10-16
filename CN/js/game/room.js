@@ -258,7 +258,7 @@ function roomCss(){
 				}
 			}
 			if(col==12){
-				if(player.room.gte(1e35)){
+				if(player.room.gte(1e33)){
 					getCss('roomUpg'+col,'rooms_upg_canBuy')
 					lossCss('roomUpg'+col,'rooms_upg_cantBuy')
 				}else{
@@ -313,7 +313,7 @@ function roomCss(){
 			}
 			
 			if(col2==5){
-				if(player.room_sub.gte(1e23)){
+				if(player.room_sub.gte(5e21)){
 					getCss('roomSubUpg'+col2,'rooms_upg_canBuy')
 					lossCss('roomSubUpg'+col2,'rooms_upg_cantBuy')
 				}else{
@@ -322,7 +322,7 @@ function roomCss(){
 				}
 			}
 			if(col2==6){
-				if(player.room_sub.gte(1.5e24)){
+				if(player.room_sub.gte(1.5e22)){
 					getCss('roomSubUpg'+col2,'rooms_upg_canBuy')
 					lossCss('roomSubUpg'+col2,'rooms_upg_cantBuy')
 				}else{
@@ -331,7 +331,7 @@ function roomCss(){
 				}
 			}
 			if(col2==7){
-				if(player.room_sub.gte(3e26)){
+				if(player.room_sub.gte(3e24)){
 					getCss('roomSubUpg'+col2,'rooms_upg_canBuy')
 					lossCss('roomSubUpg'+col2,'rooms_upg_cantBuy')
 				}else{
@@ -340,7 +340,7 @@ function roomCss(){
 				}
 			}
 			if(col2==8){
-				if(player.room_sub.gte(2e37)){
+				if(player.room_sub.gte(2e35)){
 					getCss('roomSubUpg'+col2,'rooms_upg_canBuy')
 					lossCss('roomSubUpg'+col2,'rooms_upg_cantBuy')
 				}else{

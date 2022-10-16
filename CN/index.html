@@ -51,7 +51,7 @@
 	<button onclick="showTab('setting')" class="tabbtn tabbtnSet">设置</button>
 	<button onclick="showTab('main')" class="tabbtn tabbtnMain">时空</button>
 	<button onclick="showTab('room')" class="tabbtn tabbtnRoom">空间</button>
-	<button onclick="showTab('time')" id="unlocked_tab_time" class="tabbtn tabbtnTime">时间</button>
+	<button onclick="confirm('快来了......')" id="unlocked_tab_time" class="tabbtn tabbtnTime">时间</button>
 	<br><br>
 	<mainTab id="tab_setting">
 		<br>
@@ -116,7 +116,7 @@
 				</table>
 			</div><br><br>
 			<small><small><small>扭曲时空每秒会生产(1×自身倍率)时空悖论</small></small></small><br>
-			<a id="unlocked_dim2"><small><small><small>(如果买得起扭曲时空)扭曲维度每秒会生产(扭曲维度<sup>2</sup>×自身倍率)扭曲时空并×(扭曲维度×1.5×扭曲维度倍率)扭曲时空倍率</small></small></small><br></a>
+			<a id="unlocked_dim2"><small><small><small>(如果买得起扭曲时空)扭曲维度每秒会生产(扭曲维度<sup>2</sup>×自身倍率)扭曲时空并使扭曲时空倍率×(扭曲维度×1.5×扭曲维度倍率)</small></small></small><br></a>
 		</mainTab>
 		<mainTab id="tab_main_time">
 			你有<a id="time_challenge_points_1ID" class="time_challenge_1_points"></a><a class="time_challenge_1_points">时速能量</a>,它们使你的时间速率加快<a id="timeChallenge1EffID"></a>×<br>
@@ -174,7 +174,7 @@
 					<button onclick="buyRoomUpg(9,2e5)" id="roomUpg9" class="rooms_upg">空间夸克<a id="buyRoomUpg9ID"></a><br>在扭曲中解锁夸克面板<br>消耗:200,000空间</button>
 					<button onclick="buyRoomUpg(10,1e8)" id="roomUpg10" class="rooms_upg">空间升级<a id="buyRoomUpg10ID"></a><br>在扭曲中解锁升级面板<br>消耗:100,000,000空间</button>
 					<button onclick="buyRoomUpg(11,'1e30')" id="roomUpg11" class="rooms_upg">空间维度<a id="buyRoomUpg11ID"></a><br>在时空中解锁扭曲维度,它可以生产扭曲时空<br>消耗:1e30空间</button>
-					<button onclick="buyRoomUpg(12,'1e35')" id="roomUpg12" class="rooms_upg">空间时间<a id="buyRoomUpg12ID"></a><br>解锁时间<a id='time_challenge_finishID'></a><br>消耗:1e35空间</button>
+					<button onclick="buyRoomUpg(12,'1e33')" id="roomUpg12" class="rooms_upg">空间时间<a id="buyRoomUpg12ID"></a><br>解锁时间<a id='time_challenge_finishID'></a><br>消耗:1e33空间</button>
 				</tr>
 				<br><br>
 			</mainTab>
@@ -241,10 +241,10 @@
 					</tr>
 					<br><br>
 					<tr>
-						<button onclick="buyRoomSubUpg(5,1e23)" id="roomSubUpg5" class="rooms_upg">潜在夸克<a id="buyRoomSubUpg5ID"></a><br>夸克重置时保留空间升级<br>消耗:1e23子空间</button>
-						<button onclick="buyRoomSubUpg(6,1.5e24)" id="roomSubUpg6" class="rooms_upg">元素蔓延<a id="buyRoomSubUpg6ID"></a><br>每秒自动分配1%的夸克且自动分配夸克无消耗<br>当前效果:+<a id="roomSubUpgEff6ID"></a>/sec<br>消耗:1.5e24子空间</button>
-						<button onclick="buyRoomSubUpg(7,3e26)" id="roomSubUpg7" class="rooms_upg">空间收束<a id="buyRoomSubUpg7ID"></a><br>时空悖论提升空间获取<br>当前效果:×<a id="roomSubUpgEff7ID"></a><br>消耗:3e26子空间</button>
-						<button onclick="buyRoomSubUpg(8,2e37)" id="roomSubUpg8" class="rooms_upg">夸克自产<a id="buyRoomSubUpg8ID"></a><br>每秒获得重置时可获得的夸克,元素蔓延效果×100<br>当前效果:+<a id="roomSubUpgEff8ID">/sec</a><br>消耗:2e37子空间</button>
+						<button onclick="buyRoomSubUpg(5,5e21)" id="roomSubUpg5" class="rooms_upg">潜在夸克<a id="buyRoomSubUpg5ID"></a><br>夸克重置时保留空间升级<br>消耗:5e21子空间</button>
+						<button onclick="buyRoomSubUpg(6,1.5e22)" id="roomSubUpg6" class="rooms_upg">元素蔓延<a id="buyRoomSubUpg6ID"></a><br>每秒自动分配1%的夸克且自动分配夸克无消耗<br>当前效果:+<a id="roomSubUpgEff6ID"></a>/sec<br>消耗:1.5e22子空间</button>
+						<button onclick="buyRoomSubUpg(7,3e24)" id="roomSubUpg7" class="rooms_upg">空间收束<a id="buyRoomSubUpg7ID"></a><br>时空悖论提升空间获取<br>当前效果:×<a id="roomSubUpgEff7ID"></a><br>消耗:3e24子空间</button>
+						<button onclick="buyRoomSubUpg(8,2e35)" id="roomSubUpg8" class="rooms_upg">夸克自产<a id="buyRoomSubUpg8ID"></a><br>每秒获得重置时可获得的夸克,元素蔓延效果×100<br>当前效果:+<a id="roomSubUpgEff8ID">/sec</a><br>消耗:2e35子空间</button>
 					</tr>
 				</mainTab>
 			</mainTab>
