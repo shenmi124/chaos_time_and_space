@@ -140,13 +140,13 @@ function getID(){
 	}
 	
 	if(player.time_challenge=="time_challenge_1" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:时速挑战</small><br>")
+		getBuyDoc("time_challenge_doing","<small>Current Chanllenge :Time Speed</small><br>")
 	}else if(player.time_challenge=="time_challenge_2" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:储存挑战</small><br>")
+		getBuyDoc("time_challenge_doing","<small>Current Chanllenge :Storage</small><br>")
 	}else if(player.time_challenge=="time_challenge_3" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:虚无挑战</small><br>")
+		getBuyDoc("time_challenge_doing","<small>Current Chanllenge :Empty</small><br>")
 	}else if(player.time_challenge=="time_challenge_4" && player.time_challenge_doing=="doing"){
-		getBuyDoc("time_challenge_doing","<small>正在进行:压缩挑战</small><br>")
+		getBuyDoc("time_challenge_doing","<small>Current Chanllenge :Compression</small><br>")
 	}else{
 		getBuyDoc("time_challenge_doing","<br>")
 	}
@@ -259,7 +259,7 @@ setInterval(function(){
 	getID()
 	buttonID()
 	firstTab()
-	document.title = '混乱时空 - '+format(player.points)+'时空悖论'
+	document.title = 'Chaos Time And Space - '+format(player.points)+'Space Time Paradox'
 	
 	dimCss(1)
 	dimCss(2)
