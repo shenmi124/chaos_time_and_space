@@ -82,6 +82,21 @@
 	color:rgb(0,206,0);
 }
 
+.tabbtnIncremental {
+    background: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid rgb(154 77 255);
+	box-shadow: rgb(157, 26, 184) 0px 0px 5px 0px;
+    transition-duration: 1s;
+	color:rgb(154 77 255);
+}
+
+.tabbtnIncremental:hover {
+	border: 2px solid rgb(224 69 255);
+	background: #000000;
+	color:rgb(224 69 255);
+}
+
 .tabbtnTimeChange1 {
     background: #E0E0E0;
     font-weight: bold;

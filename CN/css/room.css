@@ -4,10 +4,10 @@
 	vertical-align:text-top;
 	font-family: verdana;
 	border: 2px solid #AAA;
-	border-radius: 9px;
+	border-radius: 4px;
 	transition-duration: 0.2s;
 	height:200px;
-	width:200px;
+	width:250px;
 }
 
 .rooms_upg_have {
@@ -30,4 +30,5 @@
 
 .rooms_upg_canBuy:hover {
 	box-shadow: lightgreen 0px 0px 0px 0px;
+	box-shadow: #1bbfab 0px 0px 0px 0px;
 }

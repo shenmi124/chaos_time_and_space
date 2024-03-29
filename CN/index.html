@@ -11,6 +11,7 @@
 	<script src="js/load/save.js"></script>
 	<script src="js/game/player.js"></script>
 	<script src="js/load/load.js"></script>
+	<script src="js/load/loading.js"></script>
 	<script src="js/number/format.js"></script>
 	<script src="js/load/js.js"></script>
 	<script src="js/load/tab.js"></script>
@@ -41,7 +42,14 @@
 </head>
 
 <body>
-	<div class="version" style="margin-right: 13px;">v0.4.1.1</div>
+	<div id="loading">
+		<div id="loading_bg">
+			<div class="loader">
+				* 加 载 中 *
+			</div>
+		</div>
+	</div>
+	<div class="version" style="margin-right: 13px;">v0.4.2</div>
 	<br>
 	<a id="time_challenge_doingID"></a>
 	你有<a id="pointsID" class="points"></a><a class="points">时空悖论</a><br><small>(+<a id="GainPointsID"></a>/sec)</small><br>
@@ -236,7 +244,7 @@
 					<br>
 					<tr>
 						<button onclick="buyRoomSubUpg(1,1e9)" id="roomSubUpg1" class="rooms_upg">升级利用<a id="buyRoomSubUpg1ID"></a><br>每个空间和子空间升级都会提升0.15夸克获取指数<br>当前效果:+<a id="roomSubUpgEff1ID"></a>^<br>消耗:1e9子空间</button>
-						<button onclick="buyRoomSubUpg(2,3e11)" id="roomSubUpg2" class="rooms_upg">自协同<a id="buyRoomSubUpg2ID"></a><br>所有元素效果log10+1后提升自己<br><small><small><small><small><small>效果:<br>红:×<a id="roomSubUpgEff2RedID"></a> 绿:×<a id="roomSubUpgEff2GreenID"></a> 蓝:×<a id="roomSubUpgEff2BlueID"></a><br>黄:×<a id="roomSubUpgEff2YellowID"></a> 青:×<a id="roomSubUpgEff2CyanID"></a> 紫:×<a id="roomSubUpgEff2MagentaID"></a><br>白:×<a id="roomSubUpgEff2WhiteID"></a></small></small></small></small></small><br>消耗:3e11子空间</button>
+						<button onclick="buyRoomSubUpg(2,3e11)" id="roomSubUpg2" class="rooms_upg">自协同<a id="buyRoomSubUpg2ID"></a><br>所有元素效果log10+1后提升自己<br><small><small>效果:<br>红:×<a id="roomSubUpgEff2RedID"></a> 绿:×<a id="roomSubUpgEff2GreenID"></a> 蓝:×<a id="roomSubUpgEff2BlueID"></a><br>黄:×<a id="roomSubUpgEff2YellowID"></a> 青:×<a id="roomSubUpgEff2CyanID"></a> 紫:×<a id="roomSubUpgEff2MagentaID"></a><br>白:×<a id="roomSubUpgEff2WhiteID"></a></small></small><br>消耗:3e11子空间</button>
 						<button onclick="buyRoomSubUpg(3,2e17)" id="roomSubUpg3" class="rooms_upg">夸克平衡<a id="buyRoomSubUpg3ID"></a><br>分配夸克时将同时提升三种夸克<br>消耗:2e17子空间</button>
 						<button onclick="buyRoomSubUpg(4,5e20)" id="roomSubUpg4" class="rooms_upg">相对夸克<a id="buyRoomSubUpg4ID"></a><br>根据红,绿,蓝夸克的总数增加时速速率<br>当前效果:×<a id="roomSubUpgEff4ID"></a><br>消耗:5e20子空间</button>
 					</tr>

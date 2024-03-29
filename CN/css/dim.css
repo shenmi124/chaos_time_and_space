@@ -5,6 +5,7 @@
 
 .can_buyDim:active {
 	transform: translateY(3px);
+	box-shadow: #1bbfab 0px 0px 0px 0px;
 }
 
 .can_buyDim:hover {
@@ -20,7 +21,7 @@
 	width:300px;
 	color:#000000;
 	transition-duration: 0.2s;
-	box-shadow: #67e1dd 3px 4px 0px 0px;
+	box-shadow: #67e1dd 2px 3px 0px 0px;
 	border-radius: 9px;
 }
 
@@ -42,7 +43,7 @@
 	width:300px;
 	color:#000000;
 	transition-duration: 0.2s;
-	box-shadow: #a3a3a3 3px 4px 0px 0px;
+	box-shadow: #a3a3a3 2px 3px 0px 0px;
 	border-radius: 9px;
 }
 

@@ -51,3 +51,26 @@
 	border: 2px solid rgb(250,206,0);
     cursor: pointer;
 }
+
+.time_challenge2_buy {
+    background: #FFFFFF;
+    text-align: center;
+	vertical-align: text-top;
+    border-color: inherit;
+    font-weight: bold;
+    border: 2px solid rgb(157, 26, 184);
+    border-radius: 6px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-family: Typewriter;
+    display: inline-block;
+	color:rgb(154 77 255);
+	height:120px;
+	width:250px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.time_challenge2_buy:hover {
+	border:2px solid rgb(224 69 255);
+}

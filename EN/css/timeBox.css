@@ -29,12 +29,13 @@
 
 .square:hover .square-triangle--top,
 .square:focus .square-triangle--top {
-    border-color: #67e1dd;
+    border-color: rgb(215, 243, 115);
 }
 
 .square-triangle--top:hover {
-	box-shadow: #67e1dd 0px 0px 150px 0px;
-	z-index:999;
+    transform: translate3d(16px, 16px,0);
+	box-shadow: #000000 0px 0px 5px 0px;
+	z-index:999
 }
 
 .square-triangle--bottom {
@@ -55,7 +56,8 @@
 }
 
 .square-triangle--bottom:hover {
-	box-shadow: #c3c3c3 0px 0px 150px 0px;
+    transform: translate3d(-16px, 16px,0);
+	box-shadow: #000000 0px 0px 5px 0px;
 	z-index:999
 }
 
@@ -73,11 +75,12 @@
 
 .square:hover .square-triangle--left,
 .square:focus .square-triangle--left {
-    border-color: #e4d4ff;
+    border-color: #67e1dd;
 }
 
 .square-triangle--left:hover {
-	box-shadow: #e4d4ff 0px 0px 150px 0px;
+    transform: translate3d(-16px,-16px,0);
+	box-shadow: #000000 0px 0px 5px 0px;
 	z-index:999
 }
 
@@ -95,10 +98,11 @@
 
 .square:hover .square-triangle--right,
 .square:focus .square-triangle--right {
-    border-color: yellow;
+    border-color: rgb(224 69 255);
 }
 
 .square-triangle--right:hover {
-	box-shadow: yellow 0px 0px 150px 0px;
+    transform: translate3d(16px,-16px,0);
+	box-shadow: #000000 0px 0px 5px 0px;
 	z-index:999
 }
