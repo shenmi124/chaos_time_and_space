@@ -1,0 +1,112 @@
+.button_rest_room {
+	background-color: #ffffff;
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	box-shadow: #1bbfab 3px 4px 0px 0px;
+	background: linear-gradient(to bottom, #ededed 5%, #e1e1e1 100%);
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:70px;
+	width:250px;
+	transition-duration: 0.2s;
+}
+
+.button_rest_room:hover {
+	background: linear-gradient(to bottom, #e1e1e1 5%, #ededed 100%);
+}
+
+.button_rest_room:active {
+	transform: translateY(3px);
+}
+
+.button_rest_quark {
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	box-shadow: #e12edd70 3px 4px 0px 0px;
+	background: linear-gradient(60deg, var(--RedColor), var(--GreenColor), var(--BlueColor));
+	cursor: pointer;
+	font-family: Typewriter;
+	font-size: 15px;
+	border-radius: 9px;
+	height:100px;
+	width:250px;
+	transition-duration: 0.2s;
+}
+
+.button_rest_quark:active {
+	transform: translateY(3px);
+}
+
+.button_rest_quark_to_red {
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	background: var(--RedColor);
+	cursor: pointer;
+	font-size: 17px;
+	border-radius: 9px;
+	height:80px;
+	width:220px;
+	transition-duration: 0.2s;
+}
+
+.button_rest_quark_to_red:active {
+	transform: translateY(3px);
+}
+
+.button_rest_quark_to_green {
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	background: var(--GreenColor);
+	cursor: pointer;
+	font-size: 17px;
+	border-radius: 9px;
+	height:80px;
+	width:220px;
+	transition-duration: 0.2s;
+}
+
+.button_rest_quark_to_green:active {
+	transform: translateY(3px);
+}
+
+.button_rest_quark_to_blue {
+	text-align: center;
+	vertical-align:text-top;
+	font-family: verdana;
+	background: var(--BlueColor);
+	cursor: pointer;
+	font-size: 17px;
+	border-radius: 9px;
+	height:80px;
+	width:220px;
+	transition-duration: 0.2s;
+}
+
+.button_rest_quark_to_blue:active {
+	transform: translateY(3px);
+}
+
+.button_time_challenges {
+	background: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid rgb(0,100,0);
+	box-shadow: rgb(0,206,0) 0px 0px 5px 0px;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+	font-size: 20px;
+    display: inline-block;
+	color:rgb(0,100,0);
+}
+
+.button_time_challenges:hover {
+	border: 2px solid rgb(0,206,0);
+	background: #000000;
+	color:rgb(0,206,0);
+}
