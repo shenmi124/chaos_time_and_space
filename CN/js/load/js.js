@@ -288,8 +288,8 @@ setInterval(function(){
 	player.blue = player.blue.add(GainBlue().mul(diff))
 	
 	player.yellow = n(player.red).min(player.green)
-	player.cyan = n(player.red).min(player.blue)
-	player.magenta = n(player.green).min(player.blue)
+	player.magenta = n(player.red).min(player.blue)
+	player.cyan = n(player.green).min(player.blue)
 	player.white = n(player.red).min(player.green).min(player.blue)
 	
 	if(player.room_sub.gte(30)){
